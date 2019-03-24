@@ -4,7 +4,7 @@ import './Header.css';
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
+      <div className="Header">LONG SHOT LEAGUE
       </div>
     );
   }
