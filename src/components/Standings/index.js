@@ -5,6 +5,8 @@ class Standings extends Component {
   render() {
     return (
       <div className="Standings">
+        <div className="current-standings">
+        </div>
       </div>
     );
   }
