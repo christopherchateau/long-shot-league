@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import toddImg from "../../images/todd.jpg";
+import toddImg from "../../images/todd.png";
 import "./Header.css";
 
 class Header extends Component {
