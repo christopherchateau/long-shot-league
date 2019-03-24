@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 .Header {
-  
+  align-items: center;
+  background: black;
+  color: white;
+  display: flex;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+  justify-content: center;
 }
