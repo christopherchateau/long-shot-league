@@ -25,3 +25,20 @@
   padding-left: 12px;
   padding-right: 32.5%;
 }
+
+@media screen and (max-width: 1300px) {
+  .current-standings {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .current-standings {
+    height: 80vh;
+    width: 80%;
+  }
+
+  .current-standings-header {
+    font-size: 16px;
+  }
+}
