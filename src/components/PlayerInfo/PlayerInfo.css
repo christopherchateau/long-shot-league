@@ -93,6 +93,11 @@
 }
 
 @media screen and (max-width: 500px) {
+  .PlayerInfo {
+    padding: 0;
+    width: 80vw;
+  }
+
   .player-info-pic {
     height: 250px;
   }
