@@ -11,14 +11,21 @@ class Standings extends Component {
       if (a.total < b.total) return 1;
     });
 
-    const players2 = playerListSorted.map((player, i) => (
-      <Player
-        handlePlayerClick={handlePlayerClick}
-        {...player}
-        rank={i + 1}
-        key={i}
-      />
-    ));
+    let counter = 1;
+    const formattedPlayers = playerListSorted.map((player, i) => {
+      i > 0 && player.total === playerListSorted[i - 1].total
+        ? counter++
+        : counter = 0;
+
+      return (
+        <Player
+          handlePlayerClick={handlePlayerClick}
+          {...player}
+          rank={i + 1 - counter}
+          key={player.name}
+        />
+      );
+    });
 
     return (
       <div className="Standings">
@@ -27,7 +34,7 @@ class Standings extends Component {
           <h5>name</h5>
           <h5 className="current-standings-points">points</h5>
         </div>
-        {players2}
+        {formattedPlayers}
       </div>
     );
   }
