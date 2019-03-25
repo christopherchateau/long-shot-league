@@ -1,5 +1,6 @@
 .App {
   background: url("../../images/court.jpg") center no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   display: grid;
   grid-template-rows: 100px 1fr;
