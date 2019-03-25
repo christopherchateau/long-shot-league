@@ -3,9 +3,13 @@ import "./PlayerInfo.css";
 
 class PlayerInfo extends Component {
   render() {
+    const { handleBackClick } = this.props;
     return (
       <div className="PlayerInfo">
-      <h1>{this.props.selectedPlayer}</h1>
+        <button className="back-btn" onClick={handleBackClick}>
+          back
+        </button>
+        <h1>{this.props.selectedPlayer}</h1>
       </div>
     );
   }
