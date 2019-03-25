@@ -49,12 +49,15 @@ class MainPage extends Component {
   };
 
   render() {
-    const { display, selectedPlayer } = this.state;
+    const { display, selectedPlayer, players } = this.state;
+    const selectedPlayerData = players.find(
+      player => player.name === selectedPlayer
+    );
     return (
       <div className="MainPage">
         {display === "player info" && (
           <PlayerInfo
-            selectedPlayer={selectedPlayer}
+            selectedPlayerData={selectedPlayerData}
             handleBackClick={this.handleBackClick}
           />
         )}
