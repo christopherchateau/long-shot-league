@@ -29,6 +29,7 @@
 
 @media screen and (max-width: 500px) {
   .Header {
+    color: rgb(238, 238, 238);
     font-size: 0.8rem;
   }
 
