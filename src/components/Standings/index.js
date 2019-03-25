@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Player from "../Player";
-// import PlayerInfo from "../PlayerInfo";
 import { playerList } from "../../data/players.js";
 import "./Standings.css";
 
@@ -12,7 +11,11 @@ class Standings extends Component {
     });
 
     const players = playerListSorted.map((player, i) => (
-      <Player {...player} rank={i + 1} />
+      <Player
+        handlePlayerClick={this.props.handlePlayerClick}
+        {...player}
+        rank={i + 1}
+      />
     ));
 
     return (
