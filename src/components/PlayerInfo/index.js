@@ -15,24 +15,21 @@ class PlayerInfo extends Component {
     const selectedTeamsData = teamList.filter(listTeam =>
       selectedTeamsNames.includes(listTeam.name)
     );
-    console.log(selectedTeamsData);
-
-    const preparedTeams = selectedTeamsData.map(team => {
-      return (
-        <h5
-          className={"team".concat(team.eliminated ? " eliminated" : "")}
-          key={team.name}
-        >
-          {team.name}
-        </h5>
-      );
-    });
 
     return (
       <div className="PlayerInfo">
         <img className="player-info-pic" src={playerImg} />
         <h1>{selectedPlayer}</h1>
-        {preparedTeams}
+        <div className="player-info-teams">
+          {selectedTeamsData.map(team => (
+            <h5
+              className={"team".concat(team.eliminated ? " eliminated" : "")}
+              key={team.name}
+            >
+              {team.name}
+            </h5>
+          ))}
+        </div>
         <button className="back-btn" onClick={handleBackClick}>
           standings
         </button>
