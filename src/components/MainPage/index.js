@@ -24,8 +24,9 @@ class MainPage extends Component {
         player.teams.includes(listTeam.name)
       );
       const points = this.generatePointTotal(teams);
-      const playerData = { name: player.name, teams, points };
-      players.push(playerData);
+      const bonus = this.getPlayerBonus(player.name);
+
+      players.push({ name: player.name, teams, points, bonus });
     });
     this.setState({ players });
   };
@@ -34,8 +35,13 @@ class MainPage extends Component {
     return teams.reduce((a, b) => a + b.points, 0);
   };
 
+  getPlayerBonus = name => {
+    return playerList.find(player => player.name === name).bonus;
+  };
+
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });
+    console.log(this.state.players);
   };
 
   handleBackClick = () => {
