@@ -42,7 +42,6 @@ class MainPage extends Component {
 
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });
-    console.log(this.state.players);
   };
 
   handleBackClick = () => {
