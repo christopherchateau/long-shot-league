@@ -5,12 +5,13 @@ import "./Player.css";
 
 class Player extends Component {
   render() {
+    const { name, points, rank } = this.props;
     return (
       <div className="Player">
-        <h3 className="rank">1</h3>
-        <h3 className="name">chris</h3>
-        <h3 className="points">12</h3>
-        <img className="pic" src={playerImg} />
+        <h3 className="player-rank">{rank}</h3>
+        <h3 className="player-name">{name}</h3>
+        <h3 className="player-points">{points}</h3>
+        <img className="player-pic" src={playerImg} />
       </div>
     );
   }
