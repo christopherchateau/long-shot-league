@@ -1,8 +1,16 @@
 .PlayerInfo {
+  align-items: center;
   background-color: silver;
+  display: flex;
+  flex-direction: column;
   height: 70vh;
+  justify-content: space-around;
   opacity: 0.8;
   overflow: auto;
   padding: 0 5%;
   width: 60vw;
+}
+
+.player-info-pic {
+  height: 300px;
 }
