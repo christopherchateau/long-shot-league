@@ -13,12 +13,19 @@ class MainPage extends Component {
     this.setState({ selectedPlayer, display: "player info" });
   };
 
+  handleBackClick = () => {
+    this.setState({ selectedPlayer: "", display: "standings" });
+  };
+
   render() {
     const { display, selectedPlayer } = this.state;
     return (
       <div className="MainPage">
         {display === "player info" && (
-          <PlayerInfo selectedPlayer={selectedPlayer} />
+          <PlayerInfo
+            selectedPlayer={selectedPlayer}
+            handleBackClick={this.handleBackClick}
+          />
         )}
         {display === "standings" && (
           <Standings handlePlayerClick={this.handlePlayerClick} />
