@@ -5,12 +5,12 @@
   background-image: linear-gradient(to right, transparent, silver, transparent);
   display: flex;
   font-family: "Permanent Marker", cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
   justify-content: center;
 }
 
 .todd-img {
-  height: 80px;
+  height: 70px;
   position: relative;
   top: 12px;
 }
