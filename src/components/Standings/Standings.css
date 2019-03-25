@@ -48,6 +48,12 @@
 }
 
 @media screen and (max-width: 500px) {
+  .Standings {
+    height: auto;
+    margin: 20px 0;
+    width: 80vw;
+  }
+
   .current-standings-points {
     left: 30px;
   }
