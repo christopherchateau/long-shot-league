@@ -4,6 +4,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  font-family: "Roboto", sans-serif;
   height: 70vh;
   justify-content: space-around;
   opacity: 0.8;
@@ -29,4 +30,13 @@
   background: rgb(227, 227, 227);
   color: rgb(84, 84, 84);
   transition: all 0.5s ease-out;
+}
+
+.team {
+  font-size: 22px;
+}
+
+.eliminated {
+  color: red;
+  text-decoration: line-through;
 }

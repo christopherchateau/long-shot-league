@@ -15,6 +15,7 @@ class Standings extends Component {
         handlePlayerClick={this.props.handlePlayerClick}
         {...player}
         rank={i + 1}
+        key={i}
       />
     ));
 
