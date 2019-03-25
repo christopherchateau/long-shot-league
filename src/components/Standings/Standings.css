@@ -1,5 +1,5 @@
 .Standings {
-  background-color: silver;
+  background: silver;
   height: 70vh;
   opacity: 0.8;
   overflow: auto;
