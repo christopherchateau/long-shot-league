@@ -1,4 +1,4 @@
-export const teams = [
+export const teamList = [
   {
     name: "Duke",
     eliminated: false,
@@ -216,7 +216,7 @@ export const teams = [
   },
   {
     name: "Ohio St",
-    eliminated: false,
+    eliminated: true,
     seed: 11
   },
   {
@@ -241,7 +241,7 @@ export const teams = [
   },
   {
     name: "UC Irvince",
-    eliminated: false,
+    eliminated: true,
     seed: 13
   },
   {
