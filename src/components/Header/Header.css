@@ -14,3 +14,27 @@
   position: relative;
   top: 12px;
 }
+
+@media screen and (max-width: 760px) {
+  .Header {
+    font-size: 1.2rem;
+  }
+
+  .todd-img {
+    height: 60px;
+    position: relative;
+    top: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Header {
+    font-size: 0.8rem;
+  }
+
+  .todd-img {
+    height: 40px;
+    position: relative;
+    top: 8px;
+  }
+}

@@ -13,3 +13,19 @@
 .pic {
   height: 80px;
 }
+
+@media screen and (max-width: 760px) {
+  .Player {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Player {
+    font-size: 16px;
+    height: 60px;
+  }
+  .pic {
+    height: 60px;
+  }
+}
