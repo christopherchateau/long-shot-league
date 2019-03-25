@@ -6,7 +6,7 @@ import "./MainPage.css";
 class MainPage extends Component {
   state = {
     selectedPlayer: "",
-    display: "standings"
+    display: "player info"
   };
 
   handlePlayerClick = selectedPlayer => {
