@@ -1,16 +1,10 @@
 .Standings {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.current-standings {
   background-color: silver;
   height: 70vh;
   opacity: 0.8;
   overflow: auto;
   padding: 0 5%;
-  width: 60%;
+  width: 60vw;
 }
 
 .current-standings-header {
