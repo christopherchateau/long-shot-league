@@ -25,8 +25,9 @@ class MainPage extends Component {
       );
       const points = this.generatePointTotal(teams);
       const bonus = this.getPlayerBonus(player.name);
+      const total = points + bonus;
 
-      players.push({ name: player.name, teams, points, bonus });
+      players.push({ name: player.name, teams, points, bonus, total });
     });
     this.setState({ players });
   };
@@ -62,7 +63,10 @@ class MainPage extends Component {
           />
         )}
         {display === "standings" && (
-          <Standings handlePlayerClick={this.handlePlayerClick} />
+          <Standings
+            players={players}
+            handlePlayerClick={this.handlePlayerClick}
+          />
         )}
       </div>
     );

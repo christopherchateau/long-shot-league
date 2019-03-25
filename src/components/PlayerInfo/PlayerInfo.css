@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+
 .PlayerInfo {
   align-items: center;
   background: rgb(147, 147, 147);
@@ -7,7 +9,9 @@
   font-family: "Roboto", sans-serif;
   height: 70vh;
   justify-content: space-around;
-  opacity: 0.8;
+  margin: 20px 0;
+  min-height: 700px;
+  opacity: 0.9;
   overflow: auto;
   padding: 0 5%;
   width: 60vw;
@@ -21,13 +25,40 @@
   height: 300px;
 }
 
+.player-info-teams,
+.player-info-totals {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  width: 100%;
+  font-size: 28px;
+}
+
+.player-info-totals {
+  line-height: 1.5;
+  text-align: center;
+  width: 80%;
+}
+
+.player-info-num {
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+}
+
+.eliminated {
+  color: rgb(160, 0, 0);
+  text-decoration: line-through;
+}
+
 .back-btn {
   background: rgb(84, 84, 84);
   border: none;
   color: white;
   cursor: pointer;
   font-size: 22px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  min-height: 50px;
   padding: 10px 30px;
   transition: all 0.5s ease-out;
 }
@@ -36,20 +67,4 @@
   background: rgb(227, 227, 227);
   color: rgb(84, 84, 84);
   transition: all 0.5s ease-out;
-}
-
-.player-info-teams {
-  display: flex;
-  justify-content: space-around;
-  padding: 5px;
-  width: 100%;
-}
-
-.team {
-  font-size: 28px;
-}
-
-.eliminated {
-  color: rgb(160, 0, 0);
-  text-decoration: line-through;
 }

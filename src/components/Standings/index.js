@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import Player from "../Player";
-import { playerList } from "../../data/players.js";
 import "./Standings.css";
 
 class Standings extends Component {
   render() {
-    const playerListSorted = playerList.sort((a, b) => {
-      if (a.points > b.points) return -1;
-      if (a.points < b.points) return 1;
+    const { players, handlePlayerClick } = this.props;
+
+    const playerListSorted = players.sort((a, b) => {
+      if (a.total > b.total) return -1;
+      if (a.total < b.total) return 1;
     });
 
-    const players = playerListSorted.map((player, i) => (
+    const players2 = playerListSorted.map((player, i) => (
       <Player
-        handlePlayerClick={this.props.handlePlayerClick}
+        handlePlayerClick={handlePlayerClick}
         {...player}
         rank={i + 1}
         key={i}
@@ -26,7 +27,7 @@ class Standings extends Component {
           <h5>name</h5>
           <h5 className="current-standings-points">points</h5>
         </div>
-        {players}
+        {players2}
       </div>
     );
   }
