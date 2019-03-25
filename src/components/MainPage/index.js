@@ -23,20 +23,19 @@ class MainPage extends Component {
       const teams = teamList.filter(listTeam =>
         player.teams.includes(listTeam.name)
       );
-      const points = this.generatePointTotal(teams)
+      const points = this.generatePointTotal(teams);
       const playerData = { name: player.name, teams, points };
       players.push(playerData);
     });
     this.setState({ players });
   };
-  
+
   generatePointTotal = teams => {
     return teams.reduce((a, b) => a + b.points, 0);
   };
-  
+
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });
-    console.log(this.state);
   };
 
   handleBackClick = () => {
