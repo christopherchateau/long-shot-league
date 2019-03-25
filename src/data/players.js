@@ -1,15 +1,15 @@
 export const players = [
   {
     name: "Chris",
-    teams: ["Duke", "Syracuse", "New Mexico State", "Iona"]
+    teams: ["Duke", "Syracuse", "New Mexico St", "Iona"]
   },
   {
     name: "Brewers",
-    teams: ["Kentucky", "Seton Hall", "Mississippo State", "North Dakota State"]
+    teams: ["Kentucky", "Seton Hall", "Mississippo St", "North Dakota St"]
   },
   {
     name: "Justin",
-    teams: ["Murray State", "Yale", "Arizona State", "Fairleigh Dickinson"]
+    teams: ["Murray St", "Yale", "Arizona St", "Fairleigh Dickinson"]
   },
   {
     name: "Brent",
@@ -21,11 +21,11 @@ export const players = [
   },
   {
     name: "Matt",
-    teams: ["Virginia", "Nevada", "Iowa State", "Bradley"]
+    teams: ["Virginia", "Nevada", "Iowa St", "Bradley"]
   },
   {
     name: "Reed",
-    teams: ["North Carolina", "Louisville", "St. Mary's", "Colgate"]
+    teams: ["North Carolina", "Louisville", "St Mary's", "Colgate"]
   },
   {
     name: "Todd",
@@ -33,15 +33,15 @@ export const players = [
   },
   {
     name: "Laura",
-    teams: ["Michigan State", "Kansas State", "Washington", "VCU"]
+    teams: ["Michigan St", "Kansas St", "Washington", "VCU"]
   },
   {
     name: "Scott",
-    teams: ["Tennessee", "Marquette", "Ohio State", "Central Florida"]
+    teams: ["Tennessee", "Marquette", "Ohio St", "Central Florida"]
   },
   {
     name: "Doherty",
-    teams: ["Kansas", "Virgina Tech", "Florida", "Georgia State"]
+    teams: ["Kansas", "Virgina Tech", "Florida", "Georgia St"]
   },
   {
     name: "Kevin",
@@ -53,7 +53,7 @@ export const players = [
   },
   {
     name: "Bmase",
-    teams: ["Florida State", "Texas Tech", "Liberty", "Utah State"]
+    teams: ["Florida St", "Texas Tech", "Liberty", "Utah St"]
   },
   {
     name: "Fraske",
