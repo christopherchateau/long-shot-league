@@ -13,17 +13,21 @@
   width: 60vw;
 }
 
+.player-info-name {
+  font-size: 36px;
+}
+
 .player-info-pic {
   height: 300px;
-  margin-top: 50px;
 }
 
 .back-btn {
   background: rgb(84, 84, 84);
+  border: none;
   color: white;
   cursor: pointer;
   font-size: 22px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 10px 30px;
   transition: all 0.5s ease-out;
 }
@@ -36,16 +40,16 @@
 
 .player-info-teams {
   display: flex;
-  justify-content: space-between;
-  width: 80%;
+  justify-content: space-around;
+  padding: 5px;
+  width: 100%;
 }
 
 .team {
-  font-size: 22px;
-  margin: 5px;
+  font-size: 28px;
 }
 
 .eliminated {
-  color: red;
+  color: rgb(160, 0, 0);
   text-decoration: line-through;
 }

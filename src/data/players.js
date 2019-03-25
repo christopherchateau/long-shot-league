@@ -7,7 +7,7 @@ export const playerList = [
   {
     name: "Brewers",
     points: 3,
-    teams: ["Kentucky", "Seton Hall", "Mississippo St", "North Dakota St"]
+    teams: ["Kentucky", "Seton Hall", "Mississippi St", "North Dakota St"]
   },
   {
     name: "Justin",
@@ -52,7 +52,7 @@ export const playerList = [
   {
     name: "Doherty",
     points: 7,
-    teams: ["Kansas", "Virgina Tech", "Florida", "Georgia St"]
+    teams: ["Kansas", "Virginia Tech", "Florida", "Georgia St"]
   },
   {
     name: "Kevin",
