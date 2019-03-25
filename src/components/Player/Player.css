@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
 
 .Player {
   align-items: center;
@@ -6,7 +6,7 @@
   color: white;
   cursor: pointer;
   display: flex;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 30px;
   height: 80px;
   margin: 10px 0;
@@ -20,13 +20,27 @@
   transition: all 0.5s ease-in-out;
 }
 
-.pic {
+.player-pic {
   height: 80px;
+}
+
+.player-name {
+  width: 100px;
+}
+
+.player-rank {
+  width: 60px;
+}
+
+@media screen and (max-width: 900px) {
+  .Player {
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 760px) {
   .Player {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -35,7 +49,7 @@
     font-size: 16px;
     height: 60px;
   }
-  .pic {
+  .player-pic {
     height: 60px;
   }
 }
