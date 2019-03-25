@@ -2,12 +2,19 @@
   align-items: center;
   background: rgb(147, 147, 147);
   color: white;
+  cursor: pointer;
   display: flex;
   font-size: 32px;
   height: 80px;
   margin: 10px 0;
   justify-content: space-between;
   padding-left: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+.Player:hover {
+  background: rgb(84, 84, 84);
+  transition: all 0.5s ease-in-out;
 }
 
 .pic {
