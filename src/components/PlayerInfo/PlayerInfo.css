@@ -1,6 +1,7 @@
 .PlayerInfo {
   align-items: center;
-  background-color: silver;
+  background: rgb(147, 147, 147);
+  color: white;
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -13,4 +14,19 @@
 
 .player-info-pic {
   height: 300px;
+}
+
+.back-btn {
+  background: rgb(84, 84, 84);
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 10px 30px;
+  transition: all 0.5s ease-out;
+}
+
+.back-btn:hover {
+  background: rgb(227, 227, 227);
+  color: rgb(84, 84, 84);
+  transition: all 0.5s ease-out;
 }
