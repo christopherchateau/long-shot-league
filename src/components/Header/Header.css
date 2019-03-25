@@ -2,7 +2,7 @@
 
 .Header {
   align-items: center;
-  background-image: linear-gradient(to right, transparent, silver, transparent);
+  background-image: linear-gradient(to right, transparent, silver, silver, transparent);
   display: flex;
   font-family: "Permanent Marker", cursive;
   font-size: 1.8rem;

@@ -27,18 +27,21 @@ class MainPage extends Component {
       const bonus = this.getPlayerBonus(player.name);
       const total = points + bonus;
 
-      players.push({ name: player.name, teams, points, bonus, total });
+      players.push({
+        name: player.name,
+        teams,
+        points,
+        bonus,
+        total
+      });
     });
     this.setState({ players });
   };
 
-  generatePointTotal = teams => {
-    return teams.reduce((a, b) => a + b.points, 0);
-  };
+  generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0);
 
-  getPlayerBonus = name => {
-    return playerList.find(player => player.name === name).bonus;
-  };
+  getPlayerBonus = name =>
+    playerList.find(player => player.name === name).bonus;
 
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });
