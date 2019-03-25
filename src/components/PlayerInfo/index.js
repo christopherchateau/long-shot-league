@@ -18,8 +18,8 @@ class PlayerInfo extends Component {
 
     return (
       <div className="PlayerInfo">
+        <h1 className="player-info-name">{selectedPlayer}</h1>
         <img className="player-info-pic" src={playerImg} />
-        <h1>{selectedPlayer}</h1>
         <div className="player-info-teams">
           {selectedTeamsData.map(team => (
             <h5
