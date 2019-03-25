@@ -26,7 +26,7 @@ class PlayerInfo extends Component {
               className={"team".concat(team.eliminated ? " eliminated" : "")}
               key={team.name}
             >
-              {team.name}
+              {`${team.name} (${team.points})`}
             </h5>
           ))}
         </div>

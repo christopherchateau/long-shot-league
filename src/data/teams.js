@@ -380,6 +380,7 @@ export const teamList = [
   {
     name: "North Dakota St",
     eliminated: true,
-    seed: 16
+    seed: 16,
+    points: 0
   }
 ];
