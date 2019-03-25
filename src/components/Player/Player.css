@@ -1,0 +1,15 @@
+.Player {
+  align-items: center;
+  background: rgb(147, 147, 147);
+  color: white;
+  display: flex;
+  font-size: 32px;
+  height: 80px;
+  margin: 10px 0;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.pic {
+  height: 80px;
+}
