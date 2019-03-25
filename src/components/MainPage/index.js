@@ -5,14 +5,24 @@ import "./MainPage.css";
 
 class MainPage extends Component {
   state = {
+    selectedPlayer: "",
     display: "standings"
   };
 
+  handlePlayerClick = selectedPlayer => {
+    this.setState({ selectedPlayer, display: "player info" });
+  };
+
   render() {
+    const { display, selectedPlayer } = this.state;
     return (
       <div className="MainPage">
-        {this.state.display === "player info" && <PlayerInfo />}
-        {this.state.display === "standings" && <Standings />}
+        {display === "player info" && (
+          <PlayerInfo selectedPlayer={selectedPlayer} />
+        )}
+        {display === "standings" && (
+          <Standings handlePlayerClick={this.handlePlayerClick} />
+        )}
       </div>
     );
   }
