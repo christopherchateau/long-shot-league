@@ -13,8 +13,15 @@ class MainPage extends Component {
   };
 
   componentDidMount = () => {
+    this.getPlayers();
     this.loadPlayerData();
   };
+
+  getPlayers = async() => {
+      const response = await fetch('http://long-shot-league-be.herokuapp.com/api/v1/longshotleague/players');
+      const data = await response.json();
+      console.log(data)
+  }
 
   loadPlayerData = () => {
     const players = [];
