@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PlayerInfo from "../PlayerInfo";
 import Standings from "../Standings";
+import { getPlayers } from "../../apiCalls";
+import { getTeams } from "../../apiCalls";
 import "./MainPage.css";
 
 class MainPage extends Component {
@@ -11,8 +13,8 @@ class MainPage extends Component {
   };
 
   componentDidMount = async () => {
-    const playerList = await this.getPlayers();
-    const teamList = await this.getTeams();
+    const playerList = await getPlayers();
+    const teamList = await getTeams();
     await this.loadPlayerData(playerList, teamList);
   };
 
