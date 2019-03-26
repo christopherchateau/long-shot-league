@@ -14,7 +14,7 @@ import Justin from "../../images/player.svg";
 import Brewers from "../../images/player.svg";
 import Matt from "../../images/player.svg";
 import Fraske from "../../images/player.svg";
-import Chris from "../../images/headshot.jpg";
+import Chris from "../../images/Chris.jpg";
 import "./PlayerInfo.css";
 
 class PlayerInfo extends Component {
@@ -41,7 +41,10 @@ class PlayerInfo extends Component {
     return (
       <div className="PlayerInfo">
         <h1 className="player-info-name">{selectedPlayerData.name}</h1>
-        <img className="player-info-pic" src={playerPics[selectedPlayerData.name]} />
+        <img
+          className="player-info-pic"
+          src={playerPics[selectedPlayerData.name]}
+        />
         <div className="player-info-totals">
           <h5>
             points

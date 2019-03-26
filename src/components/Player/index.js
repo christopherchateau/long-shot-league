@@ -14,7 +14,7 @@ import Justin from "../../images/player.svg";
 import Brewers from "../../images/player.svg";
 import Matt from "../../images/player.svg";
 import Fraske from "../../images/player.svg";
-import Chris from "../../images/headshot.jpg";
+import Chris from "../../images/Chris.jpg";
 import "./Player.css";
 
 class Player extends Component {
