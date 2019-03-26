@@ -30,7 +30,9 @@ class Standings extends Component {
       );
     });
 
-    if (players.length) {
+    if (!players.length) {
+      return loadingGif;
+    } else {
       return (
         <div className="Standings">
           <div className="current-standings-header">
@@ -41,8 +43,6 @@ class Standings extends Component {
           {formattedPlayers}
         </div>
       );
-    } else {
-      return loadingGif;
     }
   }
 }
