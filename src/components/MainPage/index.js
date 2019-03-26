@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PlayerInfo from "../PlayerInfo";
 import Standings from "../Standings";
-import { playerList } from "../../data/players.js";
-import { teamList } from "../../data/teams.js";
 import "./MainPage.css";
 
 class MainPage extends Component {
@@ -12,26 +10,37 @@ class MainPage extends Component {
     players: []
   };
 
-  componentDidMount = () => {
-    this.getPlayers();
-    this.loadPlayerData();
+  componentDidMount = async () => {
+    const playerList = await this.getPlayers();
+    const teamList = await this.getTeams();
+    await this.loadPlayerData(playerList, teamList);
   };
 
-  getPlayers = async() => {
-      const response = await fetch('http://long-shot-league-be.herokuapp.com/api/v1/longshotleague/players');
-      const data = await response.json();
-      console.log(data)
-  }
+  getPlayers = async () => {
+    const response = await fetch(
+      "https://long-shot-league-be.herokuapp.com/api/v1/longshotleague/players"
+    );
+    const data = await response.json();
+    return data;
+  };
 
-  loadPlayerData = () => {
+  getTeams = async () => {
+    const response = await fetch(
+      "https://long-shot-league-be.herokuapp.com/api/v1/longshotleague/teams"
+    );
+    const data = await response.json();
+    return data;
+  };
+
+  loadPlayerData = (playerList, teamList) => {
     const players = [];
 
     playerList.forEach(player => {
-      const teams = teamList.filter(listTeam =>
-        player.teams.includes(listTeam.name)
+      const teams = teamList.filter(
+        listTeam => listTeam.drafted_by === player.name
       );
       const points = this.generatePointTotal(teams);
-      const bonus = this.getPlayerBonus(player.name);
+      const bonus = this.getPlayerBonus(playerList, player.name);
       const total = points + bonus;
 
       players.push({
@@ -47,8 +56,8 @@ class MainPage extends Component {
 
   generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0);
 
-  getPlayerBonus = name =>
-    playerList.find(player => player.name === name).bonus;
+  getPlayerBonus = (playerList, name) =>
+    +playerList.find(player => player.name === name).bonus_points;
 
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });

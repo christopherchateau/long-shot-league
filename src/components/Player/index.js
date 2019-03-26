@@ -38,6 +38,7 @@ class Player extends Component {
       Fraske,
       Chris
     };
+    
     return (
       <div className="Player" onClick={() => handlePlayerClick(name)}>
         <h3 className="player-rank">{rank}</h3>

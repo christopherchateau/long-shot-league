@@ -64,7 +64,10 @@ class PlayerInfo extends Component {
         </div>
         <div className="player-info-teams">
           {selectedPlayerData.teams.map(team => (
-            <h5 className={team.eliminated ? "eliminated" : ""} key={team.name}>
+            <h5
+              className={team.is_eliminated ? "eliminated" : ""}
+              key={team.name}
+            >
               {`${team.name} (${team.points})`}
             </h5>
           ))}
