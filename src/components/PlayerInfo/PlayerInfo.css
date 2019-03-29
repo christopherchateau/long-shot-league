@@ -137,4 +137,12 @@
   .back-btn {
     font-size: 22px;
   }
+
+  .player-info-bonus {
+    font-size: 12px;
+  }
+  
+  .player-info-bonus-title {
+    font-size: 30px;
+  }
 }
