@@ -40,6 +40,9 @@ class PlayerInfo extends Component {
     };
     return (
       <div className="PlayerInfo">
+        <button className="back-btn" onClick={handleBackClick}>
+          X
+        </button>
         <h1 className="player-info-name">{selectedPlayerData.name}</h1>
         <img
           className="player-info-pic"
@@ -76,9 +79,6 @@ class PlayerInfo extends Component {
             </h5>
           ))}
         </div>
-        <button className="back-btn" onClick={handleBackClick}>
-          standings
-        </button>
       </div>
     );
   }
