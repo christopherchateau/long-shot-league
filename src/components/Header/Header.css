@@ -11,7 +11,7 @@
   );
   display: grid;
   grid-template-rows: 90px 30px;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .header-logo {
@@ -51,7 +51,6 @@
 }
 
 @media screen and (max-width: 760px) {
-
   .Header {
     background: darkgrey;
   }
@@ -88,6 +87,10 @@
 }
 
 @media screen and (max-width: 400px) {
+  .Header {
+    grid-template-rows: 60px 30px;
+  }
+
   .header-logo {
     font-size: 0.7rem;
   }
@@ -105,5 +108,4 @@
   .header-nav-link {
     font-size: 14px;
   }
-
 }
