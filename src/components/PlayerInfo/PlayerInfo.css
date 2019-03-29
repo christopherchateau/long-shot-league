@@ -13,6 +13,7 @@
   min-height: 700px;
   opacity: 0.9;
   padding: 0 5%;
+  position: relative;
   width: 50vw;
 }
 
@@ -57,10 +58,11 @@
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 22px;
-  margin: 20px;
+  font-size: 36px;
   min-height: 50px;
-  padding: 10px 30px;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0px;
   transition: all 0.5s ease-out;
 }
 
