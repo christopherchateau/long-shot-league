@@ -86,3 +86,24 @@
     width: 300px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .header-logo {
+    font-size: 0.7rem;
+  }
+
+  .bball-img {
+    height: 25px;
+    position: relative;
+    top: 3px;
+  }
+
+  .header-nav {
+    width: 280px;
+  }
+
+  .header-nav-link {
+    font-size: 14px;
+  }
+
+}
