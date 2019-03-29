@@ -16,12 +16,12 @@ class MainPage extends Component {
   componentDidMount = async () => {
     const playerList = await getPlayers();
     const teamList = await getTeams();
-    let bonusData = await getBonusData();
+    const bonusList = await getBonusData();
 
-    await this.loadPlayerData(playerList, teamList, bonusData);
+    await this.loadPlayerData(playerList, teamList, bonusList);
   };
 
-  loadPlayerData = (playerList, teamList) => {
+  loadPlayerData = (playerList, teamList, bonusList) => {
     const players = [];
 
     playerList.forEach(player => {
@@ -29,21 +29,28 @@ class MainPage extends Component {
         listTeam => listTeam.drafted_by === player.name
       );
       const points = this.generatePointTotal(teams);
-      const bonus = this.getPlayerBonus(playerList, player.name);
-      const total = points + bonus;
+      const bonusData = this.generateBonusData(player.name, bonusList);
+      const bonusTotal = this.generateBonusTotal(bonusData);
+      const pointTotal = points + bonusTotal;
 
       players.push({
         name: player.name,
         teams,
         points,
-        bonus,
-        total
+        bonusData,
+        bonusTotal,
+        pointTotal
       });
     });
     this.setState({ players });
   };
 
   generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0);
+
+  generateBonusData = (name, bonusList) =>
+    bonusList.filter(bonus => bonus.name === name);
+
+  generateBonusTotal = bonusData => this.generatePointTotal(bonusData);
 
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });

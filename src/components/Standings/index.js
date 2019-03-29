@@ -8,15 +8,15 @@ class Standings extends Component {
     const { players, handlePlayerClick } = this.props;
 
     const playerListSorted = players.sort((a, b) => {
-      if (a.total > b.total) return -1;
-      if (a.total < b.total) return 1;
+      if (a.pointTotal > b.pointTotal) return -1;
+      if (a.pointTotal < b.pointTotal) return 1;
     });
 
     const loadingGif = <img className="loading-img" src={loadingImg} />;
 
     let counter = 1;
     const formattedPlayers = playerListSorted.map((player, i) => {
-      i > 0 && player.total === playerListSorted[i - 1].total
+      i > 0 && player.pointTotal === playerListSorted[i - 1].pointTotal
         ? counter++
         : (counter = 0);
 

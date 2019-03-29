@@ -54,12 +54,16 @@ class PlayerInfo extends Component {
           <h5>
             bonus
             <br />{" "}
-            <span className="player-info-num">{selectedPlayerData.bonus}</span>
+            <span className="player-info-num">
+              {selectedPlayerData.bonusTotal}
+            </span>
           </h5>
           <h5>
             total
             <br />{" "}
-            <span className="player-info-num">{selectedPlayerData.total}</span>
+            <span className="player-info-num">
+              {selectedPlayerData.pointTotal}
+            </span>
           </h5>
         </div>
         <div className="player-info-teams">

@@ -19,7 +19,8 @@ import "./Player.css";
 
 class Player extends Component {
   render() {
-    const { name, total, rank, handlePlayerClick } = this.props;
+    console.log(this.props);
+    const { name, pointTotal, rank, handlePlayerClick } = this.props;
     const playerPics = {
       Dan,
       Bmase,
@@ -38,12 +39,12 @@ class Player extends Component {
       Fraske,
       Chris
     };
-    
+
     return (
       <div className="Player" onClick={() => handlePlayerClick(name)}>
         <h3 className="player-rank">{rank}</h3>
         <h3 className="player-name">{name}</h3>
-        <h3 className="player-points">{total}</h3>
+        <h3 className="player-points">{pointTotal}</h3>
         <div className="player-pic-wrapper">
           <img className="player-pic" src={playerPics[name]} />
         </div>
