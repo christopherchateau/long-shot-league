@@ -1,8 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 
 .Header {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    silver,
+    silver,
+    transparent
+  );
+  display: grid;
+  grid-template-rows: 90px 30px;
+}
+
+.header-logo {
   align-items: center;
-  background-image: linear-gradient(to right, transparent, silver, silver, transparent);
   display: flex;
   font-family: "Permanent Marker", cursive;
   font-size: 1.8rem;
@@ -13,6 +24,27 @@
   height: 70px;
   position: relative;
   top: 12px;
+}
+
+.header-nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 500px;
+}
+
+.header-nav-link {
+  cursor: pointer;
+  margin: 0;
+  padding: 5px;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+.header-nav-link:hover {
+  color: white;
+  transition: all 0.5s ease-out;
 }
 
 @media screen and (max-width: 760px) {
