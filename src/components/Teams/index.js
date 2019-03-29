@@ -14,15 +14,15 @@ class Teams extends Component {
   };
 
   render() {
-    const { display } = this.state;
     let { teamList } = this.props;
+    const { display } = this.state;
     const loadingGif = <img className="loading-img" src={loadingImg} />;
 
     if (display === "still alive") {
       teamList = teamList.filter(team => !team.is_eliminated);
     }
 
-    const teams = teamList.slice(1).map(team => (
+    const teams = teamList.map(team => (
       <div
         className={"team".concat(team.is_eliminated ? " red" : " green")}
         key={team.name}

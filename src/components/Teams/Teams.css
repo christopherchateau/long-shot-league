@@ -44,3 +44,11 @@
   color: rgb(84, 84, 84);
   transition: all 0.5s ease-out;
 }
+
+
+@media screen and (max-width: 500px) {
+  .teams-toggle-btn {
+    font-size: 26px;
+    width: 200px;
+  }
+}
