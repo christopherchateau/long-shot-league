@@ -9,7 +9,7 @@ import "./MainPage.css";
 class MainPage extends Component {
   state = {
     selectedPlayer: "",
-    display: "standings",
+    standingsDisplay: "standings",
     players: []
   };
 
@@ -53,27 +53,28 @@ class MainPage extends Component {
   generateBonusTotal = bonusData => this.generatePointTotal(bonusData);
 
   handlePlayerClick = selectedPlayer => {
-    this.setState({ selectedPlayer, display: "player info" });
+    this.setState({ selectedPlayer, standingsDisplay: "player info" });
   };
 
   handleBackClick = () => {
-    this.setState({ selectedPlayer: "", display: "standings" });
+    this.setState({ selectedPlayer: "", standingsDisplay: "standings" });
   };
 
   render() {
-    const { display, selectedPlayer, players } = this.state;
+    const { pageDisplay } = this.props;
+    const { standingsDisplay, selectedPlayer, players } = this.state;
     const selectedPlayerData = players.find(
       player => player.name === selectedPlayer
     );
     return (
       <div className="MainPage">
-        {display === "player info" && (
+        {pageDisplay === "standings" && standingsDisplay === "player info" && (
           <PlayerInfo
             selectedPlayerData={selectedPlayerData}
             handleBackClick={this.handleBackClick}
           />
         )}
-        {display === "standings" && (
+        {pageDisplay === "standings" && standingsDisplay === "standings" && (
           <Standings
             players={players}
             handlePlayerClick={this.handlePlayerClick}
