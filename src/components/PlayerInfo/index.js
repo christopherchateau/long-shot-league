@@ -44,7 +44,7 @@ class PlayerInfo extends Component {
     ));
 
     if (!bonusList.length) {
-      bonusList = "-none-"
+      bonusList = "- none -"
     }
 
     return (

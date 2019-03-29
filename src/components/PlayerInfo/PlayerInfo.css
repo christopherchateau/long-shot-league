@@ -58,7 +58,7 @@
   background: grey;
   margin-bottom: 30px;
   min-height: 100px;
-  overflow: auto;
+  overflow: scroll;
   text-align: center;
   width: 100%;
 }
