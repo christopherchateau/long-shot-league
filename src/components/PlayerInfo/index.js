@@ -38,6 +38,15 @@ class PlayerInfo extends Component {
       Fraske,
       Chris
     };
+
+    let bonusList = selectedPlayerData.bonusData.map(bonus => (
+      <h3>{bonus.points} - {bonus.description}</h3>
+    ));
+
+    if (!bonusList.length) {
+      bonusList = "-none-"
+    }
+
     return (
       <div className="PlayerInfo">
         <button className="back-btn" onClick={handleBackClick}>
@@ -78,6 +87,10 @@ class PlayerInfo extends Component {
               {`${team.name} (${team.points})`}
             </h5>
           ))}
+        </div>
+        <div className="player-info-bonus">
+            <h3 className="player-info-bonus-title">bonus</h3>
+            {bonusList}
         </div>
       </div>
     );

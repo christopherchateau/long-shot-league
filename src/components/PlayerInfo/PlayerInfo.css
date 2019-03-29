@@ -12,6 +12,7 @@
   margin: 50px 0;
   min-height: 700px;
   opacity: 0.9;
+  overflow: auto;
   padding: 0 5%;
   position: relative;
   width: 50vw;
@@ -39,13 +40,33 @@
 
 .player-info-totals {
   line-height: 1.5;
+  min-height: 100px;
   text-align: center;
   width: 80%;
+}
+
+.player-info-teams {
+  min-height: 60px;
 }
 
 .player-info-num {
   font-family: "Permanent Marker", cursive;
   font-size: 50px;
+}
+
+.player-info-bonus {
+  background: grey;
+  margin-bottom: 30px;
+  min-height: 100px;
+  overflow: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.player-info-bonus-title {
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  margin: 0;
 }
 
 .eliminated {
