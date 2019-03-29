@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/loading.a21746f5.gif"
   },
   {
-    "revision": "7dace74e954083ea185d",
-    "url": "/long-shot-league/static/css/main.4068c11a.chunk.css"
+    "revision": "5b98c626321991532197",
+    "url": "/long-shot-league/static/css/main.538d818d.chunk.css"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/player.f29f6e97.svg"
   },
   {
-    "revision": "7dace74e954083ea185d",
+    "revision": "5b98c626321991532197",
     "url": "/long-shot-league/static/js/main.93ada605.chunk.js"
   },
   {
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/msu-court.f5b3e2db.png"
   },
   {
-    "revision": "7e95de810a045997f4fd1b9c82b75fc8",
+    "revision": "a9cc2f932b6593cf9eb713b6fa0c2d98",
     "url": "/long-shot-league/index.html"
   }
 ];
