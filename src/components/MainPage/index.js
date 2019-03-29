@@ -3,6 +3,7 @@ import PlayerInfo from "../PlayerInfo";
 import Standings from "../Standings";
 import { getPlayers } from "../../apiCalls";
 import { getTeams } from "../../apiCalls";
+import { getBonusData } from "../../apiCalls";
 import "./MainPage.css";
 
 class MainPage extends Component {
@@ -15,7 +16,9 @@ class MainPage extends Component {
   componentDidMount = async () => {
     const playerList = await getPlayers();
     const teamList = await getTeams();
-    await this.loadPlayerData(playerList, teamList);
+    let bonusData = await getBonusData();
+
+    await this.loadPlayerData(playerList, teamList, bonusData);
   };
 
   loadPlayerData = (playerList, teamList) => {
@@ -41,9 +44,6 @@ class MainPage extends Component {
   };
 
   generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0);
-
-  getPlayerBonus = (playerList, name) =>
-    +playerList.find(player => player.name === name).bonus_points;
 
   handlePlayerClick = selectedPlayer => {
     this.setState({ selectedPlayer, display: "player info" });
