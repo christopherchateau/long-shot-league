@@ -45,7 +45,7 @@ class MainPage extends Component {
         pointTotal
       });
     });
-    this.setState({ players, teamList });
+    this.setState({ players, teamList: this.sortByName(teamList) });
   };
 
   generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0);

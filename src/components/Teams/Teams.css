@@ -1,42 +1,20 @@
 .Teams {
+  opacity: 0.9;
+  text-align: center;
+}
+
+.teams-wrapper {
   background: silver;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 40px auto;
-  opacity: 0.9;
   width: 70vw;
 }
 
-.main-page-toggle-btn {
-  background: rgb(84, 84, 84);
-  border: 2px solid silver;
-  color: white;
-  cursor: pointer;
-  font-size: 32px;
-  margin: 30px auto;
-  padding: 10px 30px;
-  transition: all 0.5s ease-out;
-  width: 240px;
-}
-
-.main-page-toggle-btn:hover {
-  background: rgb(242, 242, 242);
-  color: rgb(84, 84, 84);
-  transition: all 0.5s ease-out;
-}
-
-.players-wrapper,
-.teams-wrapper {
-  max-height: 55vh;
-  overflow: auto;
-}
-
-.player,
 .team {
   background: rgb(101, 101, 101);
   color: white;
-  margin: 10px auto;
+  margin: 5px auto;
   width: 240px;
 }
 
@@ -54,7 +32,7 @@
   color: white;
   cursor: pointer;
   font-size: 32px;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
   padding: 10px 30px;
   transition: all 0.5s ease-out;
   width: 240px;

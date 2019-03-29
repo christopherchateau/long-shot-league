@@ -32,12 +32,12 @@ class Teams extends Component {
       </div>
     ));
     return (
-      <div>
+      <div className="Teams">
         <button className="teams-toggle-btn" onClick={this.toggleTeamDisplay}>
           {display}
         </button>
         <br />
-        <div className="Teams">{teams}</div>;
+        <div className="teams-wrapper">{teams}</div>;
       </div>
     );
   }
