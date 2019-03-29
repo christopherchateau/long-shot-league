@@ -1,0 +1,23 @@
+.BonusPage {
+  background: silver;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px auto;
+  opacity: 0.9;
+  padding: 10px;
+  width: 70vw;
+}
+
+.player {
+  background: rgb(101, 101, 101);
+  color: white;
+  height: 320px;
+  margin: 10px auto;
+  width: 240px;
+}
+
+.player-name {
+  text-align: center;
+  width: 240px;
+}
