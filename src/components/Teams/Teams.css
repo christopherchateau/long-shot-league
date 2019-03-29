@@ -1,0 +1,67 @@
+.Teams {
+  background: silver;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px auto;
+  opacity: 0.9;
+  width: 70vw;
+}
+
+.main-page-toggle-btn {
+  background: rgb(84, 84, 84);
+  border: 2px solid silver;
+  color: white;
+  cursor: pointer;
+  font-size: 32px;
+  margin: 30px auto;
+  padding: 10px 30px;
+  transition: all 0.5s ease-out;
+  width: 240px;
+}
+
+.main-page-toggle-btn:hover {
+  background: rgb(242, 242, 242);
+  color: rgb(84, 84, 84);
+  transition: all 0.5s ease-out;
+}
+
+.players-wrapper,
+.teams-wrapper {
+  max-height: 55vh;
+  overflow: auto;
+}
+
+.player,
+.team {
+  background: rgb(101, 101, 101);
+  color: white;
+  margin: 10px auto;
+  width: 240px;
+}
+
+.red {
+  background: rgb(108, 0, 0);
+}
+
+.green {
+  background: rgb(0, 87, 0);
+}
+
+.teams-toggle-btn {
+  background: rgb(84, 84, 84);
+  border: 2px solid silver;
+  color: white;
+  cursor: pointer;
+  font-size: 32px;
+  margin-top: 30px;
+  padding: 10px 30px;
+  transition: all 0.5s ease-out;
+  width: 240px;
+}
+
+.teams-toggle-btn:hover {
+  background: rgb(242, 242, 242);
+  color: rgb(84, 84, 84);
+  transition: all 0.5s ease-out;
+}

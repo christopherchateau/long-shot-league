@@ -19,7 +19,6 @@ import "./Player.css";
 
 class Player extends Component {
   render() {
-    console.log(this.props);
     const { name, pointTotal, rank, handlePlayerClick } = this.props;
     const playerPics = {
       Dan,
