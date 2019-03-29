@@ -19,8 +19,8 @@ class BonusPage extends Component {
         return +total;
       }, 0);
       return (
-        <div className="player" key={player.name}>
-          <h3 className="player-name">{`${
+        <div className="bonus-player" key={player.name}>
+          <h3 className="bonus-player-name">{`${
             player.name
           } - ${playerBonusTotal}`}</h3>
           <div>{bonusListDisplayed}</div>

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
 
 .Header {
   background-image: linear-gradient(
@@ -29,6 +30,7 @@
 .header-nav {
   align-items: center;
   display: flex;
+  font-family: "Roboto", sans-serif;
   justify-content: space-between;
   margin: auto;
   width: 500px;

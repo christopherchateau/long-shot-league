@@ -9,7 +9,7 @@
   width: 70vw;
 }
 
-.player {
+.bonus-player {
   background: rgb(101, 101, 101);
   color: white;
   height: 320px;
@@ -17,7 +17,7 @@
   width: 240px;
 }
 
-.player-name {
+.bonus-player-name {
   text-align: center;
   width: 240px;
 }
