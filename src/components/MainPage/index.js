@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PlayerInfo from "../PlayerInfo";
 import Standings from "../Standings";
+import Teams from "../Teams";
+// import Bonus from "../Bonus";
 import { getPlayers } from "../../apiCalls";
 import { getTeams } from "../../apiCalls";
 import { getBonusData } from "../../apiCalls";
@@ -10,7 +12,8 @@ class MainPage extends Component {
   state = {
     selectedPlayer: "",
     standingsDisplay: "standings",
-    players: []
+    players: [],
+    teamList: []
   };
 
   componentDidMount = async () => {
@@ -42,7 +45,7 @@ class MainPage extends Component {
         pointTotal
       });
     });
-    this.setState({ players });
+    this.setState({ players, teamList });
   };
 
   generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0);
@@ -62,7 +65,7 @@ class MainPage extends Component {
 
   render() {
     const { pageDisplay } = this.props;
-    const { standingsDisplay, selectedPlayer, players } = this.state;
+    const { standingsDisplay, selectedPlayer, players, teamList } = this.state;
     const selectedPlayerData = players.find(
       player => player.name === selectedPlayer
     );
@@ -80,6 +83,7 @@ class MainPage extends Component {
             handlePlayerClick={this.handlePlayerClick}
           />
         )}
+        {pageDisplay === "teams" && <Teams teamList={teamList}/>}
       </div>
     );
   }
