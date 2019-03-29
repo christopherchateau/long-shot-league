@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import loadingImg from "../../images/loading.gif";
 import "./Teams.css";
 
 class Teams extends Component {
@@ -15,6 +16,7 @@ class Teams extends Component {
   render() {
     const { display } = this.state;
     let { teamList } = this.props;
+    const loadingGif = <img className="loading-img" src={loadingImg} />;
 
     if (display === "still alive") {
       teamList = teamList.filter(team => !team.is_eliminated);
@@ -31,15 +33,20 @@ class Teams extends Component {
         <h5>{team.drafted_by}</h5>
       </div>
     ));
-    return (
-      <div className="Teams">
-        <button className="teams-toggle-btn" onClick={this.toggleTeamDisplay}>
-          {display}
-        </button>
-        <br />
-        <div className="teams-wrapper">{teams}</div>;
-      </div>
-    );
+
+    if (!teamList.length) {
+      return loadingGif;
+    } else {
+      return (
+        <div className="Teams">
+          <button className="teams-toggle-btn" onClick={this.toggleTeamDisplay}>
+            {display}
+          </button>
+          <br />
+          <div className="teams-wrapper">{teams}</div>;
+        </div>
+      );
+    }
   }
 }
 
