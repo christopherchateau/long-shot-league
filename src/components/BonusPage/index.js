@@ -4,11 +4,17 @@ import loadingImg from "../../images/loading.gif";
 import "./BonusPage.css";
 
 class BonusPage extends Component {
+  sortByName = input =>
+    input.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+    });
+
   render() {
-    const { players, bonusList } = this.props;
+    let { players, bonusList } = this.props;
     const loadingGif = <img className="loading-img" src={loadingImg} />;
 
-    const playersDisplayed = players.map(player => {
+    const playersDisplayed = this.sortByName(players).map(player => {
       const bonusListDisplayed = [];
 
       const playerBonusTotal = bonusList.reduce((total, bonus) => {

@@ -47,9 +47,9 @@ class MainPage extends Component {
       });
     });
     this.setState({
-      players: this.sortByName(players),
-      teamList: this.sortByName(teamList),
-      bonusList
+      players,
+      bonusList,
+      teamList: this.sortByName(teamList)
     });
   };
 

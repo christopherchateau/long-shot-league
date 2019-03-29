@@ -41,7 +41,7 @@ class PlayerInfo extends Component {
 
     let bonusList = selectedPlayerData.bonusData.map(bonus => (
       <h3 key={bonus.description}>
-        {bonus.points} - {bonus.description}
+        {bonus.description} - ({bonus.points}pt)
       </h3>
     ));
 
