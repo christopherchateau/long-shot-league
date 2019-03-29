@@ -48,7 +48,7 @@
 }
 
 @media screen and (max-width: 760px) {
-  .Header {
+  .header-logo {
     font-size: 1.2rem;
   }
 
@@ -57,10 +57,14 @@
     position: relative;
     top: 12px;
   }
+
+  .header-nav {
+    width: 350px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  .Header {
+  .header-logo {
     color: rgb(238, 238, 238);
     font-size: 0.8rem;
   }
@@ -69,5 +73,10 @@
     height: 40px;
     position: relative;
     top: 8px;
+  }
+
+  .header-nav {
+    color: white;
+    width: 300px;
   }
 }
