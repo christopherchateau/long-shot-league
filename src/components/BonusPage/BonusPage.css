@@ -14,10 +14,18 @@
   color: white;
   height: 320px;
   margin: 10px auto;
+  overflow: auto;
   width: 240px;
 }
 
 .bonus-player-name {
   text-align: center;
   width: 240px;
+}
+
+@media screen and (max-width: 500px) {
+  .bonus-player,
+  .bonus-player-name {
+    width: 200px;
+  }
 }
