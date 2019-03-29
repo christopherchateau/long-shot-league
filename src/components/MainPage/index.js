@@ -63,6 +63,12 @@ class MainPage extends Component {
     this.setState({ selectedPlayer: "", standingsDisplay: "standings" });
   };
 
+  sortByName = input =>
+    input.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+    });
+
   render() {
     const { pageDisplay } = this.props;
     const { standingsDisplay, selectedPlayer, players, teamList } = this.state;
@@ -83,7 +89,7 @@ class MainPage extends Component {
             handlePlayerClick={this.handlePlayerClick}
           />
         )}
-        {pageDisplay === "teams" && <Teams teamList={teamList}/>}
+        {pageDisplay === "teams" && <Teams teamList={teamList} />}
       </div>
     );
   }
