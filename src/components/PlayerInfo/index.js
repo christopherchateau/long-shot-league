@@ -40,11 +40,13 @@ class PlayerInfo extends Component {
     };
 
     let bonusList = selectedPlayerData.bonusData.map(bonus => (
-      <h3>{bonus.points} - {bonus.description}</h3>
+      <h3 key={bonus.description}>
+        {bonus.points} - {bonus.description}
+      </h3>
     ));
 
     if (!bonusList.length) {
-      bonusList = "-none-"
+      bonusList = "-none-";
     }
 
     return (
@@ -89,8 +91,8 @@ class PlayerInfo extends Component {
           ))}
         </div>
         <div className="player-info-bonus">
-            <h3 className="player-info-bonus-title">bonus</h3>
-            {bonusList}
+          <h3 className="player-info-bonus-title">bonus</h3>
+          {bonusList}
         </div>
       </div>
     );
