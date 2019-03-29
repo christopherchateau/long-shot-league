@@ -12,7 +12,7 @@ import Brent from "../../images/player.svg";
 import Reed from "../../images/player.svg";
 import Justin from "../../images/player.svg";
 import Brewers from "../../images/player.svg";
-import Matt from "../../images/player.svg";
+import Matt from "../../images/matt.jpg";
 import Fraske from "../../images/player.svg";
 import Chris from "../../images/Chris.jpg";
 import "./Player.css";

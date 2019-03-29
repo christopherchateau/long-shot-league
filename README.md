@@ -18,6 +18,7 @@
 2. `npm install` from the root directory
 3. `npm start` and visit `localhost:3000` in your broswer
 
+### Contributors
 Chris Chateau: [Github](https://github.com/christopherchateau) <br>
 
 -coming soon...
@@ -30,4 +31,3 @@ Chris Chateau: [Github](https://github.com/christopherchateau) <br>
 
 ### Mobile Screenshot
 
-### Contributors

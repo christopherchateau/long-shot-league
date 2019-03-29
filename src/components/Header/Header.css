@@ -5,8 +5,8 @@
   background-image: linear-gradient(
     to right,
     transparent,
-    silver,
-    silver,
+    rgb(130, 130, 130),
+    darkgrey,
     transparent
   );
   display: grid;
@@ -21,10 +21,10 @@
   justify-content: center;
 }
 
-.todd-img {
-  height: 70px;
+.bball-img {
+  height: 55px;
   position: relative;
-  top: 12px;
+  top: 8px;
 }
 
 .header-nav {
@@ -54,10 +54,10 @@
     font-size: 1.2rem;
   }
 
-  .todd-img {
-    height: 60px;
+  .bball-img {
+    height: 40px;
     position: relative;
-    top: 12px;
+    top: 7px;
   }
 
   .header-nav {
@@ -67,18 +67,18 @@
 
 @media screen and (max-width: 500px) {
   .header-logo {
-    color: rgb(238, 238, 238);
-    font-size: 0.8rem;
+    /* color: rgb(238, 238, 238); */
+    font-size: 0.9rem;
   }
 
-  .todd-img {
-    height: 40px;
+  .bball-img {
+    height: 25px;
     position: relative;
-    top: 8px;
+    top: 3px;
   }
 
   .header-nav {
-    color: white;
+    /* color: white; */
     width: 300px;
   }
 }
