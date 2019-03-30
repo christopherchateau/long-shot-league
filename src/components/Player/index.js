@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Dan from "../../images/player.svg";
 import Bmase from "../../images/player.svg";
-import Scott from "../../images/player.svg";
+import Scott from "../../images/scott.jpg";
 import Kristin from "../../images/player.svg";
 import Alex from "../../images/player.svg";
 import Doherty from "../../images/player.svg";
