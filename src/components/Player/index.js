@@ -8,7 +8,7 @@ import Doherty from "../../images/player.svg";
 import Kevin from "../../images/player.svg";
 import Todd from "../../images/todd.png";
 import Laura from "../../images/player.svg";
-import Brent from "../../images/player.svg";
+import Brent from "../../images/brent.jpg";
 import Reed from "../../images/player.svg";
 import Justin from "../../images/player.svg";
 import Brewers from "../../images/player.svg";
