@@ -14,6 +14,20 @@ class Teams extends Component {
     this.setState({ display });
   };
 
+  toggleTeamSort = () => {
+    let { teamSort } = this.state;
+    teamSort === "alphabetical"
+      ? (teamSort = "drafted by")
+      : (teamSort = "alphabetical");
+    this.setState({ teamSort });
+  };
+
+  sortByName = input =>
+    input.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+    });
+
   render() {
     let { teamList } = this.props;
     const { display, teamSort } = this.state;
@@ -22,6 +36,10 @@ class Teams extends Component {
     if (display === "still alive") {
       teamList = teamList.filter(team => !team.is_eliminated);
     }
+
+    if (teamSort === "drafted by") {
+    }
+    console.log(teamList);
 
     const teams = teamList.map(team => (
       <div
@@ -40,13 +58,16 @@ class Teams extends Component {
     } else {
       return (
         <div className="Teams">
-        <div className="team-btn-wrapper">
-          <button className="teams-toggle-btn" onClick={this.toggleTeamDisplay}>
-            {display}
-          </button>
-          <button className="teams-display-btn" onClick={this.toggleTeamDisplay}>
-            {teamSort}
-          </button>
+          <div className="team-btn-wrapper">
+            <button
+              className="teams-toggle-btn"
+              onClick={this.toggleTeamDisplay}
+            >
+              {display}
+            </button>
+            <button className="teams-display-btn" onClick={this.toggleTeamSort}>
+              {teamSort}
+            </button>
           </div>
           <br />
           <div className="teams-wrapper">{teams}</div>;
