@@ -4,7 +4,8 @@ import "./Teams.css";
 
 class Teams extends Component {
   state = {
-    display: "show all"
+    display: "show all",
+    teamSort: "alphabetical"
   };
 
   toggleTeamDisplay = () => {
@@ -15,7 +16,7 @@ class Teams extends Component {
 
   render() {
     let { teamList } = this.props;
-    const { display } = this.state;
+    const { display, teamSort } = this.state;
     const loadingGif = <img className="loading-img" src={loadingImg} />;
 
     if (display === "still alive") {
@@ -39,9 +40,14 @@ class Teams extends Component {
     } else {
       return (
         <div className="Teams">
+        <div className="team-btn-wrapper">
           <button className="teams-toggle-btn" onClick={this.toggleTeamDisplay}>
             {display}
           </button>
+          <button className="teams-display-btn" onClick={this.toggleTeamDisplay}>
+            {teamSort}
+          </button>
+          </div>
           <br />
           <div className="teams-wrapper">{teams}</div>;
         </div>
