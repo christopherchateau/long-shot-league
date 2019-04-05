@@ -100,7 +100,9 @@ class MainPage extends Component {
             handlePlayerClick={this.handlePlayerClick}
           />
         )}
-        {pageDisplay === "teams" && <Teams teamList={teamList} />}
+        {pageDisplay === "teams" && (
+          <Teams teamList={teamList} sortByName={this.sortByName} />
+        )}
         {pageDisplay === "bonus" && (
           <BonusPage players={players} bonusList={bonusList} />
         )}

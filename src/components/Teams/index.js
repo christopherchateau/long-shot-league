@@ -22,14 +22,14 @@ class Teams extends Component {
     this.setState({ teamSort });
   };
 
-  sortByName = input =>
+  sortByPlayer = input =>
     input.sort((a, b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
+      if (a.drafted_by < b.drafted_by) return -1;
+      if (a.drafted_by > b.drafted_by) return 1;
     });
 
   render() {
-    let { teamList } = this.props;
+    let { teamList, sortByName } = this.props;
     const { display, teamSort } = this.state;
     const loadingGif = <img className="loading-img" src={loadingImg} />;
 
@@ -37,9 +37,9 @@ class Teams extends Component {
       teamList = teamList.filter(team => !team.is_eliminated);
     }
 
-    if (teamSort === "drafted by") {
-    }
-    console.log(teamList);
+    teamSort === "drafted by"
+      ? this.sortByPlayer(teamList)
+      : sortByName(teamList);
 
     const teams = teamList.map(team => (
       <div
