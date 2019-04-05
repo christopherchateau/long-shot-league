@@ -56,6 +56,13 @@
   .team-btn-wrapper {
     align-items: center;
     flex-direction: column;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .team {
+    width: 90%;
   }
 }
 
