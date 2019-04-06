@@ -32,18 +32,25 @@
   display: flex;
   justify-content: space-between;
   margin: auto;
-  width: 500px;
+  width: 600px;
 }
 
 .header-nav-link {
+  background: rgb(203, 203, 203);
+  border: 1px solid black;
+  bottom: 4px;
   cursor: pointer;
   margin: 0;
-  padding: 5px;
+  padding: 2px;
+  position: relative;
+  text-align: center;
   text-decoration: none;
   transition: all 0.5s ease-out;
+  width: 120px;
 }
 
 .header-nav-link:hover {
+  background: rgb(99, 99, 99);
   color: white;
   transition: all 0.5s ease-out;
 }
