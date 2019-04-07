@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/scott.49b338aa.jpg"
   },
   {
-    "revision": "e71737f4d285b5c4b193",
-    "url": "/long-shot-league/static/css/main.a45a69d2.chunk.css"
+    "revision": "d3a50b6e9c0dc6811134",
+    "url": "/long-shot-league/static/css/main.60c8053e.chunk.css"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/loading.a21746f5.gif"
   },
   {
-    "revision": "e71737f4d285b5c4b193",
+    "revision": "d3a50b6e9c0dc6811134",
     "url": "/long-shot-league/static/js/main.09e10c31.chunk.js"
   },
   {
@@ -44,11 +44,11 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/Chris.63618149.jpg"
   },
   {
-    "revision": "dc847cf2b86448ef247866e533703486",
-    "url": "/long-shot-league/static/media/msu-court.dc847cf2.jpeg"
+    "revision": "58e6fc112b41c0948b77a1fdad30e50c",
+    "url": "/long-shot-league/static/media/court.58e6fc11.jpg"
   },
   {
-    "revision": "123b9799590056bc6b5a23037bf18bfb",
+    "revision": "d8a8b4691e56ac1a1e0d887f5c662974",
     "url": "/long-shot-league/index.html"
   }
 ];
