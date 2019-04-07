@@ -46,7 +46,8 @@
   width: 220px;
 }
 
-.teams-toggle-btn:hover {
+.teams-toggle-btn:hover,
+.teams-display-btn:hover {
   background: rgb(242, 242, 242);
   color: rgb(84, 84, 84);
   transition: all 0.5s ease-out;
