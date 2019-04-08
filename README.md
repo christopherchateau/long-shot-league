@@ -27,24 +27,31 @@ All 64 teams in the the NCAA Men's Basketball Tournament are divied up by partic
 
 Eventually I would like the app to fetch tournament data from an outside API in order to save the league commissioner having to manually input stats.
 
-# Team Tiers:
+#### Team Tiers
 - Elite Tier – Seeds 1 & 2
 - Powerhouse Tier – Seeds 3, 4, 5, & 6
 - Bubble Tier – Seeds 7, 8, 9, & 10
 - Cinderella Tier – Seeds 11, 12, 13 & 14
 - Long Shot Tier – Seeds 15 & 16
 
-# Points: 
-
-<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/points.png" width="400px" />
+#### Points:
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/points.png" width="600px" />
 
 ### Desktop Screenshot
 
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-1.png" width="800px" />
+
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-2.png" width="800px" />
+
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-3.png" width="800px" />
+
 ### Tablet Screenshot
+
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/tablet-1.png" width="800px" />
 
 ### Mobile Screenshot
 
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/phone-1.png" width="800px" />
+
 ### Contributors
 Chris Chateau: [Github](https://github.com/christopherchateau) <br>
-
--coming soon...
