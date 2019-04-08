@@ -54,11 +54,11 @@ Eventually I would like the app to fetch tournament data from an outside API in 
 
 ### Desktop Screenshots
 
-<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-1.png" width="800px" />
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-1.png" width="1000px" />
 
-<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-2.png" width="800px" />
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-2.png" width="1000px" />
 
-<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-3.png" width="800px" />
+<img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/images/desktop-3.png" width="1000px" />
 
 ### Tablet Screenshot
 
