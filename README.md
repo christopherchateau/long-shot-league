@@ -21,9 +21,9 @@
 
 ### Description
 
-The Long Shot League is a fun twist on March Madness that favors those willing to be bold! It was conceived by Todd Blakeman and has traditionally involved a live draft in Denver, CO over the last 7 years. I enjoy participating so much, I decided to make an app! It allows players to check standings and league details. There's also a separate administrator portal which allows the league commissioner to make customizations. 
+The Long Shot League is a fun twist on March Madness that favors those willing to be bold! It was conceived by Todd Blakeman and has traditionally involved a live draft in Denver, CO over the last 7 years. I enjoy participating so much, I decided to make an app! It allows participants to check standings and league details. There's also a separate administrator portal which allows the league commissioner to make customizations. 
 
-All 64 teams in the the NCAA Men's Basketball Tournament are divied up by participants by snake draft. We've typically had 16 players, each selecting 4 teams. Points are awarded for each win, including bonus multipliers for higher seeded teams. There are many bonus opportunities along the way, some of which are a little crazy...  just like the tournament!
+All 64 teams in the the NCAA Men's Basketball Tournament are divvied up by participants by snake draft. We've typically had 16 players, each selecting 4 teams. Points are awarded for each win, including bonus multipliers for higher seeded teams. There are many bonus opportunities along the way, some of which are a little crazy...  just like the tournament!
 
 Eventually I would like the app to fetch tournament data from an outside API in order to save the league commissioner having to manually input stats.
 
