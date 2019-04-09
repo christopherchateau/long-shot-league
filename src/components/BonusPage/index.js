@@ -12,7 +12,6 @@ class BonusPage extends Component {
 
   render() {
     let { players, bonusList } = this.props;
-    const loadingGif = <img className="loading-img" src={loadingImg} />;
 
     const playersDisplayed = this.sortByName(players).map(player => {
       const bonusListDisplayed = [];
@@ -24,6 +23,7 @@ class BonusPage extends Component {
         }
         return +total;
       }, 0);
+
       return (
         <div className="bonus-player" key={player.name}>
           <h3 className="bonus-player-name">{`${
@@ -35,7 +35,7 @@ class BonusPage extends Component {
     });
 
     if (!players.length) {
-      return loadingGif;
+      return <img className="loading-img" src={loadingImg} alt="loading" />;
     } else {
       return <div className="BonusPage">{playersDisplayed}</div>;
     }

@@ -12,8 +12,6 @@ class Standings extends Component {
       if (a.pointTotal < b.pointTotal) return 1;
     });
 
-    const loadingGif = <img className="loading-img" src={loadingImg} />;
-
     let counter = 1;
     const formattedPlayers = playerListSorted.map((player, i) => {
       i > 0 && player.pointTotal === playerListSorted[i - 1].pointTotal
@@ -31,7 +29,7 @@ class Standings extends Component {
     });
 
     if (!players.length) {
-      return loadingGif;
+      return <img className="loading-img" alt="loading" src={loadingImg} />;
     } else {
       return (
         <div className="Standings">

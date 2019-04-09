@@ -58,6 +58,7 @@ class PlayerInfo extends Component {
         <img
           className="player-info-pic"
           src={playerPics[selectedPlayerData.name]}
+          alt="player avatar"
         />
         <div className="player-info-totals">
           <h5>

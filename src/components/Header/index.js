@@ -10,7 +10,7 @@ class Header extends Component {
         <div className="header-logo">
           <h1>
             LONG SH
-            <img className="bball-img" src={bballImg} />T LEAGUE
+            <img className="bball-img" src={bballImg} alt="O" />T LEAGUE
           </h1>
         </div>
 

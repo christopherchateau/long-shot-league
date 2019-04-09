@@ -31,8 +31,6 @@ class Teams extends Component {
   render() {
     let { teamList, sortByName } = this.props;
     const { display, teamSort } = this.state;
-    const loadingGif = <img className="loading-img" src={loadingImg} />;
-
     if (display === "still alive") {
       teamList = teamList.filter(team => !team.is_eliminated);
     }
@@ -54,7 +52,7 @@ class Teams extends Component {
     ));
 
     if (!teamList.length) {
-      return loadingGif;
+      return <img className="loading-img" src={loadingImg} alt="loading" />;
     } else {
       return (
         <div className="Teams">

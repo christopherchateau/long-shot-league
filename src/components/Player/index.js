@@ -45,7 +45,11 @@ class Player extends Component {
         <h3 className="player-name">{name}</h3>
         <h3 className="player-points">{pointTotal}</h3>
         <div className="player-pic-wrapper">
-          <img className="player-pic" src={playerPics[name]} />
+          <img
+            className="player-pic"
+            src={playerPics[name]}
+            alt="player avatar"
+          />
         </div>
       </div>
     );
