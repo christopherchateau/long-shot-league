@@ -68,9 +68,9 @@
 }
 
 @media screen and (max-width: 500px) {
-  .teams-toggle-btn,
-  .teams-display-btn {
-    font-size: 26px;
-    width: 200px;
+  .teams-display-btn,
+  .teams-toggle-btn {
+    font-size: 16px;
+    width: 160px;
   }
 }
