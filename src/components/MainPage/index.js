@@ -3,9 +3,7 @@ import PlayerInfo from "../PlayerInfo";
 import Standings from "../Standings";
 import Teams from "../Teams";
 import BonusPage from "../BonusPage";
-import { getPlayers } from "../../apiCalls";
-import { getTeams } from "../../apiCalls";
-import { getBonusData } from "../../apiCalls";
+import { getPlayers, getTeams, getBonusData } from "../../apiCalls";
 import "./MainPage.css";
 
 class MainPage extends Component {
