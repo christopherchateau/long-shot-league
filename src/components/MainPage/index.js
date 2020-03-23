@@ -16,6 +16,7 @@ class MainPage extends Component {
     }
 
     componentDidMount = async () => {
+        console.log(this.props)
         const playerList = await getPlayers()
         const teamList = await getTeams()
         const bonusList = await getBonusData()
