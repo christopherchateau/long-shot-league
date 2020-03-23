@@ -1,31 +1,22 @@
-import React, { Component } from 'react'
-
+import React from 'react'
 import Button from './Button'
 import bball from '../../images/bball.png'
 
 import './Header.css'
 
-class Header extends Component {
-    render() {
-        // const { handleNavBarClick } = this.props
-        const bballImg = (
-            <img className='bball-img' src={bball} alt='basketball' />
-        )
+const bballImg = <img className='bball-img' src={bball} alt='long shot league' />
 
-        return (
-            <div className='Header'>
-                <div className='logo'>
-                    <h1>LONG SH{bballImg}T LEAGUE</h1>
-                </div>
+export default ({ ...props }) =>
+    <div className='Header'>
 
-                <div className='header-nav'>
-                    <Button {...this.props} name='standings' />
-                    <Button {...this.props} name='teams' />
-                    <Button {...this.props} name='bonus' />
-                </div>
-            </div>
-        )
-    }
-}
+        <div className='logo'>
+            <h1>LONG SH{bballImg}T LEAGUE</h1>
+        </div>
 
-export default Header
+        <div className='header-nav'>
+            <Button {...props} name='standings' />
+            <Button {...props} name='teams' />
+            <Button {...props} name='bonus' />
+        </div>
+
+    </div>

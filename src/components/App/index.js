@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import Header from '../Header/'
 import MainPage from '../MainPage/'
+
 import './App.css'
 
-class App extends Component {
+export default class App extends Component {
     state = { pageDisplay: 'standings' }
 
     setPageDisplay = ({ target }) =>
         this.setState({ pageDisplay: target.innerText })
 
-    render = () => (
+    render = () =>
         <div className='App'>
+
             <Header setPageDisplay={this.setPageDisplay} />
             <MainPage pageDisplay={this.state.pageDisplay} />
-        </div>
-    )
-}
 
-export default App
+        </div>
+}

@@ -4,9 +4,10 @@ import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
 import { getData } from '../../apiCalls'
+
 import './MainPage.css'
 
-class MainPage extends Component {
+export default class MainPage extends Component {
     state = {
         selectedPlayer: '',
         standingsDisplay: 'standings',
@@ -87,17 +88,17 @@ class MainPage extends Component {
         return <div className='MainPage'>
 
             {pageDisplay === 'standings' && standingsDisplay === 'player info'
-                    && <PlayerInfo
-                        selectedPlayerData={selectedPlayerData}
-                        handleBackClick={this.handleBackClick}
-                    />
+                && <PlayerInfo
+                    selectedPlayerData={selectedPlayerData}
+                    handleBackClick={this.handleBackClick}
+                />
             }
 
             {pageDisplay === 'standings' && standingsDisplay === 'standings'
-                    && <Standings
-                        players={players}
-                        handlePlayerClick={this.handlePlayerClick}
-                    />
+                && <Standings
+                    players={players}
+                    handlePlayerClick={this.handlePlayerClick}
+                />
             }
 
             {pageDisplay === 'teams'
@@ -111,5 +112,3 @@ class MainPage extends Component {
         </div>
     }
 }
-
-export default MainPage
