@@ -41,6 +41,7 @@ class MainPage extends Component {
                 pointTotal,
             })
         })
+
         this.setState({
             players,
             bonusList,
@@ -78,33 +79,36 @@ class MainPage extends Component {
             teamList,
             bonusList,
         } = this.state
+
         const selectedPlayerData = players.find(
             player => player.name === selectedPlayer
         )
-        return (
-            <div className='MainPage'>
-                {pageDisplay === 'standings' &&
-                    standingsDisplay === 'player info' && (
-                        <PlayerInfo
-                            selectedPlayerData={selectedPlayerData}
-                            handleBackClick={this.handleBackClick}
-                        />
-                    )}
-                {pageDisplay === 'standings' &&
-                    standingsDisplay === 'standings' && (
-                        <Standings
-                            players={players}
-                            handlePlayerClick={this.handlePlayerClick}
-                        />
-                    )}
-                {pageDisplay === 'teams' && (
-                    <Teams teamList={teamList} sortByName={this.sortByName} />
-                )}
-                {pageDisplay === 'bonus' && (
-                    <BonusPage players={players} bonusList={bonusList} />
-                )}
-            </div>
-        )
+
+        return <div className='MainPage'>
+
+            {pageDisplay === 'standings' && standingsDisplay === 'player info'
+                    && <PlayerInfo
+                        selectedPlayerData={selectedPlayerData}
+                        handleBackClick={this.handleBackClick}
+                    />
+            }
+
+            {pageDisplay === 'standings' && standingsDisplay === 'standings'
+                    && <Standings
+                        players={players}
+                        handlePlayerClick={this.handlePlayerClick}
+                    />
+            }
+
+            {pageDisplay === 'teams'
+                && <Teams teamList={teamList} sortByName={this.sortByName} />
+            }
+
+            {pageDisplay === 'bonus'
+                && <BonusPage {...{ players, bonusList }} />
+            }
+
+        </div>
     }
 }
 
