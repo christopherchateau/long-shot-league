@@ -1,36 +1,36 @@
 .BonusPage {
-  background: silver;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 40px auto;
-  opacity: 0.96;
-  padding: 10px;
-  width: 70vw;
+    background: silver;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px auto;
+    opacity: 0.96;
+    padding: 10px;
+    width: 70vw;
 }
 
 .bonus-player {
-  background: rgb(101, 101, 101);
-  color: white;
-  height: 320px;
-  margin: 10px auto;
-  overflow: auto;
-  width: 240px;
+    background: rgb(101, 101, 101);
+    color: white;
+    height: 320px;
+    margin: 10px auto;
+    overflow: auto;
+    width: 240px;
 }
 
 .bonus-player-name {
-  text-align: center;
-  width: 240px;
+    text-align: center;
+    width: 240px;
 }
 
 @media screen and (max-width: 690px) {
-  .BonusPage {
-    padding: 0;
-    width: 90vw;
-  }
+    .BonusPage {
+        padding: 0;
+        width: 90vw;
+    }
 
-  .bonus-player,
-  .bonus-player-name {
-    width: 90%;
-  }
+    .bonus-player,
+    .bonus-player-name {
+        width: 90%;
+    }
 }

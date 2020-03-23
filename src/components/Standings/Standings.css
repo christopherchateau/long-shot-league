@@ -1,65 +1,65 @@
 .Standings {
-  background: silver;
-  height: 75vh;
-  opacity: 0.96;
-  overflow: auto;
-  padding: 0 5%;
-  width: 60vw;
+    background: silver;
+    height: 75vh;
+    opacity: 0.96;
+    overflow: auto;
+    padding: 0 5%;
+    width: 60vw;
 }
 
 .current-standings-header {
-  align-items: center;
-  background: rgb(84, 84, 84);
-  color: white;
-  display: flex;
-  font-size: 22px;
-  height: 50px;
-  justify-content: space-between;
-  margin-top: 10px;
-  padding-left: 12px;
-  padding-right: 32.5%;
+    align-items: center;
+    background: rgb(84, 84, 84);
+    color: white;
+    display: flex;
+    font-size: 22px;
+    height: 50px;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-left: 12px;
+    padding-right: 32.5%;
 }
 
 .current-standings-points {
-  position: relative;
-  left: 20px;
+    position: relative;
+    left: 20px;
 }
 
 .loading-img {
-  height: 150px;
-  margin: auto;
+    height: 150px;
+    margin: auto;
 }
 
 @media screen and (max-width: 1300px) {
-  .current-standings {
-    width: 70%;
-  }
+    .current-standings {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 760px) {
-  .current-standings {
-    height: 80vh;
-    width: 80%;
-  }
+    .current-standings {
+        height: 80vh;
+        width: 80%;
+    }
 
-  .current-standings-header {
-    font-size: 16px;
-    padding-right: 30%;
-  }
+    .current-standings-header {
+        font-size: 16px;
+        padding-right: 30%;
+    }
 
-  .current-standings-points {
-    left: 10px;
-  }
+    .current-standings-points {
+        left: 10px;
+    }
 }
 
 @media screen and (max-width: 500px) {
-  .Standings {
-    height: auto;
-    margin: 20px 0;
-    width: 80vw;
-  }
+    .Standings {
+        height: auto;
+        margin: 20px 0;
+        width: 80vw;
+    }
 
-  .current-standings-points {
-    left: 30px;
-  }
+    .current-standings-points {
+        left: 30px;
+    }
 }

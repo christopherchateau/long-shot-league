@@ -1,109 +1,109 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 .Header {
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    rgb(130, 130, 130),
-    darkgrey,
-    transparent
-  );
-  display: grid;
-  font-family: "Roboto", sans-serif;
-  grid-template-rows: 90px 30px;
-  opacity: 0.9;
+    background-image: linear-gradient(
+        to right,
+        transparent,
+        rgb(130, 130, 130),
+        darkgrey,
+        transparent
+    );
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    grid-template-rows: 90px 30px;
+    opacity: 0.9;
 }
 
 .header-logo {
-  align-items: center;
-  display: flex;
-  font-size: 1.8rem;
-  justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1.8rem;
+    justify-content: center;
 }
 
 .bball-img {
-  height: 55px;
-  position: relative;
-  top: 8px;
+    height: 55px;
+    position: relative;
+    top: 8px;
 }
 
 .header-nav {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  width: 500px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 500px;
 }
 
 .header-nav-link {
-  cursor: pointer;
-  margin: 0;
-  padding: 5px;
-  text-decoration: none;
-  transition: all 0.5s ease-out;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px;
+    text-decoration: none;
+    transition: all 0.5s ease-out;
 }
 
 .header-nav-link:hover {
-  color: white;
-  transition: all 0.5s ease-out;
+    color: white;
+    transition: all 0.5s ease-out;
 }
 
 @media screen and (max-width: 760px) {
-  .Header {
-    background: darkgrey;
-  }
+    .Header {
+        background: darkgrey;
+    }
 
-  .header-logo {
-    font-size: 1.35rem;
-  }
+    .header-logo {
+        font-size: 1.35rem;
+    }
 
-  .bball-img {
-    height: 50px;
-    position: relative;
-    top: 7px;
-  }
+    .bball-img {
+        height: 50px;
+        position: relative;
+        top: 7px;
+    }
 
-  .header-nav {
-    width: 350px;
-  }
+    .header-nav {
+        width: 350px;
+    }
 }
 
 @media screen and (max-width: 500px) {
-  .header-logo {
-    font-size: 1.1rem;
-  }
+    .header-logo {
+        font-size: 1.1rem;
+    }
 
-  .bball-img {
-    height: 30px;
-    position: relative;
-    top: 3px;
-  }
+    .bball-img {
+        height: 30px;
+        position: relative;
+        top: 3px;
+    }
 
-  .header-nav {
-    width: 300px;
-  }
+    .header-nav {
+        width: 300px;
+    }
 }
 
 @media screen and (max-width: 400px) {
-  .Header {
-    grid-template-rows: 60px 30px;
-  }
+    .Header {
+        grid-template-rows: 60px 30px;
+    }
 
-  .header-logo {
-    font-size: 0.7rem;
-  }
+    .header-logo {
+        font-size: 0.7rem;
+    }
 
-  .bball-img {
-    height: 25px;
-    position: relative;
-    top: 3px;
-  }
+    .bball-img {
+        height: 25px;
+        position: relative;
+        top: 3px;
+    }
 
-  .header-nav {
-    width: 280px;
-  }
+    .header-nav {
+        width: 280px;
+    }
 
-  .header-nav-link {
-    font-size: 14px;
-  }
+    .header-nav-link {
+        font-size: 14px;
+    }
 }
