@@ -3,7 +3,7 @@ import PlayerInfo from '../PlayerInfo'
 import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
-import { getPlayers, getTeams, getBonusData } from '../../apiCalls'
+import { getData } from '../../apiCalls'
 import './MainPage.css'
 
 class MainPage extends Component {
@@ -16,15 +16,11 @@ class MainPage extends Component {
     }
 
     componentDidMount = async () => {
-        console.log(this.props)
-        const playerList = await getPlayers()
-        const teamList = await getTeams()
-        const bonusList = await getBonusData()
-
-        await this.loadPlayerData(playerList, teamList, bonusList)
+        const data = await getData()
+        this.loadPlayerData(data)
     }
 
-    loadPlayerData = (playerList, teamList, bonusList) => {
+    loadPlayerData = ([playerList, teamList, bonusList]) => {
         const players = []
 
         playerList.forEach(player => {

@@ -1,23 +1,13 @@
-export const getPlayers = async () => {
-    const response = await fetch(
-        'https://long-shot-league-be.herokuapp.com/api/v1/longshotleague/players'
-    )
-    const data = await response.json()
-    return data
+const url = 'https://long-shot-league-be.herokuapp.com/api/v1/longshotleague/'
+
+const types = ['players', 'teams', 'bonus']
+
+const get = async type => {
+    const response = await fetch(`${url}${type}`)
+    return await response.json()
 }
 
-export const getTeams = async () => {
-    const response = await fetch(
-        'https://long-shot-league-be.herokuapp.com/api/v1/longshotleague/teams'
+export const getData = () =>
+    Promise.all(
+        types.map(type => get(type))
     )
-    const data = await response.json()
-    return data
-}
-
-export const getBonusData = async () => {
-    const response = await fetch(
-        'https://long-shot-league-be.herokuapp.com/api/v1/longshotleague/bonus'
-    )
-    const bonusData = await response.json()
-    return bonusData
-}
