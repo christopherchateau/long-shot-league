@@ -11,7 +11,7 @@ class Header extends Component {
                     <h1>
                         LONG SH
                         <img className='bball-img' src={bballImg} alt='O' />T
-                        LEAGUE
+                        LEAGUE!
                     </h1>
                 </div>
 
