@@ -4,13 +4,10 @@ import MainPage from '../MainPage/'
 import './App.css'
 
 class App extends Component {
-    state = {
-        pageDisplay: 'standings',
-    }
 
-    handleNavBarClick = pageDisplay => {
-        this.setState({ pageDisplay })
-    }
+    state = { pageDisplay: 'standings' }
+
+    handleNavBarClick = ({ target }) => this.setState({ pageDisplay: target.innerText })
 
     render() {
         return (

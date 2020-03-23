@@ -10,27 +10,27 @@ class Header extends Component {
                 <div className='header-logo'>
                     <h1>
                         LONG SH
-                        <img className='bball-img' src={bballImg} alt='O' />T
-                        LEAGUE!
+                        <img className='bball-img' src={bballImg} alt='basketball' />T
+                        LEAGUE
                     </h1>
                 </div>
 
                 <div className='header-nav'>
                     <h3
                         className='header-nav-link'
-                        onClick={() => handleNavBarClick('standings')}
+                        onClick={handleNavBarClick}
                     >
                         standings
                     </h3>
                     <h3
                         className='header-nav-link'
-                        onClick={() => handleNavBarClick('teams')}
+                        onClick={handleNavBarClick}
                     >
                         teams
                     </h3>
                     <h3
                         className='header-nav-link'
-                        onClick={() => handleNavBarClick('bonus')}
+                        onClick={handleNavBarClick}
                     >
                         bonus
                     </h3>
