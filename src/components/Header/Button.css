@@ -1,0 +1,18 @@
+.btn {
+    cursor: pointer;
+    margin: 0;
+    padding: 5px;
+    text-decoration: none;
+    transition: all 0.5s ease-out;
+}
+
+.btn:hover {
+    color: white;
+    transition: all 0.5s ease-out;
+}
+
+@media screen and (max-width: 400px) {
+    .btn {
+        font-size: 14px;
+    }
+}

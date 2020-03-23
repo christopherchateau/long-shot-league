@@ -6,12 +6,12 @@ import './App.css'
 class App extends Component {
     state = { pageDisplay: 'standings' }
 
-    handleNavBarClick = ({ target }) =>
+    setPageDisplay = ({ target }) =>
         this.setState({ pageDisplay: target.innerText })
 
     render = () => (
         <div className='App'>
-            <Header handleNavBarClick={this.handleNavBarClick} />
+            <Header setPageDisplay={this.setPageDisplay} />
             <MainPage pageDisplay={this.state.pageDisplay} />
         </div>
     )
