@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import bball from '../../images/bball.png'
+import bball from '../../assets/images/bball.png'
 
 import './Header.css'
 

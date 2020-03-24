@@ -1,5 +1,5 @@
 .App {
-    background: url('../../images/court.jpg') center no-repeat;
+    background: url('../../assets/images/court.jpg') center no-repeat;
     background-attachment: fixed;
     background-size: cover;
     display: grid;

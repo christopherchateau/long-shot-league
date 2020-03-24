@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Player from '../Player'
-import loadingImg from '../../images/loading.gif'
+import loadingImg from '../../assets/images/loading.gif'
 import './Standings.css'
 
 class Standings extends Component {

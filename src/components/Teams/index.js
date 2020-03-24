@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import loadingImg from '../../images/loading.gif'
+import loadingImg from '../../assets/images/loading.gif'
 import './Teams.css'
 
 class Teams extends Component {

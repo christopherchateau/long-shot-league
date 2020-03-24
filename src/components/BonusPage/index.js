@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Bonus from '../Bonus'
-import loadingImg from '../../images/loading.gif'
+import loadingImg from '../../assets/images/loading.gif'
 import './BonusPage.css'
 
 class BonusPage extends Component {
