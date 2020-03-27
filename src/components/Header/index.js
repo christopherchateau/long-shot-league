@@ -4,6 +4,7 @@ import bball from '../../assets/images/bball.png'
 
 import './Header.css'
 
+const buttons = ['standings', 'teams', 'bonus']
 const bballImg = <img className='bball-img' src={bball} alt='long shot league' />
 
 export default ({ ...props }) =>
@@ -14,9 +15,7 @@ export default ({ ...props }) =>
         </div>
 
         <div className='header-nav'>
-            <Button {...props} name='standings' />
-            <Button {...props} name='teams' />
-            <Button {...props} name='bonus' />
+            {buttons.map(b => <Button {...props} name={b} />)}
         </div>
 
     </div>
