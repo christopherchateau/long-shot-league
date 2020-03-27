@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+
+import { sortByKey } from '../helpers'
 import loadingImg from '../../assets/images/loading.gif'
 
 import './Teams.css'
@@ -6,55 +8,42 @@ import './Teams.css'
 export default class Teams extends Component {
     state = {
         display: 'show all',
-        teamSort: 'alphabetical',
+        teamSort: 'name',
     }
 
     toggleTeamDisplay = () => {
         let { display } = this.state
         display === 'show all'
-            ? (display = 'still alive')
-            : (display = 'show all')
+            ? display = 'still alive'
+            : display = 'show all'
         this.setState({ display })
     }
 
     toggleTeamSort = () => {
         let { teamSort } = this.state
-        teamSort === 'alphabetical'
-            ? (teamSort = 'drafted by')
-            : (teamSort = 'alphabetical')
+        teamSort === 'name'
+            ? teamSort = 'drafted by'
+            : teamSort = 'name'
         this.setState({ teamSort })
     }
 
-    sortByPlayer = input =>
-        input.sort((a, b) => {
-            if (a.drafted_by < b.drafted_by) return -1
-            if (a.drafted_by > b.drafted_by) return 1
-        })
-
     render = () => {
-        let { teamList, sortByName } = this.props
+        let { teamList } = this.props
         const { display, teamSort } = this.state
 
         if (display === 'still alive') {
             teamList = teamList.filter(team => !team.is_eliminated)
         }
 
-        teamSort === 'drafted by'
-            ? this.sortByPlayer(teamList)
-            : sortByName(teamList)
-
-        const teams = teamList.map(team =>
-            <div
-                className={'team'.concat(
-                    team.is_eliminated ? ' red' : ' green'
-                )}
-                key={team.name}
-            >
-                <h3>
-                    {team.name} - {team.points}
-                </h3>
-                <h5>{team.drafted_by}</h5>
-            </div>
+        const teams = sortByKey(teamList, teamSort).map(
+            ({ name, points, drafted_by, is_eliminated }) =>
+                <div
+                    key={name}
+                    className={'team'.concat(is_eliminated ? ' red' : ' green')}
+                >
+                    <h3>{name} - {points}</h3>
+                    <h5>{drafted_by}</h5>
+                </div>
         )
 
         return !teamList.length

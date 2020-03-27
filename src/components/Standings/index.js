@@ -1,14 +1,12 @@
 import React from 'react'
 import Player from '../Player'
+import { sortByKey } from '../helpers'
 import loadingImg from '../../assets/images/loading.gif'
 
 import './Standings.css'
 
 export default ({ players, handlePlayerClick }) => {
-    const playerListSorted = players.sort((a, b) => {
-        if (a.pointTotal > b.pointTotal) return -1
-        if (a.pointTotal < b.pointTotal) return 1
-    })
+    const playerListSorted = sortByKey(players, 'pointTotal').reverse()
 
     let counter = 1
     const formattedPlayers = playerListSorted.map((player, i) => {

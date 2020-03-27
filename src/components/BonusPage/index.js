@@ -1,16 +1,11 @@
 import React from 'react'
 import Bonus from '../Bonus'
+import { sortByKey } from '../helpers'
 import loadingImg from '../../assets/images/loading.gif'
 import './BonusPage.css'
 
 export default ({ players, bonusList }) => {
-    const sortByName = input =>
-        input.sort((a, b) => {
-            if (a.name < b.name) return -1
-            if (a.name > b.name) return 1
-        })
-
-    const playersDisplayed = sortByName(players).map(player => {
+    const playersDisplayed = sortByKey(players).map(player => {
         const bonusListDisplayed = []
 
         const playerBonusTotal = bonusList.reduce((total, bonus) => {

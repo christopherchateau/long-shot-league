@@ -4,6 +4,7 @@ import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
 import { getData } from '../../apiCalls'
+import { sortByKey } from '../helpers'
 
 import './MainPage.css'
 
@@ -46,7 +47,7 @@ export default class MainPage extends Component {
         this.setState({
             players,
             bonusList,
-            teamList: this.sortByName(teamList),
+            teamList: sortByKey(teamList),
         })
     }
 
@@ -62,12 +63,6 @@ export default class MainPage extends Component {
 
     handleBackClick = () =>
         this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
-
-    sortByName = input =>
-        input.sort((a, b) => {
-            if (a.name < b.name) return -1
-            if (a.name > b.name) return 1
-        })
 
     render = () => {
         const { pageDisplay } = this.props
@@ -85,12 +80,10 @@ export default class MainPage extends Component {
 
         const standings = standingsDisplay === 'standings'
             ? <Standings
-                players={players}
-                handlePlayerClick={this.handlePlayerClick}
+                {...{ players, handlePlayerClick: this.handlePlayerClick }}
             />
             : <PlayerInfo
-                selectedPlayerData={selectedPlayerData}
-                handleBackClick={this.handleBackClick}
+                {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
             />
 
         return <div className='MainPage'>
@@ -98,7 +91,7 @@ export default class MainPage extends Component {
             {pageDisplay === 'standings' && standings}
 
             {pageDisplay === 'teams'
-                && <Teams teamList={teamList} sortByName={this.sortByName} />
+                && <Teams {...{ teamList }} />
             }
 
             {pageDisplay === 'bonus'
