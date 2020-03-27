@@ -24,17 +24,17 @@ export default class MainPage extends Component {
     loadPlayerData = ([playerList, teamList, bonusList]) => {
         const players = []
 
-        playerList.forEach(player => {
+        playerList.forEach(({ name }) => {
             const teams = teamList.filter(
-                listTeam => listTeam.drafted_by === player.name
+                listTeam => listTeam.drafted_by === name
             )
             const points = this.generatePointTotal(teams)
-            const bonusData = this.generateBonusData(player.name, bonusList)
+            const bonusData = this.generateBonusData(name, bonusList)
             const bonusTotal = this.generateBonusTotal(bonusData)
             const pointTotal = points + bonusTotal
 
             players.push({
-                name: player.name,
+                name,
                 teams,
                 points,
                 bonusData,
@@ -57,13 +57,11 @@ export default class MainPage extends Component {
 
     generateBonusTotal = bonusData => this.generatePointTotal(bonusData)
 
-    handlePlayerClick = selectedPlayer => {
+    handlePlayerClick = selectedPlayer =>
         this.setState({ selectedPlayer, standingsDisplay: 'player info' })
-    }
 
-    handleBackClick = () => {
+    handleBackClick = () =>
         this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
-    }
 
     sortByName = input =>
         input.sort((a, b) => {
@@ -71,7 +69,7 @@ export default class MainPage extends Component {
             if (a.name > b.name) return 1
         })
 
-    render() {
+    render = () => {
         const { pageDisplay } = this.props
         const {
             standingsDisplay,
@@ -85,21 +83,19 @@ export default class MainPage extends Component {
             player => player.name === selectedPlayer
         )
 
+        const standings = standingsDisplay === 'standings'
+            ? <Standings
+                players={players}
+                handlePlayerClick={this.handlePlayerClick}
+            />
+            : <PlayerInfo
+                selectedPlayerData={selectedPlayerData}
+                handleBackClick={this.handleBackClick}
+            />
+
         return <div className='MainPage'>
 
-            {pageDisplay === 'standings' && standingsDisplay === 'player info'
-                && <PlayerInfo
-                    selectedPlayerData={selectedPlayerData}
-                    handleBackClick={this.handleBackClick}
-                />
-            }
-
-            {pageDisplay === 'standings' && standingsDisplay === 'standings'
-                && <Standings
-                    players={players}
-                    handlePlayerClick={this.handlePlayerClick}
-                />
-            }
+            {pageDisplay === 'standings' && standings}
 
             {pageDisplay === 'teams'
                 && <Teams teamList={teamList} sortByName={this.sortByName} />
