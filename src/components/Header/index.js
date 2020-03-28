@@ -15,7 +15,7 @@ export default ({ ...props }) =>
         </div>
 
         <div className='header-nav'>
-            {buttons.map(b => <Button {...props} name={b} />)}
+            {buttons.map(b => <Button {...props} name={b} key={b} />)}
         </div>
 
     </div>

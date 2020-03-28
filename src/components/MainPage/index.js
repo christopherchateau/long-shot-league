@@ -3,6 +3,7 @@ import PlayerInfo from '../PlayerInfo'
 import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
+import Errors from '../Errors'
 import { getData } from '../../apiCalls'
 import { sortByKey } from '../helpers'
 import loadingImg from '../../assets/images/loading.gif'
@@ -16,10 +17,18 @@ export default class MainPage extends Component {
         playerList: [],
         teamList: [],
         bonusList: [],
+        errors: [],
     }
 
     componentDidMount = async () => {
         const data = await getData()
+        const errors = data.filter(resp => resp.error)
+
+        if (errors) {
+            this.setState({ errors })
+            return
+        }
+
         this.loadPlayerData(data)
     }
 
@@ -70,6 +79,10 @@ export default class MainPage extends Component {
         return !playerList.length || !teamList.length
     }
 
+    get showErrors() {
+        return this.state.errors.length
+    }
+
     get showStandings() {
         return this.props.pageDisplay === 'standings'
     }
@@ -89,9 +102,12 @@ export default class MainPage extends Component {
             playerList,
             teamList,
             bonusList,
+            errors,
         } = this.state
 
         const loading = <img className='loading-img' src={loadingImg} alt='loading' />
+
+        const displayErrors = errors.length && <Errors {...{ errors }} />
 
         const selectedPlayerData = playerList.find(
             player => player.name === selectedPlayer
@@ -105,7 +121,7 @@ export default class MainPage extends Component {
                 {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
             />
 
-        return this.showLoading ? loading
+        return this.showErrors ? displayErrors : this.showLoading ? loading
         
         : <div className='MainPage'>
 

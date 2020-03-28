@@ -1,0 +1,13 @@
+.container {
+    background: silver;
+    opacity: 0.9;
+    margin: 5rem auto;
+    padding: 5%;
+    width: 60%;
+    text-align: center;
+}
+
+
+.title {
+    color: red;
+}
