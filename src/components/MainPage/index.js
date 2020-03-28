@@ -23,14 +23,10 @@ export default class MainPage extends Component {
     componentDidMount = async () => {
         const data = await getData()
         const errors = data.filter(resp => resp.error)
-        console.log(errors)
-        if (errors.length) {
-            this.setState({ errors })
-            this.props.catchError()
-            return
-        }
 
-        this.loadPlayerData(data)
+        errors.length
+            ? this.setState({ errors }, this.props.catchError())
+            : this.loadPlayerData(data)
     }
 
     loadPlayerData = ([playerList, teamList, bonusList]) => {
