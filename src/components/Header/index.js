@@ -7,15 +7,18 @@ import './Header.css'
 const buttons = ['standings', 'teams', 'bonus']
 const bballImg = <img className='bball-img' src={bball} alt='long shot league' />
 
-export default ({ ...props }) =>
-    <div className='Header'>
+export default ({ hideNav, ...props }) =>
+    <div
+        className='Header'
+        style={{ 'gridTemplateRows': hideNav ? '120px' : '90px 30px' }}
+    >
 
         <div className='logo'>
             <h1>LONG SH{bballImg}T LEAGUE</h1>
         </div>
 
-        <div className='header-nav'>
+        {!hideNav && <div className='header-nav'>
             {buttons.map(b => <Button {...props} name={b} key={b} />)}
-        </div>
+        </div>}
 
     </div>

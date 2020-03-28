@@ -23,9 +23,10 @@ export default class MainPage extends Component {
     componentDidMount = async () => {
         const data = await getData()
         const errors = data.filter(resp => resp.error)
-
-        if (errors) {
+        console.log(errors)
+        if (errors.length) {
             this.setState({ errors })
+            this.props.catchError()
             return
         }
 

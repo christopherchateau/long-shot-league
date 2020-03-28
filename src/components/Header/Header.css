@@ -10,7 +10,6 @@
     );
     display: grid;
     font-family: 'Roboto', sans-serif;
-    grid-template-rows: 90px 30px;
     opacity: 0.9;
 }
 
