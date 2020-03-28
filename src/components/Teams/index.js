@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import { sortByKey } from '../helpers'
-import loadingImg from '../../assets/images/loading.gif'
 
 import './Teams.css'
 
@@ -46,29 +44,27 @@ export default class Teams extends Component {
                 </div>
         )
 
-        return !teamList.length
-            ? <img className='loading-img' src={loadingImg} alt='loading' />
-            : <div className='Teams'>
+        return <div className='Teams'>
 
-                <div className='team-btn-wrapper'>
-                    <button
-                        className='teams-toggle-btn'
-                        onClick={this.toggleTeamDisplay}
-                    >
-                        {display}
-                    </button>
-                    <button
-                        className='teams-display-btn'
-                        onClick={this.toggleTeamSort}
-                    >
-                        {teamSort}
-                    </button>
-                </div>
-
-                <br />
-
-                <div className='teams-wrapper'>{teams}</div>
-
+            <div className='team-btn-wrapper'>
+                <button
+                    className='teams-toggle-btn'
+                    onClick={this.toggleTeamDisplay}
+                >
+                    {display}
+                </button>
+                <button
+                    className='teams-display-btn'
+                    onClick={this.toggleTeamSort}
+                >
+                    {teamSort}
+                </button>
             </div>
+
+            <br />
+
+            <div className='teams-wrapper'>{teams}</div>
+
+        </div>
     }
 }

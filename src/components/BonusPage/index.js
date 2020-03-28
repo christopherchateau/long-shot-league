@@ -1,11 +1,11 @@
 import React from 'react'
 import Bonus from '../Bonus'
 import { sortByKey } from '../helpers'
-import loadingImg from '../../assets/images/loading.gif'
+
 import './BonusPage.css'
 
-export default ({ players, bonusList }) => {
-    const playersDisplayed = sortByKey(players).map(player => {
+export default ({ playerList, bonusList }) => {
+    const playersDisplayed = sortByKey(playerList).map(player => {
         const bonusListDisplayed = []
 
         const playerBonusTotal = bonusList.reduce((total, bonus) => {
@@ -26,7 +26,5 @@ export default ({ players, bonusList }) => {
         </div>
     })
 
-    return !players.length
-        ? <img className='loading-img' src={loadingImg} alt='loading' />
-        : <div className='BonusPage'>{playersDisplayed}</div>
+    return <div className='BonusPage'>{playersDisplayed}</div>
 }

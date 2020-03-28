@@ -1,12 +1,11 @@
 import React from 'react'
 import Player from '../Player'
 import { sortByKey } from '../helpers'
-import loadingImg from '../../assets/images/loading.gif'
 
 import './Standings.css'
 
-export default ({ players, handlePlayerClick }) => {
-    const playerListSorted = sortByKey(players, 'pointTotal').reverse()
+export default ({ playerList, handlePlayerClick }) => {
+    const playerListSorted = sortByKey(playerList, 'pointTotal').reverse()
 
     let counter = 1
     const formattedPlayers = playerListSorted.map((player, i) => {
@@ -22,17 +21,15 @@ export default ({ players, handlePlayerClick }) => {
         />
     })
 
-    return !players.length
-        ? <img className='loading-img' src={loadingImg} alt='loading' />
-        : <div className='Standings'>
+    return <div className='Standings'>
     
-                <div className='current-standings-header'>
-                    <h5>rank</h5>
-                    <h5>name</h5>
-                    <h5 className='current-standings-points'>points</h5>
-                </div>
+        <div className='current-standings-header'>
+            <h5>rank</h5>
+            <h5>name</h5>
+            <h5 className='current-standings-points'>points</h5>
+        </div>
 
-                {formattedPlayers}
+        {formattedPlayers}
 
-            </div>
+    </div>
 }

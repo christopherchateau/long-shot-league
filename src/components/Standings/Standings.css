@@ -25,11 +25,6 @@
     left: 20px;
 }
 
-.loading-img {
-    height: 150px;
-    margin: auto;
-}
-
 @media screen and (max-width: 1300px) {
     .current-standings {
         width: 70%;

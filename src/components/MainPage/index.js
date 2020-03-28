@@ -5,6 +5,7 @@ import Teams from '../Teams'
 import BonusPage from '../BonusPage'
 import { getData } from '../../apiCalls'
 import { sortByKey } from '../helpers'
+import loadingImg from '../../assets/images/loading.gif'
 
 import './MainPage.css'
 
@@ -12,7 +13,7 @@ export default class MainPage extends Component {
     state = {
         selectedPlayer: '',
         standingsDisplay: 'standings',
-        players: [],
+        playerList: [],
         teamList: [],
         bonusList: [],
     }
@@ -45,9 +46,9 @@ export default class MainPage extends Component {
         })
 
         this.setState({
-            players,
-            bonusList,
+            playerList: players,
             teamList: sortByKey(teamList),
+            bonusList,
         })
     }
 
@@ -64,39 +65,55 @@ export default class MainPage extends Component {
     handleBackClick = () =>
         this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
 
+    get showLoading() {
+        const { playerList, teamList } = this.state
+        return !playerList.length || !teamList.length
+    }
+
+    get showStandings() {
+        return this.props.pageDisplay === 'standings'
+    }
+
+    get showTeams() {
+        return this.props.pageDisplay === 'teams'
+    }
+
+    get showBonus() {
+        return this.props.pageDisplay === 'bonus'
+    }
+
     render = () => {
-        const { pageDisplay } = this.props
         const {
             standingsDisplay,
             selectedPlayer,
-            players,
+            playerList,
             teamList,
             bonusList,
         } = this.state
 
-        const selectedPlayerData = players.find(
+        const loading = <img className='loading-img' src={loadingImg} alt='loading' />
+
+        const selectedPlayerData = playerList.find(
             player => player.name === selectedPlayer
         )
 
         const standings = standingsDisplay === 'standings'
             ? <Standings
-                {...{ players, handlePlayerClick: this.handlePlayerClick }}
+                {...{ playerList, handlePlayerClick: this.handlePlayerClick }}
             />
             : <PlayerInfo
                 {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
             />
 
-        return <div className='MainPage'>
+        return this.showLoading ? loading
+        
+        : <div className='MainPage'>
 
-            {pageDisplay === 'standings' && standings}
+            {this.showStandings && standings}
 
-            {pageDisplay === 'teams'
-                && <Teams {...{ teamList }} />
-            }
+            {this.showTeams && <Teams {...{ teamList }} />}
 
-            {pageDisplay === 'bonus'
-                && <BonusPage {...{ players, bonusList }} />
-            }
+            {this.showBonus && <BonusPage {...{ playerList, bonusList }} />}
 
         </div>
     }
