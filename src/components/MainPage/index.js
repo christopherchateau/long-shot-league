@@ -30,25 +30,22 @@ export default class MainPage extends Component {
     }
 
     loadPlayerData = ([playerList, teamList, bonusList]) => {
-        const players = []
+        const players = playerList.map(({ name }) => {
 
-        playerList.forEach(({ name }) => {
-            const teams = teamList.filter(
-                listTeam => listTeam.drafted_by === name
-            )
+            const teams = teamList.filter(({ drafted_by }) => drafted_by === name)
             const points = this.generatePointTotal(teams)
             const bonusData = this.generateBonusData(name, bonusList)
             const bonusTotal = this.generateBonusTotal(bonusData)
             const pointTotal = points + bonusTotal
 
-            players.push({
+            return {
                 name,
                 teams,
                 points,
                 bonusData,
                 bonusTotal,
                 pointTotal,
-            })
+            }
         })
 
         this.setState({
