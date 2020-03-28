@@ -14,9 +14,9 @@ export default class MainPage extends Component {
     state = {
         selectedPlayer: '',
         standingsDisplay: 'standings',
-        playerList: [],
-        teamList: [],
-        bonusList: [],
+        playerData: [],
+        teamData: [],
+        bonusData: [],
         errors: [],
     }
 
@@ -29,12 +29,12 @@ export default class MainPage extends Component {
             : this.loadPlayerData(data)
     }
 
-    loadPlayerData = ([playerList, teamList, bonusList]) => {
-        const players = playerList.map(({ name }) => {
+    loadPlayerData = ([playerData, teamData, bonusData]) => {
+        const players = playerData.map(({ name }) => {
 
-            const teams = teamList.filter(({ drafted_by }) => drafted_by === name)
+            const teams = teamData.filter(({ drafted_by }) => drafted_by === name)
             const points = this.generatePointTotal(teams)
-            const bonusData = this.generateBonusData(name, bonusList)
+            const bonusData = this.generateBonusData(name, bonusData)
             const bonusTotal = this.generateBonusTotal(bonusData)
             const pointTotal = points + bonusTotal
 
@@ -49,16 +49,16 @@ export default class MainPage extends Component {
         })
 
         this.setState({
-            playerList: players,
-            teamList: sortByKey(teamList),
-            bonusList,
+            playerData: players,
+            teamData: sortByKey(teamData),
+            bonusData,
         })
     }
 
     generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0)
 
-    generateBonusData = (name, bonusList) =>
-        bonusList.filter(bonus => bonus.name === name)
+    generateBonusData = (name, bonusData) =>
+        bonusData.filter(bonus => bonus.name === name)
 
     generateBonusTotal = bonusData => this.generatePointTotal(bonusData)
 
@@ -69,8 +69,8 @@ export default class MainPage extends Component {
         this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
 
     get showLoading() {
-        const { playerList, teamList } = this.state
-        return !playerList.length || !teamList.length
+        const { playerData, teamData } = this.state
+        return !playerData.length || !teamData.length
     }
 
     get showErrors() {
@@ -93,9 +93,9 @@ export default class MainPage extends Component {
         const {
             standingsDisplay,
             selectedPlayer,
-            playerList,
-            teamList,
-            bonusList,
+            playerData,
+            teamData,
+            bonusData,
             errors,
         } = this.state
 
@@ -103,28 +103,30 @@ export default class MainPage extends Component {
 
         const displayErrors = errors.length && <Errors {...{ errors }} />
 
-        const selectedPlayerData = playerList.find(
+        const selectedPlayerData = playerData.find(
             player => player.name === selectedPlayer
         )
 
         const standings = standingsDisplay === 'standings'
             ? <Standings
-                {...{ playerList, handlePlayerClick: this.handlePlayerClick }}
+                {...{ playerData, handlePlayerClick: this.handlePlayerClick }}
             />
             : <PlayerInfo
                 {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
             />
 
-        return this.showErrors ? displayErrors : this.showLoading ? loading
-        
-        : <div className='MainPage'>
+        return this.showErrors ? displayErrors
+            
+            : this.showLoading ? loading
 
-            {this.showStandings && standings}
+                : <div className='MainPage'>
 
-            {this.showTeams && <Teams {...{ teamList }} />}
+                    {this.showStandings && standings}
 
-            {this.showBonus && <BonusPage {...{ playerList, bonusList }} />}
+                    {this.showTeams && <Teams {...{ teamData }} />}
 
-        </div>
+                    {this.showBonus && <BonusPage {...{ playerData, bonusData }} />}
+
+                </div>
     }
 }

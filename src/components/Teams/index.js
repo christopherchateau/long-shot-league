@@ -26,14 +26,14 @@ export default class Teams extends Component {
     }
 
     render = () => {
-        let { teamList } = this.props
+        let { teamData } = this.props
         const { display, teamSort } = this.state
 
         if (display === 'still alive') {
-            teamList = teamList.filter(team => !team.is_eliminated)
+            teamData = teamData.filter(team => !team.is_eliminated)
         }
 
-        const teams = sortByKey(teamList, teamSort).map(
+        const teams = sortByKey(teamData, teamSort).map(
             ({ name, points, drafted_by, is_eliminated }) =>
                 <div
                     key={name}
