@@ -5,22 +5,37 @@ import MainPage from '../MainPage/'
 import './App.css'
 
 export default class App extends Component {
-    state = {
-        pageDisplay: 'standings',
-        hideNav: false,
-    }
+	state = {
+		pageDisplay: 'standings',
+		hideHeader: false,
+		hideNav: false,
+	}
 
-    setPageDisplay = ({ target }) =>
-        this.setState({ pageDisplay: target.innerText })
+	setPageDisplay = ({ target }) =>
+		this.setState({ pageDisplay: target.innerText })
 
-    catchError = () => this.setState({ hideNav: true })
+	hideHeader = bool => this.setState({ hideHeader: bool })
 
-    render = () => {
-        const { pageDisplay, hideNav } = this.state
+	hideNav = () => this.setState({ hideNav: true })
 
-        return <div className='App'>
-            <Header {...{ hideNav, setPageDisplay: this.setPageDisplay }} />
-            <MainPage {...{ pageDisplay, catchError: this.catchError }} />
+	render = () => {
+		const { pageDisplay, hideHeader, hideNav } = this.state
+
+		return <div className='App'>
+            <Header
+                {...{
+                    hideNav,
+                    hideHeader,
+                    setPageDisplay: this.setPageDisplay,
+                }}
+            />
+            <MainPage
+                {...{
+                    pageDisplay,
+                    hideHeader: this.hideHeader,
+                    hideNav: this.hideNav,
+                }}
+            />
         </div>
-    }
+	}
 }

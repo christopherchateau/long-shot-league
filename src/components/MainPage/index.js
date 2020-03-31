@@ -25,7 +25,7 @@ export default class MainPage extends Component {
         const errors = data.filter(resp => resp.error)
 
         errors.length
-            ? this.setState({ errors }, this.props.catchError())
+            ? this.setState({ errors }, this.props.hideNav())
             : this.loadPlayerList(data)
     }
 
@@ -62,10 +62,10 @@ export default class MainPage extends Component {
     generateBonusTotal = bonusData => this.generatePointTotal(bonusData)
 
     handlePlayerClick = selectedPlayer =>
-        this.setState({ selectedPlayer, standingsDisplay: 'player info' })
+        this.setState({ selectedPlayer, standingsDisplay: 'player info' }, () => this.props.hideHeader(true))
 
     handleBackClick = () =>
-        this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
+        this.setState({ selectedPlayer: '', standingsDisplay: 'standings' }, () => this.props.hideHeader(false))
 
     get showLoading() {
         const { playerList, teamList } = this.state
