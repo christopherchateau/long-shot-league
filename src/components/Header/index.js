@@ -8,9 +8,9 @@ const buttons = ['standings', 'teams', 'bonus']
 
 const bball = <img className='bball-img' src={bballImg} alt='long shot league' />
 
-export default ({ hideNav, hideHeader, ...props }) =>
+export default ({ hideNav, ...props }) =>
     <div
-        className={'Header'.concat(hideHeader ? ' hidden' : '')}
+        className='Header'
         style={{ 'gridTemplateRows': hideNav ? '120px' : '90px 30px' }}
     >
 

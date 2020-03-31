@@ -3,10 +3,7 @@ import PlayerInfo from '../PlayerInfo'
 import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
-import Errors from '../Errors'
-import { getData } from '../../utilities/apiCalls'
 import { sortByKey } from '../../utilities/helpers'
-import loadingImg from '../../assets/images/loading.gif'
 
 import './MainPage.css'
 
@@ -17,19 +14,11 @@ export default class MainPage extends Component {
         playerList: [],
         teamList: [],
         bonusList: [],
-        errors: [],
     }
 
-    componentDidMount = async () => {
-        const data = await getData()
-        const errors = data.filter(resp => resp.error)
+    componentDidMount = () => this.loadData(this.props.data)
 
-        errors.length
-            ? this.setState({ errors }, this.props.hideNav())
-            : this.loadPlayerList(data)
-    }
-
-    loadPlayerList = ([playerList, teamList, bonusList]) => {
+    loadData = ([playerList, teamList, bonusList]) => {
         const players = playerList.map(({ name }) => {
             const teams = teamList.filter(({ drafted_by }) => drafted_by === name)
             const points = this.generatePointTotal(teams)
@@ -62,19 +51,10 @@ export default class MainPage extends Component {
     generateBonusTotal = bonusData => this.generatePointTotal(bonusData)
 
     handlePlayerClick = selectedPlayer =>
-        this.setState({ selectedPlayer, standingsDisplay: 'player info' }, () => this.props.hideHeader(true))
+        this.setState({ selectedPlayer, standingsDisplay: 'player info' })
 
     handleBackClick = () =>
-        this.setState({ selectedPlayer: '', standingsDisplay: 'standings' }, () => this.props.hideHeader(false))
-
-    get showLoading() {
-        const { playerList, teamList } = this.state
-        return !playerList.length || !teamList.length
-    }
-
-    get showErrors() {
-        return this.state.errors.length
-    }
+        this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
 
     get showStandings() {
         return this.props.pageDisplay === 'standings'
@@ -95,12 +75,7 @@ export default class MainPage extends Component {
             playerList,
             teamList,
             bonusList,
-            errors,
         } = this.state
-
-        const loading = <img className='loading-img' src={loadingImg} alt='loading' />
-
-        const displayErrors = errors.length && <Errors {...{ errors }} />
 
         const selectedPlayerData = playerList.find(
             player => player.name === selectedPlayer
@@ -114,18 +89,14 @@ export default class MainPage extends Component {
                 {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
             />
 
-        return this.showErrors ? displayErrors
-            
-            : this.showLoading ? loading
+        return <div className='MainPage'>
 
-                : <div className='MainPage'>
+            {this.showStandings && standings}
 
-                    {this.showStandings && standings}
+            {this.showTeams && <Teams {...{ teamList }} />}
 
-                    {this.showTeams && <Teams {...{ teamList }} />}
+            {this.showBonus && <BonusPage {...{ playerList, bonusList }} />}
 
-                    {this.showBonus && <BonusPage {...{ playerList, bonusList }} />}
-
-                </div>
+        </div>
     }
 }
