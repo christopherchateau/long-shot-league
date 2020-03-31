@@ -9,14 +9,14 @@ export default ({
         name,
         teams,
         points,
-        bonusData,
+        bonuses,
         pointTotal,
         bonusTotal,
     },
 }) => {
-    const bonus = !bonusData.length
+    const bonus = !bonuses.length
         ? '-none-'
-        : bonusData.map(bonus =>
+        : bonuses.map(bonus =>
             <h3 key={bonus.description}>
                 {`${bonus.description} - ${bonus.points}pt`}
             </h3>

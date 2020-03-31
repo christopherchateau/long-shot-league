@@ -3,7 +3,7 @@ import PlayerInfo from '../PlayerInfo'
 import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
-import { sortByKey } from '../../utilities/helpers'
+import { sumPoints, sortByKey } from '../../utilities/helpers'
 
 import './MainPage.css'
 
@@ -21,16 +21,16 @@ export default class MainPage extends Component {
     loadData = ([playerList, teamList, bonusList]) => {
         const players = playerList.map(({ name }) => {
             const teams = teamList.filter(({ drafted_by }) => drafted_by === name)
-            const points = this.generatePointTotal(teams)
-            const bonusData = this.generateBonusData(name, bonusList)
-            const bonusTotal = this.generateBonusTotal(bonusData)
+            const points = sumPoints(teams)
+            const bonuses = this.getPlayerBonuses(name, bonusList)
+            const bonusTotal = sumPoints(bonuses)
             const pointTotal = points + bonusTotal
 
             return {
                 name,
                 teams,
                 points,
-                bonusData,
+                bonuses,
                 bonusTotal,
                 pointTotal,
             }
@@ -43,12 +43,8 @@ export default class MainPage extends Component {
         })
     }
 
-    generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0)
-
-    generateBonusData = (name, bonusList) =>
+    getPlayerBonuses = (name, bonusList) =>
         bonusList.filter(bonus => bonus.name === name)
-
-    generateBonusTotal = bonusData => this.generatePointTotal(bonusData)
 
     handlePlayerClick = selectedPlayer =>
         this.setState({ selectedPlayer, standingsDisplay: 'player info' })
