@@ -17,10 +17,10 @@ export default ({
     const bonus = !bonusData.length
         ? '-none-'
         : bonusData.map(bonus =>
-              <h3 key={bonus.description}>
-                  {bonus.description} - ({bonus.points}pt)
-              </h3>
-          )
+            <h3 key={bonus.description}>
+                {`${bonus.description} - ${bonus.points}pt`}
+            </h3>
+        )
 
     return <div className='PlayerInfo'>
 
@@ -37,24 +37,21 @@ export default ({
         <div className='player-info-totals'>
             <h5>
                 points
-                <br />{' '}
-                <span className='player-info-num'>
+                <p className='player-info-num'>
                     {points}
-                </span>
+                </p>
             </h5>
             <h5>
                 bonus
-                <br />{' '}
-                <span className='player-info-num'>
+                <p className='player-info-num'>
                     {bonusTotal}
-                </span>
+                </p>
             </h5>
             <h5>
                 total
-                <br />{' '}
-                <span className='player-info-num'>
+                <p className='player-info-num'>
                     {pointTotal}
-                </span>
+                </p>
             </h5>
         </div>
 
