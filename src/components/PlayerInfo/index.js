@@ -14,7 +14,7 @@ export default ({
         bonusTotal,
     },
 }) => {
-    const bonusData = !bonusData.length
+    const bonus = !bonusData.length
         ? '-none-'
         : bonusData.map(bonus =>
               <h3 key={bonus.description}>
@@ -71,7 +71,7 @@ export default ({
 
         <div className='player-info-bonus'>
             <h3 className='player-info-bonus-title'>bonus</h3>
-            {bonusData}
+            {bonus}
         </div>
 
     </div>

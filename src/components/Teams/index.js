@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { sortByKey } from '../helpers'
+import { sortByKey } from '../../utilities/helpers'
 
 import './Teams.css'
 
@@ -26,14 +26,14 @@ export default class Teams extends Component {
     }
 
     render = () => {
-        let { teamData } = this.props
+        let { teamList } = this.props
         const { display, teamSort } = this.state
 
         if (display === 'still alive') {
-            teamData = teamData.filter(team => !team.is_eliminated)
+            teamList = teamList.filter(team => !team.is_eliminated)
         }
 
-        const teams = sortByKey(teamData, teamSort).map(
+        const teams = sortByKey(teamList, teamSort).map(
             ({ name, points, drafted_by, is_eliminated }) =>
                 <div
                     key={name}

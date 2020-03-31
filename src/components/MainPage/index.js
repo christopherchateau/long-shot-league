@@ -4,8 +4,8 @@ import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
 import Errors from '../Errors'
-import { getData } from '../../utilities/apiCalls.js'
-import { sortByKey } from '../helpers'
+import { getData } from '../../utilities/apiCalls'
+import { sortByKey } from '../../utilities/helpers'
 import loadingImg from '../../assets/images/loading.gif'
 
 import './MainPage.css'
@@ -14,9 +14,9 @@ export default class MainPage extends Component {
     state = {
         selectedPlayer: '',
         standingsDisplay: 'standings',
-        playerData: [],
-        teamData: [],
-        bonusData: [],
+        playerList: [],
+        teamList: [],
+        bonusList: [],
         errors: [],
     }
 
@@ -26,15 +26,14 @@ export default class MainPage extends Component {
 
         errors.length
             ? this.setState({ errors }, this.props.catchError())
-            : this.loadPlayerData(data)
+            : this.loadPlayerList(data)
     }
 
-    loadPlayerData = ([playerData, teamData, bonusData]) => {
-        const players = playerData.map(({ name }) => {
-
-            const teams = teamData.filter(({ drafted_by }) => drafted_by === name)
+    loadPlayerList = ([playerList, teamList, bonusList]) => {
+        const players = playerList.map(({ name }) => {
+            const teams = teamList.filter(({ drafted_by }) => drafted_by === name)
             const points = this.generatePointTotal(teams)
-            const bonusData = this.generateBonusData(name, bonusData)
+            const bonusData = this.generateBonusData(name, bonusList)
             const bonusTotal = this.generateBonusTotal(bonusData)
             const pointTotal = points + bonusTotal
 
@@ -49,16 +48,16 @@ export default class MainPage extends Component {
         })
 
         this.setState({
-            playerData: players,
-            teamData: sortByKey(teamData),
-            bonusData,
+            playerList: players,
+            teamList: sortByKey(teamList),
+            bonusList,
         })
     }
 
     generatePointTotal = teams => teams.reduce((a, b) => a + b.points, 0)
 
-    generateBonusData = (name, bonusData) =>
-        bonusData.filter(bonus => bonus.name === name)
+    generateBonusData = (name, bonusList) =>
+        bonusList.filter(bonus => bonus.name === name)
 
     generateBonusTotal = bonusData => this.generatePointTotal(bonusData)
 
@@ -69,8 +68,8 @@ export default class MainPage extends Component {
         this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
 
     get showLoading() {
-        const { playerData, teamData } = this.state
-        return !playerData.length || !teamData.length
+        const { playerList, teamList } = this.state
+        return !playerList.length || !teamList.length
     }
 
     get showErrors() {
@@ -93,9 +92,9 @@ export default class MainPage extends Component {
         const {
             standingsDisplay,
             selectedPlayer,
-            playerData,
-            teamData,
-            bonusData,
+            playerList,
+            teamList,
+            bonusList,
             errors,
         } = this.state
 
@@ -103,13 +102,13 @@ export default class MainPage extends Component {
 
         const displayErrors = errors.length && <Errors {...{ errors }} />
 
-        const selectedPlayerData = playerData.find(
+        const selectedPlayerData = playerList.find(
             player => player.name === selectedPlayer
         )
 
         const standings = standingsDisplay === 'standings'
             ? <Standings
-                {...{ playerData, handlePlayerClick: this.handlePlayerClick }}
+                {...{ playerList, handlePlayerClick: this.handlePlayerClick }}
             />
             : <PlayerInfo
                 {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
@@ -123,9 +122,9 @@ export default class MainPage extends Component {
 
                     {this.showStandings && standings}
 
-                    {this.showTeams && <Teams {...{ teamData }} />}
+                    {this.showTeams && <Teams {...{ teamList }} />}
 
-                    {this.showBonus && <BonusPage {...{ playerData, bonusData }} />}
+                    {this.showBonus && <BonusPage {...{ playerList, bonusList }} />}
 
                 </div>
     }

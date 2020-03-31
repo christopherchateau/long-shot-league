@@ -13,5 +13,5 @@ export const getData = async () => {
 	const data = await Promise.all(
         paths.map(path => get(path))
     )
-	return sortData(data)
+	return data
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import Player from '../Player'
-import { sortByKey } from '../helpers'
+import { sortByKey } from '../../utilities/helpers'
 
 import './Standings.css'
 
-export default ({ playerData, handlePlayerClick }) => {
-    const playerDataSorted = sortByKey(playerData, 'pointTotal').reverse()
+export default ({ playerList, handlePlayerClick }) => {
+    const playerListSorted = sortByKey(playerList, 'pointTotal').reverse()
 
     let counter = 1
-    const formattedPlayers = playerDataSorted.map((player, i) => {
-        i > 0 && player.pointTotal === playerDataSorted[i - 1].pointTotal
+    const formattedPlayers = playerListSorted.map((player, i) => {
+        i > 0 && player.pointTotal === playerListSorted[i - 1].pointTotal
             ? counter++
             : counter = 0
 

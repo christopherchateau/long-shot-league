@@ -1,17 +1,17 @@
 import React from 'react'
 import Bonus from '../Bonus'
-import { sortByKey } from '../helpers'
+import { sortByKey } from '../../utilities/helpers'
 
 import './BonusPage.css'
 
-export default ({ playerData, bonusData }) => {
-    const playersDisplayed = sortByKey(playerData).map(player => {
-        const bonusDataDisplayed = []
+export default ({ playerList, bonusList }) => {
+    const playersDisplayed = sortByKey(playerList).map(player => {
+        const bonusListDisplayed = []
 
-        const playerBonusTotal = bonusData.reduce((total, bonus) => {
+        const playerBonusTotal = bonusList.reduce((total, bonus) => {
             if (bonus.name === player.name) {
-                bonusDataDisplayed.push(
-                    <Bonus bonusData={bonus} key={bonus.id} />
+                bonusListDisplayed.push(
+                    <Bonus bonusList={bonus} key={bonus.id} />
                 )
                 total += bonus.points
             }
@@ -21,7 +21,7 @@ export default ({ playerData, bonusData }) => {
         return <div className='bonus-player' key={player.name}>
 
             <h3 className='bonus-player-name'>{`${player.name} - ${playerBonusTotal}`}</h3>
-            <div>{bonusDataDisplayed}</div>
+            <div>{bonusListDisplayed}</div>
 
         </div>
     })
