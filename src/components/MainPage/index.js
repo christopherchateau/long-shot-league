@@ -4,7 +4,7 @@ import Standings from '../Standings'
 import Teams from '../Teams'
 import BonusPage from '../BonusPage'
 import Errors from '../Errors'
-import { getData } from '../../apiCalls'
+import { getData } from '../../utilities/apiCalls'
 import { sortByKey } from '../helpers'
 import loadingImg from '../../assets/images/loading.gif'
 
