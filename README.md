@@ -7,7 +7,7 @@
 
 ### Primary Technologies
 
-- ReactJS
+- React
 - ExpressJS
 - Knex
 - PostgreSQL
@@ -69,4 +69,4 @@ Eventually I would like the app to fetch tournament data from an outside API in 
 <img src="https://github.com/christopherchateau/long-shot-league/blob/master/src/assets/images/phone-1.png" width="300px" />
 
 ### Contributors
-Chris Chateau: [Github](https://github.com/christopherchateau) <br>
+Chris Chateau: [Github](https://github.com/christopherchateau)
