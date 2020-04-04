@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { DataContext } from '../../contexts/DataContext'
 import PlayerInfo from '../PlayerInfo'
 import Standings from '../Standings'
 import Teams from '../Teams'
@@ -7,92 +8,88 @@ import { sumPoints, sortByKey } from '../../utilities/helpers'
 
 import './MainPage.css'
 
-export default class MainPage extends Component {
-    state = {
-        selectedPlayer: '',
-        standingsDisplay: 'standings',
-        playerList: [],
-        teamList: [],
-        bonusList: [],
-    }
+const MainPage = () => {
+	const {
+		data: { playersData, teamsData, bonusData },
+		display,
+		standingsDisplay,
+	} = useContext(DataContext)
 
-    componentDidMount = () => this.loadData(this.props.data)
+	const [selectedPlayer, setSelectedPlayer] = useState('')
 
-    loadData = ([playerList, teamList, bonusList]) => {
-        const players = playerList.map(({ name }) => {
-            const teams = teamList.filter(({ drafted_by }) => drafted_by === name)
-            const points = sumPoints(teams)
-            const bonuses = this.getPlayerBonuses(name, bonusList)
-            const bonusTotal = sumPoints(bonuses)
-            const pointTotal = points + bonusTotal
+	useEffect(() => {
+		compileStandings()
+	}, [data])
 
-            return {
-                name,
-                teams,
-                points,
-                bonuses,
-                bonusTotal,
-                pointTotal,
-            }
-        })
+	const compileStandings = () => {
+		const players = playersData.map(({ name }) => {
+			const teams = teamsData.filter(
+				({ drafted_by }) => drafted_by === name
+			)
+			const points = sumPoints(teams)
+			const bonuses = this.getPlayerBonuses(name, bonusData)
+			const bonusTotal = sumPoints(bonuses)
+			const pointTotal = points + bonusTotal
 
-        this.setState({
-            playerList: players,
-            teamList: sortByKey(teamList),
-            bonusList,
-        })
-    }
+			return {
+				name,
+				teams,
+				points,
+				bonuses,
+				bonusTotal,
+				pointTotal,
+			}
+		})
 
-    getPlayerBonuses = (name, bonusList) =>
-        bonusList.filter(bonus => bonus.name === name)
+		this.setState({
+			playersData: players,
+			teamsData: sortByKey(teamsData),
+			bonusData,
+		})
+	}
 
-    handlePlayerClick = selectedPlayer =>
-        this.setState({ selectedPlayer, standingsDisplay: 'player info' })
+	const getPlayerBonuses = (name, bonusData) =>
+		bonusData.filter(bonus => bonus.name === name)
 
-    handleBackClick = () =>
-        this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
+	const handlePlayerClick = selectedPlayer =>
+		this.setState({ selectedPlayer, standingsDisplay: 'player info' })
 
-    get showStandings() {
-        return this.props.pageDisplay === 'standings'
-    }
+	const handleBackClick = () =>
+		this.setState({ selectedPlayer: '', standingsDisplay: 'standings' })
 
-    get showTeams() {
-        return this.props.pageDisplay === 'teams'
-    }
+	render = () => {
 
-    get showBonus() {
-        return this.props.pageDisplay === 'bonus'
-    }
+		const selectedPlayerData = playersData.find(
+			player => player.name === selectedPlayer
+		)
 
-    render = () => {
-        const {
-            standingsDisplay,
-            selectedPlayer,
-            playerList,
-            teamList,
-            bonusList,
-        } = this.state
+		const standings =
+			standingsDisplay === 'standings' ? (
+				<Standings
+					{...{
+						playersData,
+						handlePlayerClick: this.handlePlayerClick,
+					}}
+				/>
+			) : (
+				<PlayerInfo
+					{...{
+						selectedPlayerData,
+						handleBackClick: this.handleBackClick,
+					}}
+				/>
+			)
 
-        const selectedPlayerData = playerList.find(
-            player => player.name === selectedPlayer
-        )
+		return (
+			<div className='MainPage'>
+				{this.showStandings && standings}
 
-        const standings = standingsDisplay === 'standings'
-            ? <Standings
-                {...{ playerList, handlePlayerClick: this.handlePlayerClick }}
-            />
-            : <PlayerInfo
-                {...{ selectedPlayerData, handleBackClick: this.handleBackClick }}
-            />
+				{this.showTeams && <Teams {...{ teamsData }} />}
 
-        return <div className='MainPage'>
-
-            {this.showStandings && standings}
-
-            {this.showTeams && <Teams {...{ teamList }} />}
-
-            {this.showBonus && <BonusPage {...{ playerList, bonusList }} />}
-
-        </div>
-    }
+				{this.showBonus && <BonusPage {...{ playersData, bonusData }} />}
+			</div>
+		)
+	}
 }
+
+export default MainPage

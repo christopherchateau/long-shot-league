@@ -10,3 +10,16 @@ export const sortByKey = (input, key = 'name', k = formatKey(key)) =>
     )
 
 const formatKey = input => input.replace(/\s/g, '_')
+
+export const formatApiData = (paths, data) =>
+	data.reduce(
+		(acc, d, i) => {
+			d.error
+				? acc.errors.push(d.error)
+				: (acc[`${paths[i]}Data`] = sortByKey(d))
+
+			return acc
+		},
+		{ errors: [] }
+	)
+

@@ -1,64 +1,51 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../../contexts/DataContext'
 import Header from '../Header/'
 import MainPage from '../MainPage/'
 import Errors from '../Errors'
-import { getData } from '../../utilities/apiCalls'
 import loadingImg from '../../assets/images/loading.gif'
 
 import './App.css'
 
-export default class App extends Component {
-	state = {
-        data: [],
-        errors: [],
-        pageDisplay : 'standings',
-		hideNav: false,
-    }
+const App = () => {
+	const { data } = useContext(DataContext)
 
-    componentDidMount = async () => {
-        const data = await getData()
-        const errors = data.filter(resp => resp.error)
+	// const [display, setDisplayState] = useState('standings')
+	// const [hideNav, setHideNav] = useState(false)
 
-        errors.length
-            ? this.setState({ errors }, this.hideNav())
-            : this.setState({ data })
-    }
+	// const setDisplay = ({ target }) => setDisplayState(target.innerText)
 
-	setPageDisplay = ({ target }) =>
-		this.setState({ pageDisplay: target.innerText })
+	// const hideNav = () => setHideNav(true)
 
-    hideNav = () => this.setState({ hideNav: true })
-    
-    get showLoading() { return !this.state.data.length }
+	const loading = (
+		<img className='loading-img' src={loadingImg} alt='loading' />
+	)
 
-    get showErrors() { return this.state.errors.length }
+	return (
+		<div className='App'>
+			<Header
+				{...{
+					// hideNav,
+					// setDisplay,
+				}}
+			/>
 
-	render = () => {
-        const { data, errors, pageDisplay, hideNav } = this.state
+            {!data
 
-        const loading = <img className='loading-img' src={loadingImg} alt='loading' />
+                ? loading
+                : data.errors.length
 
-		return <div className='App'>
-            <Header
-                {...{
-                    hideNav,
-                    setPageDisplay: this.setPageDisplay,
-                }}
-            />
-
-            {this.showErrors ? <Errors {...{ errors }} />
-
-                    : this.showLoading ? loading
-
-                        : <MainPage
-                            {...{
-                                data,
-                                pageDisplay,
-                                hideNav: this.hideNav,
-                            }}
-                        />
-
-            }
-        </div>
-	}
+                    ? <Errors {...{ errors }} />
+                    : <MainPage
+                        {...{
+                            // data,
+                            // display,
+                            // hideNav: this.hideNav,
+                        }}
+				/>
+			}
+		</div>
+	)
 }
+
+export default App
