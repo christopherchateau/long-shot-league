@@ -59,12 +59,12 @@ export default () => {
         </div>
 
         <div className='player-info-teams'>
-            {teams.map(team =>
+            {teams.map(({ name, points, is_eliminated}) =>
                 <h5
-                    className={team.is_eliminated ? 'eliminated' : null}
-                    key={team.name}
+                    className={is_eliminated ? 'eliminated' : null}
+                    key={name}
                 >
-                    {`${team.name} (${team.points})`}
+                    {`${name} (${points})`}
                 </h5>
             )}
         </div>

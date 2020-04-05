@@ -9,7 +9,7 @@ export default () => {
 	const {
 		data: { playersData },
 	} = useContext(DataContext)
-    // console.log('sfd', playersData)
+
 	const playersDataSorted = sortByKey(playersData, 'pointTotal').reverse()
 
     let counter = 1

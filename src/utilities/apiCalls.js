@@ -13,7 +13,5 @@ const get = async path => {
 
 export const getData = async () => {
 	const data = await Promise.all(paths.map(path => get(path)))
-    const a = format(paths, data)
-    // console.log(a)
-    return a    
+    return format(paths, data) 
 }
