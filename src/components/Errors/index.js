@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../../context/DataContext'
 
 import './Errors.css'
 
-export default ({ errors }) => <div className='error'>
+export default () => {
+	const { errors } = useContext(DataContext)
 
-    <h1 >ERROR</h1>
+	return (
+		<div className='error'>
+			<h1>ERROR</h1>
 
-    {errors.map(({ error }) =>
-        <h3 key={error}>{error}</h3>
-    )}
-
-</div>
+			{errors.map(error =>
+				<h3 key={error}>{error}</h3>
+			)}
+		</div>
+	)
+}

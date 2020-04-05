@@ -24,6 +24,8 @@ export const formatApiData = (paths, data) => {
 export const compilePlayersData = data => {
 	const [playersData, teamsData, bonusData] = data
 
+	if (data.find(d => d.error)) return data
+
 	const compiledPlayersData = playersData.map(({ name, id }) => {
 		const teams = teamsData.filter(
 			({ drafted_by }) => drafted_by === name

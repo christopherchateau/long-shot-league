@@ -1,20 +1,13 @@
 import React, { createContext, useState, useEffect } from 'react'
-import { getData } from '../utilities/apiCalls'
+// import { getData } from '../utilities/apiCalls'
 
-export const DataContext = createContext()
+export const DisplayContext = createContext()
 
-const DataContextProvider = props => {
-	const [data, setData] = useState(null)
+const DisplayContextProvider = props => {
 	const [display, setDisplay] = useState('standings')
 	const [standingsDisplay, setStandingsDisplay] = useState('standings')
 	const [selectedPlayer, setSelectedPlayer] = useState(null)
-	const [hideNav, setHideNav] = useState(false)
-
-	useEffect(() => { loadData() }, [])
-
-	const loadData = async () => {
-		setData(await getData())
-	}
+	// const [hideNav, setHideNav] = useState(false)
 
 	const openPlayerProfile = player => {
 		setSelectedPlayer(player)
@@ -27,24 +20,21 @@ const DataContextProvider = props => {
 	}
 
 	return (
-		<DataContext.Provider
+		<DisplayContext.Provider
 			value={{
-				data,
-				errors: data && data.errors,
-				refreshData: loadData,
 				display,
 				setDisplay,
 				standingsDisplay,
 				openPlayerProfile,
 				closePlayerProfile,
 				selectedPlayer,
-				hideNav,
-				setHideNav,
+				// hideNav,
+				// setHideNav,
 			}}
 		>
 			{props.children}
-		</DataContext.Provider>
+		</DisplayContext.Provider>
 	)
 }
 
-export default DataContextProvider
+export default DisplayContextProvider

@@ -5,13 +5,11 @@ import MainPage from '../MainPage/'
 import Errors from '../Errors'
 import Loading from '../Loading'
 
-
 import './App.css'
 
 const App = () => {
-	const { data } = useContext(DataContext)
-    const errors = data && data.errors
-
+	const { data, errors } = useContext(DataContext)
+	console.log(errors)
 	return (
 		<div className='App'>
 			<Header />
@@ -21,7 +19,7 @@ const App = () => {
                 ? <Loading />
                 : errors.length
 
-                    ? <Errors {...{errors}} />
+                    ? <Errors />
                     : <MainPage />
 			}
 		</div>
