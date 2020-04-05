@@ -12,7 +12,7 @@ const Teams = () => {
 	const [display, setDisplay] = useState('show all')
 	const [teamSort, setTeamSort] = useState('name')
 
-	let filteredTeams = teamsData
+	let filteredTeams = [...teamsData]
 
 	if (display === 'still alive')
 		filteredTeams = teamsData.filter(team => !team.is_eliminated)

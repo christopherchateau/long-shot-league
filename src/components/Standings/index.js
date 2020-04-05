@@ -10,7 +10,7 @@ export default () => {
 		data: { playersData },
 	} = useContext(DataContext)
 
-	const playersDataSorted = sortByKey(playersData, 'pointTotal').reverse()
+	let playersDataSorted = sortByKey([...playersData], 'pointTotal').reverse()
 
     let counter = 1
 	const formattedPlayers = playersDataSorted.map((player, i) => {

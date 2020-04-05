@@ -6,7 +6,8 @@ export const sortByKey = (input, key = 'name', k = formatKey(key)) =>
 const formatKey = input => input.replace(/\s/g, '_')
 
 export const formatApiData = (paths, data) => {
-	const formattedData = data.reduce(
+	const compiledData = compilePlayersData(data)
+	const formattedData = compiledData.reduce(
 		(acc, d, i) => {
 			d.error
 				? acc.errors.push(d.error)
@@ -17,31 +18,34 @@ export const formatApiData = (paths, data) => {
 		{ errors: [] }
 	)
 
-	return compilePlayersData(formattedData)
+	return formattedData
 }
 
 export const compilePlayersData = data => {
-	const { playersData, teamsData, bonusData } = data
-	
-	playersData.forEach(player => {
+	const [playersData, teamsData, bonusData] = data
+
+	const compiledPlayersData = playersData.map(({ name, id }) => {
 		const teams = teamsData.filter(
-			({ drafted_by }) => drafted_by === player.name
+			({ drafted_by }) => drafted_by === name
 		)
 		const points = sumPoints(teams)
-		const bonuses = getPlayerBonuses(player.name, bonusData)
+		const bonuses = getPlayerBonuses(name, bonusData)
 		const bonusTotal = sumPoints(bonuses)
 		const pointTotal = points + bonusTotal
 
-		player.teams = teams
-		player.points = points
-		player.bonuses = bonuses
-		player.bonusTotal = bonusTotal
-		player.pointTotal = pointTotal
+		return {
+			id,
+			name,
+			teams,
+			points,
+			bonuses,
+			pointTotal,
+			bonusTotal,
+		}
 	})
 
-	return data
+	return [compiledPlayersData, teamsData, bonusData]
 }
 
 const getPlayerBonuses = (name, bonusData) =>
 	bonusData.filter(bonus => bonus.name === name)
-

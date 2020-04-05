@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../../context/DataContext'
-import { sortByKey } from '../../utilities/helper'
 import Bonus from '../Bonus'
 
 import './BonusPage.css'
@@ -10,7 +9,7 @@ export default () => {
 		data: { playersData, bonusData },
 	} = useContext(DataContext)
 
-	const playerBonuses = sortByKey(playersData).map(player => {
+	const playerBonuses = playersData.map(player => {
 		const bonuses = []
 
 		const playerBonusTotal = bonusData.reduce((total, bonus) => {
