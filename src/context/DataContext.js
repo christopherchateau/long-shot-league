@@ -7,12 +7,23 @@ const DataContextProvider = props => {
 	const [data, setData] = useState(null)
 	const [display, setDisplay] = useState('standings')
 	const [standingsDisplay, setStandingsDisplay] = useState('standings')
+	const [selectedPlayer, setSelectedPlayer] = useState(null)
 	const [hideNav, setHideNav] = useState(false)
 
 	useEffect(() => { loadData() }, [])
 
 	const loadData = async () => {
 		setData(await getData())
+	}
+
+	const openPlayerProfile = player => {
+		setSelectedPlayer(player)
+        setStandingsDisplay('player info')
+	}
+
+	const closePlayerProfile = () => {
+		setSelectedPlayer(null)
+        setStandingsDisplay('standings')
 	}
 
 	return (
@@ -23,7 +34,9 @@ const DataContextProvider = props => {
 				display,
 				setDisplay,
 				standingsDisplay,
-				setStandingsDisplay,
+				openPlayerProfile,
+				closePlayerProfile,
+				selectedPlayer,
 				hideNav,
 				setHideNav,
 			}}

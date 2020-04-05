@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../../context/DataContext'
 import playerPics from '../../assets/playerPics'
 
 import './PlayerInfo.css'
 
-export default ({
-    handleBackClick,
-    selectedPlayerData: {
-        name,
-        teams,
-        points,
-        bonuses,
-        pointTotal,
-        bonusTotal,
-    },
-}) => {
+export default () => {
+    const {
+        selectedPlayer: {
+            name,
+            teams,
+            points,
+            bonuses,
+            pointTotal,
+            bonusTotal,
+        },
+        closePlayerProfile,
+    } = useContext(DataContext)
+
     const bonus = !bonuses.length
         ? '-none-'
         : bonuses.map(bonus =>
@@ -24,7 +27,7 @@ export default ({
 
     return <div className='PlayerInfo'>
 
-        <button className='back-btn' onClick={handleBackClick}>
+        <button className='back-btn' onClick={closePlayerProfile}>
             X
         </button>
         <h1 className='player-info-name'>{name}</h1>

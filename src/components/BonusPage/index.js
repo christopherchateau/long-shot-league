@@ -1,30 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../../context/DataContext'
+import { sortByKey } from '../../utilities/helper'
 import Bonus from '../Bonus'
-import { sortByKey } from '../../utilities/helpers'
 
 import './BonusPage.css'
 
-export default ({ playerList, bonusList }) => {
-    const playersDisplayed = sortByKey(playerList).map(player => {
-        const bonusListDisplayed = []
+export default () => {
+	const {
+		data: { playersData, bonusData },
+	} = useContext(DataContext)
 
-        const playerBonusTotal = bonusList.reduce((total, bonus) => {
-            if (bonus.name === player.name) {
-                bonusListDisplayed.push(
-                    <Bonus bonusList={bonus} key={bonus.id} />
+	const playerBonuses = sortByKey(playersData).map(player => {
+		const bonuses = []
+
+		const playerBonusTotal = bonusData.reduce((total, bonus) => {
+			if (bonus.name === player.name) {
+
+				bonuses.push(
+                    <Bonus {...{ ...bonus, key: bonus.id }} />
                 )
-                total += bonus.points
+				total += bonus.points
             }
+
             return +total
-        }, 0)
+		}, 0)
 
-        return <div className='bonus-player' key={player.name}>
+		return (
+			<div className='bonus-player' key={player.name}>
+				<h3 className='bonus-player-name'>{`${player.name} - ${playerBonusTotal}`}</h3>
+				<div>{bonuses}</div>
+			</div>
+		)
+	})
 
-            <h3 className='bonus-player-name'>{`${player.name} - ${playerBonusTotal}`}</h3>
-            <div>{bonusListDisplayed}</div>
-
-        </div>
-    })
-
-    return <div className='BonusPage'>{playersDisplayed}</div>
+	return <div className='BonusPage'>{playerBonuses}</div>
 }

@@ -1,70 +1,66 @@
-import React, { Component } from 'react'
-import { sortByKey } from '../../utilities/helpers'
+import React, { useState, useContext } from 'react'
+import { DataContext } from '../../context/DataContext'
+import { sortByKey } from '../../utilities/helper'
 
 import './Teams.css'
 
-export default class Teams extends Component {
-    state = {
-        display: 'show all',
-        teamSort: 'name',
-    }
+const Teams = () => {
+	const {
+		data: { teamsData },
+	} = useContext(DataContext)
 
-    toggleTeamDisplay = () => {
-        let { display } = this.state
-        display === 'show all'
-            ? display = 'still alive'
-            : display = 'show all'
-        this.setState({ display })
-    }
+	const [display, setDisplay] = useState('show all')
+	const [teamSort, setTeamSort] = useState('name')
 
-    toggleTeamSort = () => {
-        let { teamSort } = this.state
-        teamSort === 'name'
-            ? teamSort = 'drafted by'
-            : teamSort = 'name'
-        this.setState({ teamSort })
-    }
+	let filteredTeams = teamsData
 
-    render = () => {
-        let { teamList } = this.props
-        const { display, teamSort } = this.state
+	if (display === 'still alive')
+		filteredTeams = teamsData.filter(team => !team.is_eliminated)
 
-        if (display === 'still alive') {
-            teamList = teamList.filter(team => !team.is_eliminated)
-        }
+	const teams = sortByKey(filteredTeams, teamSort).map(
+		({ name, points, drafted_by, is_eliminated }) => (
+			<div
+				key={name}
+				className={'team'.concat(is_eliminated ? ' red' : ' green')}
+			>
+				<h3>
+					{name} - {points}
+				</h3>
+				<h5>{drafted_by}</h5>
+			</div>
+		)
+	)
 
-        const teams = sortByKey(teamList, teamSort).map(
-            ({ name, points, drafted_by, is_eliminated }) =>
-                <div
-                    key={name}
-                    className={'team'.concat(is_eliminated ? ' red' : ' green')}
-                >
-                    <h3>{name} - {points}</h3>
-                    <h5>{drafted_by}</h5>
-                </div>
-        )
+	const toggleTeamDisplay = () =>
+		display === 'show all'
+			? setDisplay('still alive')
+			: setDisplay('show all')
 
-        return <div className='Teams'>
+	const toggleTeamSort = () =>
+		teamSort === 'name' ? setTeamSort('drafted by') : setTeamSort('name')
 
-            <div className='team-btn-wrapper'>
-                <button
-                    className='teams-toggle-btn'
-                    onClick={this.toggleTeamDisplay}
-                >
-                    {display}
-                </button>
-                <button
-                    className='teams-display-btn'
-                    onClick={this.toggleTeamSort}
-                >
-                    {teamSort}
-                </button>
-            </div>
+	return (
+		<div className='Teams'>
+			<div className='team-btn-wrapper'>
+				<button
+					className='teams-toggle-btn'
+					onClick={toggleTeamDisplay}
+				>
+					{display}
+				</button>
+				<button
+					className='teams-display-btn'
+					onClick={toggleTeamSort}
+				>
+					{teamSort}
+				</button>
+			</div>
 
-            <br />
+			<br />
 
-            <div className='teams-wrapper'>{teams}</div>
-
-        </div>
-    }
+			<div className='teams-wrapper'>{teams}</div>
+		</div>
+	)
 }
+
+export default Teams

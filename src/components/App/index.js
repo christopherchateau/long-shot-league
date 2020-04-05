@@ -1,48 +1,28 @@
 import React, { useContext } from 'react'
-import { DataContext } from '../../contexts/DataContext'
+import { DataContext } from '../../context/DataContext'
 import Header from '../Header/'
 import MainPage from '../MainPage/'
 import Errors from '../Errors'
-import loadingImg from '../../assets/images/loading.gif'
+import Loading from '../Loading'
+
 
 import './App.css'
 
 const App = () => {
 	const { data } = useContext(DataContext)
-
-	// const [display, setDisplayState] = useState('standings')
-	// const [hideNav, setHideNav] = useState(false)
-
-	// const setDisplay = ({ target }) => setDisplayState(target.innerText)
-
-	// const hideNav = () => setHideNav(true)
-
-	const loading = (
-		<img className='loading-img' src={loadingImg} alt='loading' />
-	)
+    const errors = data && data.errors
 
 	return (
 		<div className='App'>
-			<Header
-				{...{
-					// hideNav,
-					// setDisplay,
-				}}
-			/>
+			<Header />
 
             {!data
 
-                ? loading
-                : data.errors.length
+                ? <Loading />
+                : errors.length
 
-                    ? <Errors {...{ errors }} />
-                    : <MainPage
-                        {...{
-                            // data,
-                            // display,
-                            // hideNav: this.hideNav,
-                        }}
-				/>
+                    ? <Errors {...{errors}} />
+                    : <MainPage />
 			}
 		</div>
 	)

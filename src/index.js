@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-import DataContextProvider from './contexts/DataContext'
+import DataContextProvider from './context/DataContext'
 import * as serviceWorker from './serviceWorker'
 
 import './index.css'
