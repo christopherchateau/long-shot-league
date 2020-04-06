@@ -11,11 +11,19 @@ const Teams = () => {
 
 	const [display, setDisplay] = useState('show all')
 	const [teamSort, setTeamSort] = useState('name')
+	const [searchInput, setSearchInput] = useState('')
 
 	let filteredTeams = [...teamsData]
 
 	if (display === 'still alive')
-		filteredTeams = teamsData.filter(team => !team.is_eliminated)
+		filteredTeams = filteredTeams.filter(
+			({ is_eliminated }) => !is_eliminated
+		)
+
+	if (searchInput)
+		filteredTeams = filteredTeams.filter(({ name }) =>
+			name.toLowerCase().includes(searchInput.toLowerCase())
+		)
 
 	const teams = sortByKey(filteredTeams, teamSort).map(
 		({ name, points, drafted_by, is_eliminated }) => (
@@ -39,24 +47,30 @@ const Teams = () => {
 	const toggleTeamSort = () =>
 		teamSort === 'name' ? setTeamSort('drafted by') : setTeamSort('name')
 
+	const handleSearchInput = ({ target }) => setSearchInput(target.value)
+
 	return (
 		<div className='Teams'>
-			<div className='team-btn-wrapper'>
+			<div className='team-controls'>
 				<button
 					className='teams-toggle-btn'
 					onClick={toggleTeamDisplay}
 				>
 					{display}
 				</button>
-				<button
-					className='teams-display-btn'
-					onClick={toggleTeamSort}
-				>
+
+				<button className='teams-display-btn' onClick={toggleTeamSort}>
 					{teamSort}
 				</button>
-			</div>
 
-			<br />
+				<input
+					className='search'
+					placeholder='search'
+					type='text'
+					value={searchInput}
+					onChange={handleSearchInput}
+				/>
+			</div>
 
 			<div className='teams-wrapper'>{teams}</div>
 		</div>

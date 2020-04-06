@@ -4,7 +4,7 @@ import playerPics from '../../assets/playerPics'
 
 import './Player.css'
 
-export default ({ player, player: { name, pointTotal }, rank }) => {
+export default ({ player, rank, player: { name, pointTotal } }) => {
 	const { openPlayerProfile } = useContext(DisplayContext)
 
 	return (

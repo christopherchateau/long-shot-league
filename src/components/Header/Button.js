@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { DisplayContext } from '../../context/DisplayContext'
+
 import './Button.css'
 
 export default ({ name }) => {
