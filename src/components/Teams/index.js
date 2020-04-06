@@ -59,10 +59,6 @@ const Teams = () => {
 					{display}
 				</button>
 
-				<button className='teams-display-btn' onClick={toggleTeamSort}>
-					{teamSort}
-				</button>
-
 				<input
 					className='teams-search'
 					placeholder='search'
@@ -70,6 +66,11 @@ const Teams = () => {
 					value={searchInput}
 					onChange={handleSearchInput}
 				/>
+
+				<button className='teams-display-btn' onClick={toggleTeamSort}>
+					{teamSort}
+				</button>
+
 			</div>
 
 			<div className='teams-wrapper'>{teams}</div>

@@ -15,7 +15,7 @@ export default () => {
 	return (
 		<div
 			className='Header'
-			style={{ gridTemplateRows: hideNav ? '120px' : '90px 30px' }}
+			style={{ gridTemplateRows: hideNav ? '120px' : '80px 40px' }}
 		>
 			<div className='logo'>
 				<h1>LONG SH{bball}T LEAGUE</h1>
