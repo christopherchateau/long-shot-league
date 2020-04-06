@@ -1,15 +1,15 @@
 .App {
-    background: url('../../assets/images/court.jpg') center no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    display: grid;
-    grid-template-rows: 120px 1fr;
-    min-height: 100vh;
-    transition: all 0.5s ease-in-out;
+	background: url('../../assets/images/court.jpg') center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	display: grid;
+	grid-template-rows: 120px 1fr;
+	min-height: 100vh;
+	transition: all 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 760px) {
-    .App {
-        grid-template-rows: 90px 1fr;
-    }
+	.App {
+		grid-template-rows: 90px 1fr;
+	}
 }

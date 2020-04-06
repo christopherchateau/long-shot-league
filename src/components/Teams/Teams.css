@@ -69,8 +69,8 @@
 	.teams-toggle-btn,
 	.teams-display-btn,
 	.teams-search {
-        width: 300px;
-    }
+		width: 300px;
+	}
 }
 
 @media screen and (max-width: 760px) {

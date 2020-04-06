@@ -20,9 +20,9 @@ export default () => {
 
 			{!hideNav && (
 				<div className='header-nav'>
-					{buttons.map(name => (
+					{buttons.map(name =>
 						<Button {...{ name, key: name }} />
-					))}
+					)}
 				</div>
 			)}
 		</div>

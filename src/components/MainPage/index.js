@@ -15,11 +15,13 @@ const MainPage = () => {
 
 	return (
 		<div className='MainPage'>
+
 			{pageDisplay === 'standings' && standings}
 
 			{pageDisplay === 'teams' && <Teams />}
 
 			{pageDisplay === 'bonus' && <BonusPage />}
+
 		</div>
 	)
 }
