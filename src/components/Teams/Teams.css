@@ -1,92 +1,97 @@
 .Teams {
-    opacity: 0.9;
-    text-align: center;
+	opacity: 0.9;
+	text-align: center;
 }
 
 .teams-wrapper {
-    background: silver;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px auto;
-    padding: 10px;
-    width: 70vw;
+	background: silver;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px auto;
+	padding: 10px;
+	width: 70vw;
 }
 
 .team {
-    background: rgb(101, 101, 101);
-    color: white;
-    margin: 5px auto;
-    width: 240px;
+	background: rgb(101, 101, 101);
+	color: white;
+	margin: 5px auto;
+	width: 240px;
 }
 
 .red {
-    background: rgb(108, 0, 0);
+	background: rgb(108, 0, 0);
 }
 
 .green {
-    background: rgb(0, 87, 0);
+	background: rgb(0, 87, 0);
 }
 
 .team-controls {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto 2rem;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 auto 2rem;
 }
 
 .teams-toggle-btn,
 .teams-display-btn {
-    background: rgb(84, 84, 84);
-    border: 2px solid silver;
-    color: white;
-    cursor: pointer;
-    font-size: 24px;
-    margin-top: 30px;
-    padding: 10px 30px;
-    transition: all 0.5s ease-out;
-    width: 220px;
+	background: rgb(84, 84, 84);
+	border: 2px solid silver;
+	color: white;
+	cursor: pointer;
+	font-size: 24px;
+	margin-top: 30px;
+	padding: 10px 30px;
+	transition: all 0.5s ease-out;
+	width: 220px;
 }
 
 .teams-toggle-btn:hover,
 .teams-display-btn:hover {
-    background: rgb(242, 242, 242);
-    color: rgb(84, 84, 84);
-    transition: all 0.5s ease-out;
+	background: rgb(242, 242, 242);
+	color: rgb(84, 84, 84);
+	transition: all 0.5s ease-out;
 }
 
 .teams-search {
-    height: 3rem;
-    font-size: 24px;
-    margin-top: 30px;
-    width: 220px;
+	height: 3rem;
+	font-size: 24px;
+	margin-top: 30px;
+	width: 220px;
 }
 
 @media screen and (max-width: 960px) {
-    .team-controls {
-        flex-direction: column;
-        align-items: center;
+	.team-controls {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.teams-toggle-btn,
+	.teams-display-btn,
+	.teams-search {
+        width: 300px;
     }
 }
 
 @media screen and (max-width: 760px) {
-    .team-btn-wrapper {
-        align-items: center;
-        flex-direction: column;
-        width: auto;
-    }
+	.team-btn-wrapper {
+		align-items: center;
+		flex-direction: column;
+		width: auto;
+	}
 }
 
 @media screen and (max-width: 685px) {
-    .team {
-        width: 90%;
-    }
+	.team {
+		width: 90%;
+	}
 }
 
 @media screen and (max-width: 500px) {
-    .teams-display-btn,
-    .teams-toggle-btn,
-    .teams-search {
-        font-size: 16px;
-        height: 42px;
-        width: 160px;
-    }
+	.teams-display-btn,
+	.teams-toggle-btn,
+	.teams-search {
+		font-size: 16px;
+		height: 42px;
+	}
 }

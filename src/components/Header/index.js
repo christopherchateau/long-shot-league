@@ -13,21 +13,18 @@ export default () => {
 	const { hideNav } = useContext(DataContext)
 
 	return (
-		<div
-			className='Header'
-			style={{ gridTemplateRows: hideNav ? '120px' : '80px 40px' }}
-		>
+		<div className='Header'>
 			<div className='logo'>
 				<h1>LONG SH{bball}T LEAGUE</h1>
 			</div>
 
-			{!hideNav &&
+			{!hideNav && (
 				<div className='header-nav'>
-					{buttons.map(name =>
+					{buttons.map(name => (
 						<Button {...{ name, key: name }} />
-					)}
+					))}
 				</div>
-			}
+			)}
 		</div>
 	)
 }

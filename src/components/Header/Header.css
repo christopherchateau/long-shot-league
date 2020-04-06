@@ -1,88 +1,78 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 .Header {
-    background-image: linear-gradient(to right, transparent, silver, silver, transparent);
-    display: grid;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0.9;
-    transition: all 0.5s ease-in-out;
+	background-image: linear-gradient(
+		to right,
+		transparent,
+		silver,
+		silver,
+		transparent
+	);
+	display: grid;
+	font-family: 'Roboto', sans-serif;
+	opacity: 0.9;
+	transition: all 0.5s ease-in-out;
 }
 
 .logo {
-    align-items: center;
-    display: flex;
-    font-size: 1.8rem;
-    justify-content: center;
+	align-items: center;
+	display: flex;
+	font-size: 1.8rem;
+	justify-content: center;
+}
+
+.logo > h1 {
+	margin: 0;
 }
 
 .bball-img {
-    height: 55px;
-    position: relative;
-    top: 8px;
+	height: 55px;
+	position: relative;
+	top: 8px;
 }
 
 .header-nav {
-    align-items: center;
-    display: flex;
-    font-size: 1.4rem;
-    justify-content: space-evenly;
-    margin: auto;
-    width: 500px;
+	align-items: center;
+	display: flex;
+	font-size: 1.4rem;
+	justify-content: space-evenly;
+	margin: auto;
+	width: 500px;
 }
 
 @media screen and (max-width: 760px) {
-    .Header {
-        background: darkgrey;
-    }
+	.Header {
+		background: darkgrey;
+		grid-template-rows: 60px 30px;
+	}
 
-    .logo {
-        font-size: 1.35rem;
-    }
+	.logo {
+		font-size: 1.1rem;
+	}
 
-    .bball-img {
-        height: 50px;
-        position: relative;
-        top: 7px;
-    }
+	.bball-img {
+		height: 30px;
+		position: relative;
+		top: 3px;
+	}
 
-    .header-nav {
-        width: 350px;
-    }
+	.header-nav {
+		font-size: 1rem;
+	}
 }
 
 @media screen and (max-width: 500px) {
-    .logo {
-        font-size: 1.1rem;
-    }
+	.header-nav {
+		width: 100vw;
+	}
 
-    .bball-img {
-        height: 30px;
-        position: relative;
-        top: 3px;
-    }
+	.logo {
+		font-size: 0.7rem;
+	}
 
-    .header-nav {
-        width: 300px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .Header {
-        grid-template-rows: 60px 30px;
-    }
-
-    .logo {
-        font-size: 0.7rem;
-    }
-
-    .bball-img {
-        height: 25px;
-        position: relative;
-        top: 3px;
-    }
-
-    .header-nav {
-        width: 280px;
-    }
-
+	.bball-img {
+		height: 25px;
+		position: relative;
+		top: 3px;
+	}
 }
