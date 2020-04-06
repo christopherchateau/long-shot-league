@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react'
 export const DisplayContext = createContext()
 
 const DisplayContextProvider = props => {
-	const [display, setDisplay] = useState('standings')
+	const [pageDisplay, setPageDisplay] = useState('standings')
 	const [standingsDisplay, setStandingsDisplay] = useState('standings')
 	const [selectedPlayer, setSelectedPlayer] = useState(null)
 
@@ -20,8 +20,8 @@ const DisplayContextProvider = props => {
 	return (
 		<DisplayContext.Provider
 			value={{
-				display,
-				setDisplay,
+				pageDisplay,
+				setPageDisplay,
 				selectedPlayer,
 				standingsDisplay,
 				openPlayerProfile,

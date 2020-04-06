@@ -9,7 +9,7 @@ import './MainPage.css'
 
 const MainPage = () => {
 	const {
-		display,
+		pageDisplay,
 		standingsDisplay,
 	} = useContext(DisplayContext)
 
@@ -19,11 +19,11 @@ const MainPage = () => {
 	return (
 		<div className='MainPage'>
 
-			{display === 'standings' && standings}
+			{pageDisplay === 'standings' && standings}
 
-			{display === 'teams' && <Teams />}
+			{pageDisplay === 'teams' && <Teams />}
 
-			{display === 'bonus' && <BonusPage />}
+			{pageDisplay === 'bonus' && <BonusPage />}
 
 		</div>
 	)
