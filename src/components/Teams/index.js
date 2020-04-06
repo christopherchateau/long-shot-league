@@ -64,7 +64,7 @@ const Teams = () => {
 				</button>
 
 				<input
-					className='search'
+					className='teams-search'
 					placeholder='search'
 					type='text'
 					value={searchInput}

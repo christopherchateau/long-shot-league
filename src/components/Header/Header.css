@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 .Header {
-    background-image: linear-gradient(
-        to right,
-        transparent,
-        rgb(130, 130, 130),
-        darkgrey,
-        transparent
-    );
+    background-image: linear-gradient(to right, transparent, silver, silver, transparent);
     display: grid;
     font-family: 'Roboto', sans-serif;
     opacity: 0.9;
