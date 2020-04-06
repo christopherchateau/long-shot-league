@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { DataContext } from '../../context/DataContext'
+import { DisplayContext } from '../../context/DisplayContext'
 import PlayerInfo from '../PlayerInfo'
 import Standings from '../Standings'
 import Teams from '../Teams'
@@ -11,7 +11,7 @@ const MainPage = () => {
 	const {
 		display,
 		standingsDisplay,
-	} = useContext(DataContext)
+	} = useContext(DisplayContext)
 
 	const standings =
 		standingsDisplay === 'standings' ? <Standings /> : <PlayerInfo />

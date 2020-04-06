@@ -5,41 +5,23 @@ export const DataContext = createContext()
 
 const DataContextProvider = props => {
 	const [data, setData] = useState(null)
-	const [display, setDisplay] = useState('standings')
-	const [standingsDisplay, setStandingsDisplay] = useState('standings')
-	const [selectedPlayer, setSelectedPlayer] = useState(null)
-	const [hideNav, setHideNav] = useState(false)
+
+	const loading = !data
+	const errors = data && data.errors
+	const hideNav = data && data.errors.length
 
 	useEffect(() => { loadData() }, [])
 
-	const loadData = async () => {
-		setData(await getData())
-	}
-
-	const openPlayerProfile = player => {
-		setSelectedPlayer(player)
-        setStandingsDisplay('player info')
-	}
-
-	const closePlayerProfile = () => {
-		setSelectedPlayer(null)
-        setStandingsDisplay('standings')
-	}
+	const loadData = async () => setData(await getData())
 
 	return (
 		<DataContext.Provider
 			value={{
 				data,
-				errors: data && data.errors,
-				refreshData: loadData,
-				display,
-				setDisplay,
-				standingsDisplay,
-				openPlayerProfile,
-				closePlayerProfile,
-				selectedPlayer,
+				errors,
+				loading,
 				hideNav,
-				setHideNav,
+				refreshData: loadData,
 			}}
 		>
 			{props.children}

@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
-// import { getData } from '../utilities/apiCalls'
+import React, { createContext, useState } from 'react'
 
 export const DisplayContext = createContext()
 
@@ -7,16 +6,15 @@ const DisplayContextProvider = props => {
 	const [display, setDisplay] = useState('standings')
 	const [standingsDisplay, setStandingsDisplay] = useState('standings')
 	const [selectedPlayer, setSelectedPlayer] = useState(null)
-	// const [hideNav, setHideNav] = useState(false)
 
 	const openPlayerProfile = player => {
 		setSelectedPlayer(player)
-        setStandingsDisplay('player info')
+		setStandingsDisplay('player info')
 	}
 
 	const closePlayerProfile = () => {
 		setSelectedPlayer(null)
-        setStandingsDisplay('standings')
+		setStandingsDisplay('standings')
 	}
 
 	return (
@@ -24,12 +22,10 @@ const DisplayContextProvider = props => {
 			value={{
 				display,
 				setDisplay,
+				selectedPlayer,
 				standingsDisplay,
 				openPlayerProfile,
 				closePlayerProfile,
-				selectedPlayer,
-				// hideNav,
-				// setHideNav,
 			}}
 		>
 			{props.children}

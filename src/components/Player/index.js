@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { DataContext } from '../../context/DataContext'
+import { DisplayContext } from '../../context/DisplayContext'
 import playerPics from '../../assets/playerPics'
 
 import './Player.css'
 
 export default ({ player, player: { name, pointTotal }, rank }) => {
-	const { openPlayerProfile } = useContext(DataContext)
+	const { openPlayerProfile } = useContext(DisplayContext)
 
 	return (
 		<div className='Player' onClick={() => openPlayerProfile(player)}>

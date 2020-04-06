@@ -8,20 +8,15 @@ import Loading from '../Loading'
 import './App.css'
 
 const App = () => {
-	const { data, errors } = useContext(DataContext)
-	console.log(errors)
+	const { loading, errors } = useContext(DataContext)
+
 	return (
 		<div className='App'>
+
 			<Header />
 
-            {!data
+			{loading ? <Loading /> : errors.length ? <Errors /> : <MainPage />}
 
-                ? <Loading />
-                : errors.length
-
-                    ? <Errors />
-                    : <MainPage />
-			}
 		</div>
 	)
 }

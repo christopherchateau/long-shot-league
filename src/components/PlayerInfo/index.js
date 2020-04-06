@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { DataContext } from '../../context/DataContext'
+import { DisplayContext } from '../../context/DisplayContext'
 import playerPics from '../../assets/playerPics'
 
 import './PlayerInfo.css'
@@ -15,7 +15,7 @@ export default () => {
             bonusTotal,
         },
         closePlayerProfile,
-    } = useContext(DataContext)
+    } = useContext(DisplayContext)
 
     const bonus = !bonuses.length
         ? '-none-'

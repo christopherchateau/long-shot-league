@@ -7,9 +7,7 @@ import './Header.css'
 
 const buttons = ['standings', 'teams', 'bonus']
 
-const bball = (
-	<img className='bball-img' src={bballImg} alt='long shot league' />
-)
+const bball = <img className='bball-img' src={bballImg} alt='long shot league' />
 
 export default () => {
 	const { hideNav } = useContext(DataContext)
