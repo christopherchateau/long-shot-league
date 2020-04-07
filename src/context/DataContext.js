@@ -7,7 +7,7 @@ const DataContextProvider = props => {
 	const [data, setData] = useState(null)
 
 	const loading = !data
-	const errors = data && data.errors
+	const errors = data && data.errors || null
 	const hideNav = data && data.errors.length
 
 	useEffect(() => { loadData() }, [])

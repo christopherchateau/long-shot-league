@@ -1,149 +1,179 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
+.overlay {
+	animation: overlay 0.4s ease-in-out forwards;
+	background: rgb(242, 242, 242);
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
+}
+
+@keyframes overlay {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.98;
+	}
+}
+
 .PlayerInfo {
-    align-items: center;
-    background: rgb(147, 147, 147);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-    justify-content: space-between;
-    height: 70vh;
-    margin: 2rem 0;
-    min-height: 700px;
-    opacity: 0.96;
-    padding: 0 5%;
-    position: relative;
-    width: 50vw;
+	align-items: center;
+	animation: modal 0.7s ease-in-out forwards;
+	background: rgb(147, 147, 147);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	justify-content: space-between;
+	margin: auto;
+	max-height: 100vh;
+	overflow: auto;
+	padding: 0 5%;
+	position: absolute;
+	right: 0;
+	left: 0;
+	width: 50vw;
+}
+
+@keyframes modal {
+	0% {
+		opacity: 0;
+		top: 100vh;
+	}
+	100% {
+		opacity: 0.98;
+		top: 0;
+	}
 }
 
 .player-info-name {
-    font-size: 36px;
+	font-size: 36px;
 }
 
 .player-info-pic {
-    height: 200px;
-    margin-bottom: 10px;
-    opacity: 1.3;
+	height: 200px;
+	margin-bottom: 10px;
+	opacity: 1.3;
 }
 
 .player-info-teams,
 .player-info-totals {
-    align-items: center;
-    display: flex;
-    height: 100px;
-    justify-content: space-around;
-    padding: 5px;
-    width: 100%;
-    font-size: 28px;
+	align-items: center;
+	display: flex;
+	height: 100px;
+	justify-content: space-around;
+	padding: 5px;
+	width: 100%;
+	font-size: 28px;
 }
 
 .player-info-totals {
-    line-height: 1.5;
-    min-height: 100px;
-    text-align: center;
-    width: 80%;
+	line-height: 1.5;
+	min-height: 100px;
+	text-align: center;
+	width: 80%;
 }
 
 .player-info-teams {
-    min-height: 60px;
+	min-height: 60px;
 }
 
 .player-info-num {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 50px;
-    margin: 0;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 50px;
+	margin: 0;
 }
 
 .player-info-bonus {
-    background: grey;
-    margin-bottom: 30px;
-    min-height: 200px;
-    overflow: auto;
-    text-align: center;
-    width: 100%;
+	background: grey;
+	margin-bottom: 30px;
+	min-height: 200px;
+	overflow: auto;
+	text-align: center;
+	width: 100%;
 }
 
 .player-info-bonus-title {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 40px;
-    margin: 0;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 40px;
+	margin: 0;
 }
 
 .eliminated {
-    color: rgb(160, 0, 0);
-    text-decoration: line-through;
+	color: rgb(160, 0, 0);
+	text-decoration: line-through;
 }
 
 .back-btn {
-    background: rgb(84, 84, 84);
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 36px;
-    min-height: 50px;
-    padding: 10px 20px;
-    position: absolute;
-    right: 0px;
-    transition: all 0.5s ease-out;
+	background: rgb(84, 84, 84);
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 36px;
+	min-height: 50px;
+	padding: 10px 20px;
+	position: absolute;
+	right: 0px;
+	transition: all 0.5s ease-out;
 }
 
 .back-btn:hover {
-    background: rgb(227, 227, 227);
-    color: rgb(84, 84, 84);
-    transition: all 0.5s ease-out;
+	background: rgb(227, 227, 227);
+	color: rgb(84, 84, 84);
+	transition: all 0.5s ease-out;
 }
 
 @media screen and (max-width: 1300px) {
-    .player-info-teams,
-    .player-info-totals {
-        font-size: 22px;
-    }
+	.player-info-teams,
+	.player-info-totals {
+		font-size: 22px;
+	}
 }
 
 @media screen and (max-width: 1000px) {
-    .PlayerInfo {
-        height: auto;
-        width: 70vw;
-    }
+	.PlayerInfo {
+		height: auto;
+		width: 70vw;
+	}
 
-    .player-info-teams {
-        flex-direction: column;
-        min-height: 140px;
-    }
+	.player-info-teams {
+		flex-direction: column;
+		min-height: 140px;
+	}
 
-    .player-info-teams h5 {
-        margin: 0;
-    }
+	.player-info-teams h5 {
+		margin: 0;
+	}
 
-    .player-info-num {
-        font-size: 40px;
-    }
+	.player-info-num {
+		font-size: 40px;
+	}
 }
 
 @media screen and (max-width: 500px) {
-    .PlayerInfo {
-        width: 80vw;
-    }
+	.PlayerInfo {
+		width: 80vw;
+	}
 
-    .player-info-teams,
-    .player-info-totals {
-        font-size: 18px;
-    }
+	.player-info-teams,
+	.player-info-totals {
+		font-size: 18px;
+	}
 
-    .player-info-num {
-        font-size: 30px;
-    }
+	.player-info-num {
+		font-size: 30px;
+	}
 
-    .back-btn {
-        font-size: 22px;
-    }
+	.back-btn {
+		font-size: 22px;
+	}
 
-    .player-info-bonus {
-        font-size: 12px;
-    }
+	.player-info-bonus {
+		font-size: 12px;
+	}
 
-    .player-info-bonus-title {
-        font-size: 30px;
-    }
+	.player-info-bonus-title {
+		font-size: 30px;
+	}
 }
