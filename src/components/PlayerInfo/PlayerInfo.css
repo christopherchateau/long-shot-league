@@ -2,7 +2,7 @@
 
 .overlay {
 	animation: overlay 0.4s ease-in-out forwards;
-	background: rgb(242, 242, 242);
+	background: rgb(255, 255, 255);
 	height: 100vh;
 	position: absolute;
 	width: 100vw;
@@ -13,7 +13,7 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 0.98;
+		opacity: 0.97;
 	}
 }
 
@@ -26,13 +26,13 @@
 	flex-direction: column;
 	font-family: 'Roboto', sans-serif;
 	justify-content: space-between;
+	left: 0;
 	margin: auto;
 	max-height: 100vh;
 	overflow: auto;
 	padding: 0 5%;
 	position: absolute;
 	right: 0;
-	left: 0;
 	width: 50vw;
 }
 
@@ -151,11 +151,18 @@
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 	.PlayerInfo {
-		width: 80vw;
-	}
+        padding: 0;
+        width: 100vw;
+    }
+    
+    .player-info-bonus {
+        width: 80%;
+    }
+}
 
+@media screen and (max-width: 500px) {
 	.player-info-teams,
 	.player-info-totals {
 		font-size: 18px;
