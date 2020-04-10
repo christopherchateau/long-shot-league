@@ -4,6 +4,7 @@ import Header from '../Header/'
 import MainPage from '../MainPage/'
 import Errors from '../Errors'
 import Loading from '../Loading'
+import Overlay from './Overlay'
 
 import './App.css'
 
@@ -12,11 +13,11 @@ const App = () => {
 
 	return (
 		<div className='App'>
-
 			<Header />
 
 			{loading ? <Loading /> : errors.length ? <Errors /> : <MainPage />}
 
+			<Overlay />
 		</div>
 	)
 }

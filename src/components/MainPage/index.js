@@ -8,19 +8,17 @@ import BonusPage from '../BonusPage'
 import './MainPage.css'
 
 const MainPage = () => {
-	const { pageDisplay, selectedPlayer } = useContext(DisplayContext)
+	const { pageDisplay } = useContext(DisplayContext)
 
 	return (
 		<div className='MainPage'>
-
 			{pageDisplay === 'standings' && <Standings />}
 
 			{pageDisplay === 'teams' && <Teams />}
 
 			{pageDisplay === 'bonus' && <BonusPage />}
 
-			{selectedPlayer && <PlayerInfo />}
-
+			<PlayerInfo />
 		</div>
 	)
 }

@@ -1,10 +1,9 @@
 .Teams {
-	opacity: 0.9;
+	opacity: 0.94;
 	text-align: center;
 }
 
 .teams-wrapper {
-	background: silver;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 10px auto;
@@ -13,9 +12,9 @@
 }
 
 .team {
-	background: rgb(101, 101, 101);
 	color: white;
-	margin: 5px auto;
+	margin: 10px auto;
+	opacity: .95;
 	width: 240px;
 }
 

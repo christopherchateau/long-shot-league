@@ -16,7 +16,7 @@ export default ({ player, rank, player: { name, pointTotal } }) => {
 			<div className='player-pic-wrapper'>
 				<img
 					className='player-pic'
-					src={playerPics[name]}
+					src={playerPics[name] || playerPics.playerImg}
 					alt='player avatar'
 				/>
 			</div>
