@@ -6,11 +6,10 @@ import './Overlay.css'
 export default () => {
 	const { showModal } = useContext(DisplayContext)
 	return (
-		<div
+		<table
 			className={'overlay'.concat(
 				showModal ? ' showOverlay' : ' hideOverlay'
 			)}
-			style={{ top: `${window.scrollY}px` }}
 		/>
 	)
 }

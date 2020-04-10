@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 export const DisplayContext = createContext()
 
@@ -27,7 +27,7 @@ const DisplayContextProvider = props => {
 
 	const closePlayerProfile = () => {
 		setShowModal(false)
-		enableBodyScroll(mainPageEl)
+		clearAllBodyScrollLocks()
 	}
 
 	return (

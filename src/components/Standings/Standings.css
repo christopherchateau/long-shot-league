@@ -1,6 +1,6 @@
 .Standings {
     background: silver;
-    height: 75vh;
+    height: 80vh;
     opacity: 0.96;
     overflow: auto;
     padding: 0 5%;
@@ -32,6 +32,10 @@
 }
 
 @media screen and (max-width: 760px) {
+    .Standings {
+        width: 70vw;
+    }
+
     .current-standings {
         height: 80vh;
         width: 80%;
@@ -49,7 +53,6 @@
 
 @media screen and (max-width: 500px) {
     .Standings {
-        height: auto;
         margin: 20px 0;
         width: 80vw;
     }
