@@ -146,8 +146,8 @@
 
 @media screen and (max-width: 500px) {
 	.showModal {
-		max-height: 85vh;
-		min-height: 85vh;
+		max-height: 80vh;
+		min-height: 80vh;
 	}
 
 	.player-info-teams,
