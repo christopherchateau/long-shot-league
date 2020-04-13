@@ -70,7 +70,7 @@
 .player-info-bonus {
 	background: grey;
 	margin-bottom: 30px;
-	/* min-height: 200px; */
+	min-height: 200px;
 	overflow: auto;
 	text-align: center;
 	width: 100%;
@@ -145,6 +145,12 @@
 }
 
 @media screen and (max-width: 500px) {
+	.showModal {
+		margin-top: 5vh;
+		max-height: 85vh;
+		min-height: 85vh;
+	}
+
 	.player-info-teams,
 	.player-info-totals {
 		font-size: 18px;
