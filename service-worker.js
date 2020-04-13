@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/long-shot-league/precache-manifest.d2e7300a7ccc365f0a41e6a4df9cbcb7.js"
+  "/long-shot-league/precache-manifest.2fd1b5a4ea56b8ddc8340f6cfbcab259.js"
 );
 
 workbox.clientsClaim();
