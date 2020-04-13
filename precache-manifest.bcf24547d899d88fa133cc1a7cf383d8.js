@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/matt.fa20e678.jpg"
   },
   {
-    "revision": "8608ed0d639f6fa1afc0",
-    "url": "/long-shot-league/static/css/main.6caf6fe8.chunk.css"
+    "revision": "eb5a7f0e4b425cb5ab32",
+    "url": "/long-shot-league/static/css/main.dacda5bc.chunk.css"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/Chris.63618149.jpg"
   },
   {
-    "revision": "8608ed0d639f6fa1afc0",
+    "revision": "eb5a7f0e4b425cb5ab32",
     "url": "/long-shot-league/static/js/main.4e343d20.chunk.js"
   },
   {
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/court.58e6fc11.jpg"
   },
   {
-    "revision": "c7a1989f98613202330283824292f4d3",
+    "revision": "cd672a1b5ed1aa27f4623e9113c54a6c",
     "url": "/long-shot-league/index.html"
   }
 ];
