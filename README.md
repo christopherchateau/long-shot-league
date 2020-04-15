@@ -8,7 +8,7 @@
 
 ### Primary Technologies
 
--   React (:star: Refactored in 2020 using React Hooks and Context :leftwards_arrow_with_hook:)
+-   React - :star: Refactored in 2020 using React Context and Hooks :leftwards_arrow_with_hook:
 -   ExpressJS
 -   Knex
 -   PostgreSQL
