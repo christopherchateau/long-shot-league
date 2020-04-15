@@ -17,7 +17,7 @@ const App = () => {
 
 			{loading ? <Loading /> : errors.length ? <Errors /> : <MainPage />}
 
-			{/* <Overlay /> */}
+			<Overlay />
 		</div>
 	)
 }
