@@ -156,7 +156,6 @@
 }
 
 @media screen and (max-width: 500px) {
-	.PlayerInfo,
 	.showModal {
 		max-height: 85vh;
 		min-height: 85vh;
