@@ -7,7 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	font-family: 'Roboto', sans-serif;
-	justify-content: space-between;
+	justify-content: space-around;
 	left: 0;
 	margin: auto;
 	max-height: 0;
@@ -34,7 +34,7 @@
 }
 
 .player-info-pic {
-	max-height: 200px;
+	height: 200px;
 	margin-bottom: 10px;
 	opacity: 1.3;
 }
@@ -43,22 +43,20 @@
 .player-info-totals {
 	align-items: center;
 	display: flex;
-	height: 100px;
 	justify-content: space-around;
-	padding: 5px;
 	width: 100%;
 	font-size: 28px;
 }
 
 .player-info-totals {
 	line-height: 1.5;
-	min-height: 100px;
+	height: 100px;
 	text-align: center;
 	width: 80%;
 }
 
 .player-info-teams {
-	min-height: 60px;
+	height: 60px;
 }
 
 .player-info-num {
@@ -70,7 +68,7 @@
 .player-info-bonus {
 	background: grey;
 	margin-bottom: 30px;
-	min-height: 200px;
+	height: 200px;
 	overflow: auto;
 	text-align: center;
 	width: 100%;
@@ -96,7 +94,8 @@
 	min-height: 50px;
 	padding: 10px 20px;
 	position: absolute;
-	right: 0px;
+	right: 0;
+	top: 0;
 	transition: all 0.5s ease-out;
 }
 
@@ -121,7 +120,7 @@
 
 	.player-info-teams {
 		flex-direction: column;
-		min-height: 140px;
+		height: 140px;
 	}
 
 	.player-info-teams h5 {
@@ -139,6 +138,18 @@
 		width: 100vw;
 	}
 
+	.player-info-name {
+		font-size: 30px;
+	}
+
+	.player-info-pic {
+		height: 100px;
+	}
+
+	.player-info-totals {
+		height: 60px;
+	}
+
 	.player-info-bonus {
 		width: 80%;
 	}
@@ -146,13 +157,17 @@
 
 @media screen and (max-width: 500px) {
 	.showModal {
-		max-height: 80vh;
-		min-height: 80vh;
+		max-height: 85vh;
+		min-height: 85vh;
 	}
 
 	.player-info-teams,
 	.player-info-totals {
-		font-size: 18px;
+		font-size: 16px;
+	}
+
+	.player-info-teams {
+		height: 100px;
 	}
 
 	.player-info-num {
@@ -165,6 +180,7 @@
 
 	.player-info-bonus {
 		font-size: 12px;
+		min-height: 80px;
 	}
 
 	.player-info-bonus-title {
