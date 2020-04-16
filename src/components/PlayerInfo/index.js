@@ -20,9 +20,9 @@ export default () => {
 
 	const bonus = !bonuses.length
 		? '-none-'
-		: bonuses.map(({ description, points }) => (
+		: bonuses.map(({ description, points }) =>
 				<h3 key={description}>{`${description} - ${points}pt`}</h3>
-		  ))
+		  )
 
 	return (
 		<div className={'PlayerInfo'.concat(showModal ? ' showModal' : '')}>

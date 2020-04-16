@@ -6,7 +6,7 @@ import './Overlay.css'
 export default () => {
 	const { showModal, closePlayerProfile } = useContext(DisplayContext)
 	return (
-		<table
+		<div
 			className={'overlay'.concat(showModal ? ' showOverlay' : ' hideOverlay')}
 			onClick={closePlayerProfile}
 		/>
