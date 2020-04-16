@@ -6,15 +6,14 @@
 .teams-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 10px auto;
-	padding: 10px;
+	margin: auto;
 	width: 70vw;
 }
 
 .team {
 	color: white;
 	margin: 10px auto;
-	opacity: .95;
+	opacity: 0.95;
 	width: 240px;
 }
 
@@ -29,7 +28,7 @@
 .team-controls {
 	display: flex;
 	justify-content: space-evenly;
-	margin: 0 auto 2rem;
+	margin: 0 auto 1.2rem;
 }
 
 .teams-toggle-btn,
