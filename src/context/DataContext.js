@@ -15,11 +15,11 @@ const DataContextProvider = props => {
 			value={{
 				data,
 				loading: !data,
-				teamsData: data && data.teams,
-				bonusData: data && data.bonus,
-				playersData: data && data.players,
 				hideNav: data && data.errors.length,
 				errors: (data && data.errors) || null,
+				teamsData: data && data.teamsData,
+				bonusData: data && data.bonusData,
+				playersData: data && data.playersData,
 				refreshData: loadData,
 			}}
 		>

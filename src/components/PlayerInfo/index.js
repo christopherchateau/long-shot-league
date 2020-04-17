@@ -21,7 +21,7 @@ export default () => {
 	const bonus = !bonuses.length
 		? '-none-'
 		: bonuses.map(({ description, points }) =>
-				<h3 key={description}>{`${description} - ${points}pt`}</h3>
+				<h5 key={description}>{`${description} - ${points}pt`}</h5>
 		  )
 
 	return (

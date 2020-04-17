@@ -80,6 +80,10 @@
 	margin: 0;
 }
 
+.player-info-bonus > h5 {
+	margin: 8px auto;
+}
+
 .eliminated {
 	color: rgb(160, 0, 0);
 	text-decoration: line-through;
