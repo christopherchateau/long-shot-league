@@ -17,12 +17,12 @@ const DisplayContextProvider = props => {
 	const [selectedPlayer, setSelectedPlayer] = useState(defaultPlayer)
 	const [showModal, setShowModal] = useState(false)
 
-	const mainPageEl = document.querySelector('.App')
+	const appEl = document.querySelector('.App')
 
 	const openPlayerProfile = player => {
 		setSelectedPlayer(player)
 		setShowModal(true)
-		disableBodyScroll(mainPageEl)
+		disableBodyScroll(appEl)
 	}
 
 	const closePlayerProfile = () => {

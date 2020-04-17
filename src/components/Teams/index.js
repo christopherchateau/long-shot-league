@@ -5,9 +5,7 @@ import { sortByKey } from '../../utilities/helper'
 import './Teams.css'
 
 const Teams = () => {
-	const {
-		data: { teamsData },
-	} = useContext(DataContext)
+	const { teamsData } = useContext(DataContext)
 
 	const [display, setDisplay] = useState('show all')
 	const [teamSort, setTeamSort] = useState('name')

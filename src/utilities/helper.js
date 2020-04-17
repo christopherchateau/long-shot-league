@@ -11,7 +11,7 @@ export const formatApiData = (paths, data) => {
 		(acc, d, i) => {
 			d.error
 				? acc.errors.push(d.error)
-				: (acc[`${paths[i]}Data`] = sortByKey(d))
+				: (acc[`${paths[i]}`] = sortByKey(d))
 
 			return acc
 		},

@@ -5,9 +5,7 @@ import Bonus from '../Bonus'
 import './BonusPage.css'
 
 export default () => {
-	const {
-		data: { playersData, bonusData },
-	} = useContext(DataContext)
+	const { playersData, bonusData } = useContext(DataContext)
 
 	const playerBonuses = playersData.map(player => {
 		const bonuses = []

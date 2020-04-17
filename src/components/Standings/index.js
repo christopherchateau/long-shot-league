@@ -6,9 +6,7 @@ import { sortByKey } from '../../utilities/helper'
 import './Standings.css'
 
 export default () => {
-	const {
-		data: { playersData },
-	} = useContext(DataContext)
+	const { playersData } = useContext(DataContext)
 
 	let playersDataSorted = sortByKey([...playersData], 'pointTotal').reverse()
 
