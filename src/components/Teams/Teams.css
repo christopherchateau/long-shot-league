@@ -6,7 +6,7 @@
 .teams-wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	margin: auto;
+	margin: 0 auto 3rem;
 	width: 70vw;
 }
 
