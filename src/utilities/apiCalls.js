@@ -12,6 +12,10 @@ const get = async path => {
 }
 
 export const getData = async () => {
-	const data = await Promise.all(paths.map(path => get(path)))
-	return format(paths, data)
+	try {
+		const data = await Promise.all(paths.map(path => get(path)))
+		return format(paths, data)
+	} catch {
+		return { errors: ['Data failed to load :-('] }
+	}
 }
