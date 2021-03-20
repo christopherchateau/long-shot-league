@@ -10,11 +10,11 @@ export default () => {
 	const playerBonuses = playersData.map(player => {
 		const bonuses = []
 
-		const playerBonusTotal = bonusData.reduce((total, bonus) => {
+		const playerBonusTotal = bonusData.reduce((total, bonus, index) => {
 			if (bonus.name === player.name) {
 
 				bonuses.push(
-                    <Bonus {...{ ...bonus, key: bonus.id }} />
+                    <Bonus {...{ ...bonus, key: index }} />
                 )
 				total += bonus.points
             }

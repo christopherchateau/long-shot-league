@@ -1,17 +1,17 @@
-export const sumPoints = pts => pts.reduce((a, b) => a + b.points, 0)
+export const sumPoints = pts => pts.reduce((a, b) => a + Number(b.points), 0)
 
 export const sortByKey = (input, key = 'name', k = formatKey(key)) =>
 	input.sort((a, b) => (a[k] < b[k] ? -1 : 1))
 
 const formatKey = input => input.replace(/\s/g, '_')
 
-export const formatApiData = (paths, data) => {
+export const formatApiData = (endpoints, data) => {
 	const compiledData = compilePlayersData(data)
 	const formattedData = compiledData.reduce(
 		(acc, d, i) => {
 			d.error
 				? acc.errors.push(d.error)
-				: (acc[`${paths[i]}Data`] = sortByKey(d))
+				: (acc[`${endpoints[i]}Data`] = sortByKey(d))
 
 			return acc
 		},
@@ -26,7 +26,7 @@ export const compilePlayersData = data => {
 
 	if (data.find(d => d.error)) return data
 
-	const compiledPlayersData = playersData.map(({ name, id }) => {
+	const compiledPlayersData = playersData.map(({ name }) => {
 		const teams = teamsData.filter(
 			({ drafted_by }) => drafted_by === name
 		)
@@ -36,13 +36,12 @@ export const compilePlayersData = data => {
 		const pointTotal = points + bonusTotal
 
 		return {
-			id,
 			name,
 			teams,
 			points,
 			bonuses,
-			pointTotal,
 			bonusTotal,
+			pointTotal,
 		}
 	})
 

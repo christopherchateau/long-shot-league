@@ -1,20 +1,24 @@
 import { formatApiData as format } from './helper.js'
 
-let endpoint
-// endpoint = 'http://localhost:3001/api/v1/longshotleague'
-endpoint = 'https://long-shot-league-be.herokuapp.com/api/v1/longshotleague'
+const endpoints = {
+	players: 'https://sheet.best/api/sheets/bfb453e8-3009-419f-895b-e7bdccdec797',
+	teams: 'https://sheet.best/api/sheets/2ab21c69-d5f6-4aff-9a76-c6c7ad90592b',
+	bonus: 'https://sheet.best/api/sheets/a61b2b38-2cae-45ba-ae74-4fbb69ea296b',
+}
 
-const paths = ['players', 'teams', 'bonus']
+const endpointKeys = Object.keys(endpoints)
 
-const get = async path => {
-	const response = await fetch(`${endpoint}/${path}`)
+const get = async endpoint => {
+	const response = await fetch(endpoint)
 	return await response.json()
 }
 
 export const getData = async () => {
 	try {
-		const data = await Promise.all(paths.map(path => get(path)))
-		return format(paths, data)
+		const data = await Promise.all(
+			endpointKeys.map(key => get(endpoints[key]))
+		)
+		return format(endpointKeys, data)
 	} catch {
 		return { errors: ['Data failed to load :-('] }
 	}

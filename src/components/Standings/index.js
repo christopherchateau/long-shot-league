@@ -9,14 +9,16 @@ export default () => {
 	const { playersData } = useContext(DataContext)
 
 	let playersDataSorted = sortByKey([...playersData], 'pointTotal').reverse()
+	let counter = 1
 
-    let counter = 1
 	const formattedPlayers = playersDataSorted.map((player, i) => {
+
 		i > 0 && player.pointTotal === playersDataSorted[i - 1].pointTotal
 			? counter++
             : counter = 0
 
 		const rank = i + 1 - counter
+
 		return <Player {...{ player, rank, key: player.name }} />
 	})
 

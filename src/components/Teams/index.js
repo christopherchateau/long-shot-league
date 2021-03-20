@@ -15,7 +15,7 @@ const Teams = () => {
 
 	if (display === 'still alive')
 		filteredTeams = filteredTeams.filter(
-			({ is_eliminated }) => !is_eliminated
+			({ is_eliminated }) => is_eliminated === 'FALSE'
 		)
 
 	if (searchInput)
@@ -27,7 +27,7 @@ const Teams = () => {
 		({ name, points, drafted_by, is_eliminated }) => (
 			<div
 				key={name}
-				className={'team'.concat(is_eliminated ? ' red' : ' green')}
+				className={'team'.concat(is_eliminated === 'TRUE' ? ' red' : ' green')}
 			>
 				<h3>
 					{name} - {points}
