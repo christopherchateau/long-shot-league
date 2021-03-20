@@ -54,7 +54,7 @@
 @media screen and (max-width: 500px) {
     .Standings {
         margin: 20px 0;
-        height: 70vh;
+        height: auto;
         width: 85vw;
     }
 
