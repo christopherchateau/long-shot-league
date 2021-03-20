@@ -1,5 +1,5 @@
 {
-  "main.css": "/long-shot-league/static/css/main.f709adea.chunk.css",
+  "main.css": "/long-shot-league/static/css/main.170176a6.chunk.css",
   "main.js": "/long-shot-league/static/js/main.f9852afb.chunk.js",
   "main.js.map": "/long-shot-league/static/js/main.f9852afb.chunk.js.map",
   "runtime~main.js": "/long-shot-league/static/js/runtime~main.9e0388a0.js",
@@ -7,9 +7,9 @@
   "static/js/2.6b0ec793.chunk.js": "/long-shot-league/static/js/2.6b0ec793.chunk.js",
   "static/js/2.6b0ec793.chunk.js.map": "/long-shot-league/static/js/2.6b0ec793.chunk.js.map",
   "index.html": "/long-shot-league/index.html",
-  "precache-manifest.4f3f5835dd35ff80a727cc0a58dcc7ce.js": "/long-shot-league/precache-manifest.4f3f5835dd35ff80a727cc0a58dcc7ce.js",
+  "precache-manifest.fdf57e5d323113e35d98915aa8a7eab8.js": "/long-shot-league/precache-manifest.fdf57e5d323113e35d98915aa8a7eab8.js",
   "service-worker.js": "/long-shot-league/service-worker.js",
-  "static/css/main.f709adea.chunk.css.map": "/long-shot-league/static/css/main.f709adea.chunk.css.map",
+  "static/css/main.170176a6.chunk.css.map": "/long-shot-league/static/css/main.170176a6.chunk.css.map",
   "static/media/Chris.jpg": "/long-shot-league/static/media/Chris.63618149.jpg",
   "static/media/brent.jpg": "/long-shot-league/static/media/brent.69f8a180.jpg",
   "static/media/App.css": "/long-shot-league/static/media/court.58e6fc11.jpg",
