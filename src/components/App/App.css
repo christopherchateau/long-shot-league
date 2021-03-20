@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 760px) {
 	.App {
-		background-size: auto;
+		background: black;
 		grid-template-rows: 90px 1fr;
 	}
 }
