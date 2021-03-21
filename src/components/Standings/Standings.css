@@ -1,10 +1,20 @@
 .Standings {
+    animation: mainpage 0.5s ease-out forwards;
     background: silver;
     height: 80vh;
     opacity: 0.96;
     overflow: auto;
     padding: 0 5%;
     width: 60vw;
+}
+
+@keyframes mainpage {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .current-standings-header {

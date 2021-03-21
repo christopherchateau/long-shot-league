@@ -2,16 +2,6 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	animation: mainpage 0.5s ease-out forwards;
-}
-
-@keyframes mainpage {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
 }
 
 @media screen and (max-width: 500px) {
