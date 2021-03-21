@@ -1,13 +1,13 @@
 {
   "main.css": "/long-shot-league/static/css/main.55de1a55.chunk.css",
-  "main.js": "/long-shot-league/static/js/main.f2e4b645.chunk.js",
-  "main.js.map": "/long-shot-league/static/js/main.f2e4b645.chunk.js.map",
+  "main.js": "/long-shot-league/static/js/main.f2536d99.chunk.js",
+  "main.js.map": "/long-shot-league/static/js/main.f2536d99.chunk.js.map",
   "runtime~main.js": "/long-shot-league/static/js/runtime~main.9e0388a0.js",
   "runtime~main.js.map": "/long-shot-league/static/js/runtime~main.9e0388a0.js.map",
-  "static/js/2.6b0ec793.chunk.js": "/long-shot-league/static/js/2.6b0ec793.chunk.js",
-  "static/js/2.6b0ec793.chunk.js.map": "/long-shot-league/static/js/2.6b0ec793.chunk.js.map",
+  "static/js/2.512b9023.chunk.js": "/long-shot-league/static/js/2.512b9023.chunk.js",
+  "static/js/2.512b9023.chunk.js.map": "/long-shot-league/static/js/2.512b9023.chunk.js.map",
   "index.html": "/long-shot-league/index.html",
-  "precache-manifest.39cd0f74a62a17c10d0fdee3c72f55f6.js": "/long-shot-league/precache-manifest.39cd0f74a62a17c10d0fdee3c72f55f6.js",
+  "precache-manifest.3eafad2dd56f192efa1e6d229757f996.js": "/long-shot-league/precache-manifest.3eafad2dd56f192efa1e6d229757f996.js",
   "service-worker.js": "/long-shot-league/service-worker.js",
   "static/css/main.55de1a55.chunk.css.map": "/long-shot-league/static/css/main.55de1a55.chunk.css.map",
   "static/media/Chris.jpg": "/long-shot-league/static/media/Chris.3fd80372.jpg",
@@ -16,6 +16,7 @@
   "static/media/loading.gif": "/long-shot-league/static/media/loading.a21746f5.gif",
   "static/media/matt.jpg": "/long-shot-league/static/media/matt.fa20e678.jpg",
   "static/media/paul-davis.jpg": "/long-shot-league/static/media/paul-davis.24adc892.jpg",
+  "static/media/reed.png": "/long-shot-league/static/media/reed.1cc74aac.png",
   "static/media/scott.jpg": "/long-shot-league/static/media/scott.49b338aa.jpg",
   "static/media/todd.png": "/long-shot-league/static/media/todd.401918f0.png"
 }
