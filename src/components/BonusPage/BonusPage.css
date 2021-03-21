@@ -30,6 +30,7 @@
 
     .bonus-player,
     .bonus-player-name {
+        height: auto;
         width: 90%;
     }
 }
