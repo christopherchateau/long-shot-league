@@ -15,7 +15,7 @@ const App = () => {
 		<div className='App'>
 			<Header />
 
-			{loading ? <Loading /> : errors.length ? <Errors /> : <MainPage />}
+			{loading ? <Loading /> : errors.length ? <Errors /> : <Loading />}
 
 			<Overlay />
 		</div>

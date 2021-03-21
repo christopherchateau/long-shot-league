@@ -2,3 +2,9 @@
 	height: 150px;
 	margin: auto;
 }
+
+@media screen and (max-width: 500px) {
+	.loading-img {
+		height: 100px;
+	}
+}
