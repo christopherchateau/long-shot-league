@@ -1,4 +1,5 @@
 import { formatApiData as format } from './helper.js'
+import { players, teams, bonus } from '../data/mockData'
 
 const endpoints = {
 	players: 'https://sheet.best/api/sheets/bfb453e8-3009-419f-895b-e7bdccdec797',
@@ -6,11 +7,14 @@ const endpoints = {
 	bonus: 'https://sheet.best/api/sheets/a61b2b38-2cae-45ba-ae74-4fbb69ea296b',
 }
 
+// const endpoints = { players, teams, bonus }
+
 const endpointKeys = Object.keys(endpoints)
 
 const get = async endpoint => {
 	const response = await fetch(endpoint)
 	return await response.json()
+	// return endpoint
 }
 
 export const getData = async () => {
