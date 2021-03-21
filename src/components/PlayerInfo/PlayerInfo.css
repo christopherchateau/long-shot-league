@@ -186,6 +186,8 @@
 
 	.back-btn {
 		font-size: 22px;
+		height: 100px;
+		width: 80px;
 	}
 
 	.player-info-bonus {
