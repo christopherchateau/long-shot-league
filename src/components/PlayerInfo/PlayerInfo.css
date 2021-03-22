@@ -183,7 +183,6 @@
 		display: block;
 	}
 
-	.player-info-name,
 	.player-info-totals,
 	.player-info-teams {
 		margin-left: 5vw;
@@ -194,8 +193,7 @@
 	}
 
 	.player-info-name {
-		font-size: 30px;
-		margin-bottom: 0;
+		display: none;
 	}
 
 	.player-info-pic {
