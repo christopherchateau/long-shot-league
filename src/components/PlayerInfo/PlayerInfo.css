@@ -35,7 +35,16 @@
 	background-size: cover;
 	display: none;
 	height: 100%;
-	opacity: 0.6;
+	position: absolute;
+	width: 100%;
+	z-index: -10;
+}
+
+.darkener {
+	background-color: black;
+	display: none;
+	height: 100%;
+	opacity: 0.5;
 	position: absolute;
 	width: 100%;
 	z-index: -10;
@@ -166,11 +175,11 @@
 		width: 100vw;
 	}
 
-	.player-info-teams {
-		align-items: flex-start;
+	.background-img {
+		display: block;
 	}
 
-	.background-img {
+	.darkener {
 		display: block;
 	}
 
@@ -178,6 +187,10 @@
 	.player-info-totals,
 	.player-info-teams {
 		margin-left: 5vw;
+	}
+
+	.player-info-teams {
+		align-items: flex-start;
 	}
 
 	.player-info-name {

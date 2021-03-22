@@ -33,6 +33,8 @@ export default () => {
 				style={{ backgroundImage: `url(${pic})` }}
 			/>
 
+			<div className='darkener' />
+
 			<button className='back-btn' onClick={closePlayerProfile}>
 				X
 			</button>
