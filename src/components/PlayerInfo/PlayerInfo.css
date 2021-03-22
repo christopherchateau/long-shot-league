@@ -185,7 +185,7 @@
 
 	.player-info-totals,
 	.player-info-teams {
-		text-shadow: black 2px 2px;
+		text-shadow: black 1px 1px;
 		margin-left: 5vw;
 	}
 
