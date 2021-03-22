@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "3f0ec8b6d48e21618bbf",
-    "url": "/long-shot-league/static/css/main.487c0d25.chunk.css"
+    "revision": "7b773dc35487c5dc3516",
+    "url": "/long-shot-league/static/css/main.465f858c.chunk.css"
   },
   {
-    "revision": "3f0ec8b6d48e21618bbf",
+    "revision": "7b773dc35487c5dc3516",
     "url": "/long-shot-league/static/js/main.35531cb5.chunk.js"
   },
   {
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/court.58e6fc11.jpg"
   },
   {
-    "revision": "bcde796ff77e07639faa051e1de2d00b",
+    "revision": "7d366dfa9a7247d96e43fcbd4ff5c90b",
     "url": "/long-shot-league/index.html"
   }
 ];
