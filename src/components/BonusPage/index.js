@@ -16,7 +16,7 @@ export default () => {
 				bonuses.push(
                     <Bonus {...{ ...bonus, key: index }} />
                 )
-				total += bonus.points
+				total += Number(bonus.points)
             }
 
             return +total
