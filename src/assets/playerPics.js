@@ -1,6 +1,6 @@
 import Brent from '../assets/images/brent.jpg'
 import Chris from '../assets/images/Chris.jpg'
-import Matt from '../assets/images/matt.jpg'
+import Matt from '../assets/images/matt.png'
 import Scott from '../assets/images/scott.jpg'
 import Todd from '../assets/images/todd.png'
 import Reed from '../assets/images/reed.png'
