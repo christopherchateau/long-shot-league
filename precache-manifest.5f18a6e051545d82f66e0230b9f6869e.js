@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "520962455cbeb0e24ddb",
+    "revision": "024520cb54f686420515",
     "url": "/long-shot-league/static/css/main.24b5667e.chunk.css"
   },
   {
-    "revision": "520962455cbeb0e24ddb",
-    "url": "/long-shot-league/static/js/main.9c2f503c.chunk.js"
+    "revision": "024520cb54f686420515",
+    "url": "/long-shot-league/static/js/main.7232c008.chunk.js"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
     "url": "/long-shot-league/static/js/runtime~main.9e0388a0.js"
   },
   {
-    "revision": "6ee8f53b51af3c49e99e",
-    "url": "/long-shot-league/static/js/2.512b9023.chunk.js"
+    "revision": "c824819ebf6c9d1313c5",
+    "url": "/long-shot-league/static/js/2.9c686eec.chunk.js"
   },
   {
     "revision": "69f8a180bc5167bb4717525face0420a",
@@ -40,6 +40,10 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/reed.1cc74aac.png"
   },
   {
+    "revision": "873403227765b7313a7afd5a9b84e9d3",
+    "url": "/long-shot-league/static/media/alex.87340322.png"
+  },
+  {
     "revision": "24adc892729eb7149d6073343a111aa0",
     "url": "/long-shot-league/static/media/paul-davis.24adc892.jpg"
   },
@@ -52,7 +56,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/court.58e6fc11.jpg"
   },
   {
-    "revision": "0b316e5105404019eec2a48dfb6b58f0",
+    "revision": "f808734b57d16e0e5843cb926a96b91b",
     "url": "/long-shot-league/index.html"
   }
 ];
