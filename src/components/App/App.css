@@ -25,4 +25,8 @@ body:before {
 	.App {
 		grid-template-rows: 90px 1fr;
 	}
+
+	body:before {
+		height: 70rem;
+	}
 }
