@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "e0197fd024dc66fd8709",
-    "url": "/long-shot-league/static/css/main.d395ba86.chunk.css"
+    "revision": "27c311b6663b70395b37",
+    "url": "/long-shot-league/static/css/main.f4484c0e.chunk.css"
   },
   {
-    "revision": "e0197fd024dc66fd8709",
-    "url": "/long-shot-league/static/js/main.7232c008.chunk.js"
+    "revision": "27c311b6663b70395b37",
+    "url": "/long-shot-league/static/js/main.06281e6d.chunk.js"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
     "url": "/long-shot-league/static/js/runtime~main.9e0388a0.js"
   },
   {
-    "revision": "c824819ebf6c9d1313c5",
-    "url": "/long-shot-league/static/js/2.9c686eec.chunk.js"
+    "revision": "7f657a9c836ddf098ad8",
+    "url": "/long-shot-league/static/js/2.a7602660.chunk.js"
   },
   {
     "revision": "69f8a180bc5167bb4717525face0420a",
@@ -44,6 +44,10 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/alex.87340322.png"
   },
   {
+    "revision": "8751da8c0d19649567e5cc23f6d8ce0c",
+    "url": "/long-shot-league/static/media/kirkwood.8751da8c.jpeg"
+  },
+  {
     "revision": "24adc892729eb7149d6073343a111aa0",
     "url": "/long-shot-league/static/media/paul-davis.24adc892.jpg"
   },
@@ -52,11 +56,11 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/loading.a21746f5.gif"
   },
   {
-    "revision": "58e6fc112b41c0948b77a1fdad30e50c",
-    "url": "/long-shot-league/static/media/court.58e6fc11.jpg"
+    "revision": "3270819665ddad856c600d08425353e7",
+    "url": "/long-shot-league/static/media/breslin.32708196.jpeg"
   },
   {
-    "revision": "b9896f937430f0275bed20bb1f210d46",
+    "revision": "5707fbc7b56eee55538c939b15abde2c",
     "url": "/long-shot-league/index.html"
   }
 ];
