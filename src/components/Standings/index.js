@@ -24,11 +24,11 @@ export default () => {
 
 	return (
 		<div className='Standings'>
-			<div className='current-standings-header'>
+			{/* <div className='current-standings-header'>
 				<h5>rank</h5>
 				<h5>name</h5>
 				<h5 className='current-standings-points'>points</h5>
-			</div>
+			</div> */}
 
 			{formattedPlayers}
 

@@ -1,8 +1,6 @@
 .Standings {
     animation: fade-in 0.5s ease-out forwards;
-    background: silver;
     height: 80vh;
-    opacity: 0.96;
     overflow: auto;
     padding: 0 10px;
     width: 60vw;
