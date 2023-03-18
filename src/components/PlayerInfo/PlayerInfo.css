@@ -43,7 +43,7 @@
 	background-color: black;
 	display: none;
 	height: 100%;
-	opacity: 0.5;
+	opacity: 0.6;
 	position: absolute;
 	width: 100%;
 	z-index: -10;
@@ -190,6 +190,7 @@
 
 	.player-info-teams {
 		align-items: flex-start;
+		margin-bottom: 40px;
 	}
 
 	.player-info-name {
@@ -215,11 +216,12 @@
 	}
 
 	.player-info-bonus {
-		background: grey;
+		display: none;
+		/* background: grey;
 		height: auto;
 		overflow: auto;
 		text-align: center;
-		width: 100%;
+		width: 100%; */
 	}
 
 	.back-btn {

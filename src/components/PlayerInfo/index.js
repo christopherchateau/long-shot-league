@@ -72,11 +72,11 @@ export default () => {
 				))}
 			</div>
 
-			<div className='player-info-bonus'>
-				<h3 className='player-info-bonus-title'>bonus</h3>
+				<div className='player-info-bonus'>
+					<h3 className='player-info-bonus-title'>bonus</h3>
 
-				{bonus}
-			</div>
+					{bonus}
+				</div>
 		</div>
 	)
 }
