@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "27c311b6663b70395b37",
-    "url": "/long-shot-league/static/css/main.f4484c0e.chunk.css"
+    "revision": "a365fa413f03edc0d171",
+    "url": "/long-shot-league/static/css/main.6d502428.chunk.css"
   },
   {
-    "revision": "27c311b6663b70395b37",
-    "url": "/long-shot-league/static/js/main.06281e6d.chunk.js"
+    "revision": "a365fa413f03edc0d171",
+    "url": "/long-shot-league/static/js/main.755b8e84.chunk.js"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/breslin.32708196.jpeg"
   },
   {
-    "revision": "5707fbc7b56eee55538c939b15abde2c",
+    "revision": "1f5cb7cfcc59de4c6c904df9d7ed7c26",
     "url": "/long-shot-league/index.html"
   }
 ];
