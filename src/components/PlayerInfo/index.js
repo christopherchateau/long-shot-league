@@ -27,7 +27,10 @@ export default () => {
 		  ))
 
 	return (
-		<div className={'PlayerInfo'.concat(showModal ? ' showModal' : '')}>
+		<div
+			onClick={closePlayerProfile}
+			className={'PlayerInfo'.concat(showModal ? ' showModal' : '')}
+		>
 			<div
 				className='background-img'
 				style={{ backgroundImage: `url(${pic})` }}
@@ -35,9 +38,9 @@ export default () => {
 
 			<div className='darkener' />
 
-			<button className='back-btn' onClick={closePlayerProfile}>
+			{/* <button className='back-btn' onClick={closePlayerProfile}>
 				X
-			</button>
+			</button> */}
 
 			<h1 className='player-info-name'>{name}</h1>
 
