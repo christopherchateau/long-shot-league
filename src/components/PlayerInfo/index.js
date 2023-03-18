@@ -28,7 +28,7 @@ export default () => {
 
 	return (
 		<div
-			onClick={closePlayerProfile}
+			onTouchStart={closePlayerProfile}
 			className={'PlayerInfo'.concat(showModal ? ' showModal' : '')}
 		>
 			<div
