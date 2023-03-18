@@ -43,10 +43,6 @@
 }
 
 @media screen and (max-width: 760px) {
-    .Standings {
-        width: 70vw;
-    }
-
     .current-standings {
         height: 80vh;
         width: 80%;
@@ -64,16 +60,11 @@
 
 @media screen and (max-width: 600px) {
     .Standings {
-        height: 70vh;
         margin: 20px 0;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .Standings {
-        width: 85vw;
-    }
-
     .current-standings-points {
         left: 30px;
     }

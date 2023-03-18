@@ -1,5 +1,5 @@
 import { formatApiData as format } from './helper.js'
-// import { players, teams, bonus } from '../data/mockData'
+import { players, teams, bonus } from '../data/mockData'
 
 const endpoints = {
 	players: 'https://sheet.best/api/sheets/bfb453e8-3009-419f-895b-e7bdccdec797',

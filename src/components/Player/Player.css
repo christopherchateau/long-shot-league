@@ -46,6 +46,7 @@
 @media screen and (max-width: 900px) {
     .Player {
         font-size: 22px;
+        width: 80vw;
     }
 }
 
