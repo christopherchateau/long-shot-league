@@ -4,8 +4,8 @@
 	background-image: linear-gradient(
 		to right,
 		transparent,
-		silver,
-		silver,
+		rgb(84, 84, 84),
+		rgb(84, 84, 84),
 		transparent
 	);
 	display: grid;
@@ -16,6 +16,7 @@
 
 .logo {
 	align-items: center;
+	color: white;
 	display: flex;
 	font-size: 1.8rem;
 	justify-content: center;
@@ -23,6 +24,7 @@
 
 .logo > h1 {
 	margin: 0;
+	font-weight: 100;
 }
 
 .bball-img {
@@ -33,6 +35,7 @@
 
 .header-nav {
 	align-items: center;
+	color: white;
 	display: flex;
 	font-size: 1.4rem;
 	justify-content: space-evenly;
@@ -42,7 +45,7 @@
 
 @media screen and (max-width: 760px) {
 	.Header {
-		background: darkgrey;
+		background: rgb(84, 84, 84);
 		grid-template-rows: 60px 30px;
 	}
 

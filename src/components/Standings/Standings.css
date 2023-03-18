@@ -1,9 +1,12 @@
 .Standings {
     animation: fade-in 0.5s ease-out forwards;
-    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: auto;
     padding: 0 10px;
-    width: 60vw;
+    width: 100vw;
 }
 
 @keyframes fade-in {

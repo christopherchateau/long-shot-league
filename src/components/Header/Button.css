@@ -1,5 +1,7 @@
 .btn {
+    color: white;
     cursor: pointer;
+    font-weight: 100;
     margin: 0;
     padding: 5px;
     text-align: center;
@@ -9,7 +11,7 @@
 }
 
 .btn:hover {
-    color: white;
+    color: lightgrey;
     transition: all 0.5s ease-out;
 }
 
