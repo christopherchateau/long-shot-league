@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "0ac4f274cc60fb9a2f3b",
+    "revision": "29a6b1d646d7370f7d6c",
     "url": "/long-shot-league/static/css/main.326d1815.chunk.css"
   },
   {
-    "revision": "0ac4f274cc60fb9a2f3b",
-    "url": "/long-shot-league/static/js/main.927d899c.chunk.js"
+    "revision": "29a6b1d646d7370f7d6c",
+    "url": "/long-shot-league/static/js/main.cc370871.chunk.js"
   },
   {
     "revision": "e7331fb8f4a17e3eaa2f",
     "url": "/long-shot-league/static/js/runtime~main.9e0388a0.js"
   },
   {
-    "revision": "7f657a9c836ddf098ad8",
-    "url": "/long-shot-league/static/js/2.a7602660.chunk.js"
+    "revision": "9102dd923540374643d4",
+    "url": "/long-shot-league/static/js/2.25a184d2.chunk.js"
   },
   {
     "revision": "69f8a180bc5167bb4717525face0420a",
@@ -36,16 +36,28 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/todd.401918f0.png"
   },
   {
-    "revision": "1cc74aacf762095f0d2280ceb998afc6",
-    "url": "/long-shot-league/static/media/reed.1cc74aac.png"
+    "revision": "b4c4ead9a2eb1f1023950454edfe29d2",
+    "url": "/long-shot-league/static/media/reed.b4c4ead9.jpg"
   },
   {
     "revision": "873403227765b7313a7afd5a9b84e9d3",
     "url": "/long-shot-league/static/media/alex.87340322.png"
   },
   {
-    "revision": "8751da8c0d19649567e5cc23f6d8ce0c",
-    "url": "/long-shot-league/static/media/kirkwood.8751da8c.jpeg"
+    "revision": "bab4c3867244dfd018ce4ab8a80e9201",
+    "url": "/long-shot-league/static/media/mike.bab4c386.jpeg"
+  },
+  {
+    "revision": "3ac19e8431df5eed376ea86f7dad085c",
+    "url": "/long-shot-league/static/media/patel.3ac19e84.jpg"
+  },
+  {
+    "revision": "1073ea84d68114eee36f64fb0b043ed7",
+    "url": "/long-shot-league/static/media/brian.1073ea84.jpg"
+  },
+  {
+    "revision": "3e7756d6fbcb300095d7fcbea5a52729",
+    "url": "/long-shot-league/static/media/batey.3e7756d6.jpg"
   },
   {
     "revision": "24adc892729eb7149d6073343a111aa0",
@@ -60,7 +72,7 @@ self.__precacheManifest = [
     "url": "/long-shot-league/static/media/breslin.32708196.jpeg"
   },
   {
-    "revision": "ba579d05fb2768d57579c69d3095f575",
+    "revision": "dbf588b109cc00cc819c322a576cc92b",
     "url": "/long-shot-league/index.html"
   }
 ];
