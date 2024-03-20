@@ -5,7 +5,7 @@ import Scott from '../assets/images/scott.jpg'
 import Todd from '../assets/images/todd.png'
 import Reed from '../assets/images/reed.png'
 import Alex from '../assets/images/alex.png'
-import Kirkwood from '../assets/images/kirkwood.jpeg'
+import Mike from '../assets/images/mike.jpeg'
 import playerImg from '../assets/images/paul-davis.jpg'
 
 export default {
@@ -16,6 +16,6 @@ export default {
 	Todd,
 	Reed,
 	Alex,
-	Kirkwood,
+	Mike,
 	playerImg,
 }
